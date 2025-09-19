@@ -115,15 +115,15 @@ const ElectricBorder: React.FC<ElectricBorderProps> = ({
     });
   };
 
-  useEffect(() => {
-    updateAnim();
-  }, [speed, chaos]);
+  //useEffect(() => {
+  //updateAnim();
+  //}, [speed, chaos]);
 
   useLayoutEffect(() => {
     if (!rootRef.current) return;
     const ro = new ResizeObserver(() => updateAnim());
     ro.observe(rootRef.current);
-    updateAnim();
+    //updateAnim();
     return () => ro.disconnect();
   }, []);
 
