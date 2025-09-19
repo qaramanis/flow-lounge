@@ -93,10 +93,10 @@ export default function Nav() {
   return (
     <div className="fixed right-[2rem] top-[2rem] z-[100] flex">
       <button
-        className="bg-[#EF5021] rounded-full items-center justify-center z-10 cursor-pointer"
+        className="bg-[#EF5021] rounded-md items-center justify-center z-10 cursor-pointer "
         onClick={() => setIsOpen(!isOpen)}
       >
-        <Hamburger size={20} color="#000" toggled={isOpen} toggle={setIsOpen} />
+        <Hamburger size={25} color="#000" toggled={isOpen} toggle={setIsOpen} />
       </button>
       <div
         className={cn(
@@ -105,10 +105,10 @@ export default function Nav() {
         )}
       >
         <div className="flex flex-col gap-3">
-          <NavItem title="Hookah" href="#" />
-          <NavItem title="Playroom" href="#" />
-          <NavItem title="Events" href="#" />
           <NavItem title="Menu" href="#" />
+          <NavItem title="Hookah" href="#" />
+          <NavItem title="Events" href="#" />
+          <NavItem title="Playroom" href="#" />
         </div>
         <div className=" text-2xl text-black">
           <span className="text-black/50 text-sm tracking-tighter mb-4 mbn-item">
