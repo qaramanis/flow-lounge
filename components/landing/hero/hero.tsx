@@ -164,12 +164,15 @@ export default function HeroSection() {
       });
     };
 
+    // Store the current ref value to use in cleanup
+    const currentContainer = containerRef.current;
+
     window.addEventListener("mousemove", handleMouseMove);
-    containerRef.current?.addEventListener("mouseleave", handleMouseLeave);
+    currentContainer?.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      containerRef.current?.removeEventListener("mouseleave", handleMouseLeave);
+      currentContainer?.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 

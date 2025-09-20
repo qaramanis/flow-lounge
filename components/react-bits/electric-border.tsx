@@ -3,6 +3,7 @@
 import React, {
   CSSProperties,
   PropsWithChildren,
+  useCallback,
   useEffect,
   useId,
   useLayoutEffect,
@@ -49,7 +50,7 @@ const ElectricBorder: React.FC<ElectricBorderProps> = ({
   const rootRef = useRef<HTMLDivElement | null>(null);
   const strokeRef = useRef<HTMLDivElement | null>(null);
 
-  const updateAnim = () => {
+  const updateAnim = useCallback(() => {
     const svg = svgRef.current;
     const host = rootRef.current;
     if (!svg || !host) return;
@@ -105,19 +106,19 @@ const ElectricBorder: React.FC<ElectricBorderProps> = ({
     }
 
     requestAnimationFrame(() => {
-      [...dyAnims, ...dxAnims].forEach((a: any) => {
-        if (typeof a.beginElement === "function") {
+      [...dyAnims, ...dxAnims].forEach((animElement: SVGAnimateElement) => {
+        if (typeof animElement.beginElement === "function") {
           try {
-            a.beginElement();
+            animElement.beginElement();
           } catch {}
         }
       });
     });
-  };
+  }, [filterId, speed, chaos]);
 
   useEffect(() => {
     updateAnim();
-  }, [speed, chaos]);
+  }, [speed, chaos, updateAnim]);
 
   useLayoutEffect(() => {
     if (!rootRef.current) return;
@@ -125,7 +126,7 @@ const ElectricBorder: React.FC<ElectricBorderProps> = ({
     ro.observe(rootRef.current);
     updateAnim();
     return () => ro.disconnect();
-  }, []);
+  }, [updateAnim]);
 
   const inheritRadius: CSSProperties = {
     borderRadius: style?.borderRadius ?? "inherit",
