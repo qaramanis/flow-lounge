@@ -1,8 +1,6 @@
 "use client";
-
 import { ReactNode, useEffect, useRef } from "react";
 import Lenis from "lenis";
-import { gsap } from "@/lib/gsap";
 
 interface LenisProviderProps {
   children: ReactNode;
@@ -19,6 +17,12 @@ interface LenisProviderProps {
   };
 }
 
+declare global {
+  interface Window {
+    lenis?: Lenis;
+  }
+}
+
 export default function LenisProvider({
   children,
   options = {},
@@ -26,7 +30,6 @@ export default function LenisProvider({
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    // Initialize Lenis with default options
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -42,7 +45,6 @@ export default function LenisProvider({
 
     lenisRef.current = lenis;
 
-    // Animation frame function
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -50,19 +52,18 @@ export default function LenisProvider({
 
     requestAnimationFrame(raf);
 
-    // Global lenis instance for accessing from other components
     if (typeof window !== "undefined") {
-      (window as any).lenis = lenis;
+      window.lenis = lenis;
     }
 
     // Cleanup
     return () => {
       lenis.destroy();
       if (typeof window !== "undefined") {
-        delete (window as any).lenis;
+        delete window.lenis;
       }
     };
-  }, []);
+  }, [options]);
 
   return <>{children}</>;
 }
