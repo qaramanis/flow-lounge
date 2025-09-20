@@ -1,3 +1,4 @@
+import Footer from "@/components/landing/footer/footer";
 import HeroSection from "@/components/landing/hero/hero";
 import TestimonialsSection from "@/components/landing/testimonial/testimonial";
 import ElectricBorder from "@/components/react-bits/electric-border";
@@ -26,6 +27,7 @@ export default function Home() {
 
       <HeroSection />
       <TestimonialsSection />
+      <Footer />
     </div>
   );
 }
