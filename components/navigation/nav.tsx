@@ -6,13 +6,25 @@ import Link from "next/link";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import { gsap } from "@/lib/gsap";
 
-function NavItem({ title, href }: { title: string; href: string }) {
+function NavItem({
+  title,
+  href,
+  index,
+}: {
+  title: string;
+  href: string;
+  index: string;
+}) {
   return (
     <Link
       href={href}
-      className="w-full text-4xl text-black hover:text-[#EF5021] tracking-tight flex flex-col leading-none transition-all duration-300"
+      className="w-full  text-black hover:text-[#EF5021] tracking-tight flex flex-col leading-none transition-all duration-300"
     >
-      <span className="mbn-item">{title}</span>
+      <div className="flex flex-row">
+        <span className="mbn-item text-5xl">{title}</span>
+        <div className="ml-2 text-lg mbn-item text-[#EF5021]">{index}</div>
+      </div>
+
       <div className="w-full h-[1px] bg-black/10 my-2 mbn-line" />
     </Link>
   );
@@ -40,7 +52,7 @@ export default function Nav() {
   }, [isOpen]);
 
   useIsomorphicLayoutEffect(() => {
-    const ctx = gsap.context((self) => {
+    const ctx = gsap.context(() => {
       if (isOpen) {
         const openTl = gsap.timeline({
           defaults: {
@@ -105,13 +117,13 @@ export default function Nav() {
         )}
       >
         <div className="flex flex-col gap-3">
-          <NavItem title="Menu" href="#" />
-          <NavItem title="Hookah" href="#" />
-          <NavItem title="Events" href="#" />
-          <NavItem title="Playroom" href="#" />
+          <NavItem title="Menu" href="#" index="01." />
+          <NavItem title="Hookah" href="#" index="02." />
+          <NavItem title="Events" href="#" index="03." />
+          <NavItem title="Playroom" href="#" index="04." />
         </div>
-        <div className=" text-2xl text-black">
-          <span className="text-black/50 text-sm tracking-tighter mb-4 mbn-item">
+        <div className=" text-3xl text-black">
+          <span className="text-[#EF5021] text-xl tracking-tighter mb-4 mbn-item">
             Socials
           </span>
           <div className="flex flex-row gap-12">

@@ -1,4 +1,5 @@
 import HeroSection from "@/components/landing/hero/hero";
+import TestimonialsSection from "@/components/landing/testimonial/testimonial";
 import ElectricBorder from "@/components/react-bits/electric-border";
 import Image from "next/image";
 
@@ -23,10 +24,8 @@ export default function Home() {
         </ElectricBorder>
       </div>
 
-      {/* Hero Section */}
       <HeroSection />
-
-      {/* Additional sections will go here */}
+      <TestimonialsSection />
     </div>
   );
 }

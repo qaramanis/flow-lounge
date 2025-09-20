@@ -90,7 +90,6 @@ export default function HeroSection() {
       const xPos = (clientX - innerWidth / 2) / innerWidth;
       const yPos = (clientY - innerHeight / 2) / innerHeight;
 
-      // Rotate calculation for tilt effect
       const rotateX = yPos * 15;
       const rotateY = xPos * 15;
 
