@@ -12,7 +12,6 @@ export default function HeroSection() {
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Set initial states
       gsap.set(titleRef.current, {
         opacity: 0,
         y: 50,
@@ -20,7 +19,7 @@ export default function HeroSection() {
 
       gsap.set(subtitleRef.current, {
         opacity: 0,
-        y: 30,
+        y: 50,
       });
 
       gsap.set(ctaContainerRef.current, {
@@ -67,12 +66,12 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-dvh overflow-hidden bg-black flex items-center justify-center"
+      className="relative min-h-screen overflow-hidden bg-transparent flex items-center justify-center"
     >
       {/* Simple static background gradient */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/*<div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-tr from-black via-black to-[#EF5021]/20" />
-      </div>
+      </div>*/}
 
       {/* Content Container */}
       <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
@@ -90,15 +89,14 @@ export default function HeroSection() {
         {/* Subtitle */}
         <p
           ref={subtitleRef}
-          className="text-lg md:text-xl lg:text-2xl text-white/60 max-w-2xl mx-auto mb-12 font-light"
+          className="text-lg md:text-xl lg:text-2xl text-[#666666] max-w-2xl mx-auto mb-12 font-light"
         >
-          Step into a world where ambiance meets artistry. Your journey into
-          relaxation and entertainment begins here.
+          Κάνε ένα βήμα
         </p>
 
         {/* CTA Buttons */}
         <div ref={ctaContainerRef} className="flex gap-4 justify-center">
-          <button className="relative px-8 py-4 rounded-xl bg-[#EF5021] text-black font-medium overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(239,80,33,0.6)] group cursor-pointer">
+          <button className="relative px-8 py-4 rounded-xl bg-[#EF5021] text-white font-medium overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(239,80,33,0.6)] group cursor-pointer">
             <span className="relative z-10 transition-colors duration-300 group-hover:text-[#EF5021]">
               Explore Now
             </span>
@@ -116,9 +114,9 @@ export default function HeroSection() {
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#EF5021]/50 to-transparent" />
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#666666]">
         <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-16 bg-gradient-to-b from-white/40 to-transparent animate-pulse" />
+        <div className="w-[2px] h-16 bg-gradient-to-b from-[#666666] to-transparent" />
       </div>
     </section>
   );

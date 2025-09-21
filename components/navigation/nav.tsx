@@ -40,7 +40,7 @@ function NavItem({
     <Link
       href={href}
       onClick={handleClick}
-      className="w-full text-black hover:text-[#EF5021] tracking-tight flex flex-col leading-none transition-all duration-300"
+      className="w-full text-background hover:text-[#EF5021] tracking-tight flex flex-col leading-none transition-all duration-300"
     >
       <div className="flex flex-row">
         <span className="mbn-item text-5xl">{title}</span>
@@ -139,10 +139,19 @@ export default function Nav() {
   return (
     <div className="fixed right-[2rem] top-[2rem] z-[100] flex">
       <button
-        className="bg-[#EF5021] rounded-md items-center justify-center z-10 cursor-pointer "
+        className="bg-[#EF5021] rounded-md items-center justify-center z-10 cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
-      >
-        <Hamburger size={25} color="#000" toggled={isOpen} toggle={setIsOpen} />
+      ></button>
+      <button className="relative rounded-md bg-[#EF5021] items-center justify-center z-10 cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(239,80,33,0.6)] group overflow-hidden">
+        <span className="relative z-10 transition-colors duration-300 group-hover:text-[#EF5021]">
+          <Hamburger
+            size={25}
+            color="#000"
+            toggled={isOpen}
+            toggle={setIsOpen}
+          />
+        </span>
+        <span className="absolute inset-0 bg-white scale-0 group-hover:scale-105 transition-transform duration-500 ease-out rounded-md" />
       </button>
       <div
         className={cn(

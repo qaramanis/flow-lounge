@@ -36,7 +36,7 @@ export default function Marquees() {
         <SimpleMarquee
           className="w-full"
           baseVelocity={4}
-          repeat={2}
+          repeat={4}
           draggable={false}
           scrollAwareDirection={true}
           useScrollVelocity={true}

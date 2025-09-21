@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/navigation/nav";
 import LenisProvider from "@/components/providers/lenis-provider";
+import UnicornScene from "@/components/unicorn-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,9 @@ export default function RootLayout({
         <LenisProvider>
           {children}
           <Nav />
+          <div className="w-screen h-[110vh] fixed top-0 left-0 z-[-1]">
+            <UnicornScene projectId="sleEzr0rL1MREXKhJt1V" />
+          </div>
         </LenisProvider>
       </body>
     </html>
