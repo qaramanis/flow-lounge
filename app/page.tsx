@@ -1,3 +1,4 @@
+import EventsSection from "@/components/landing/events/events";
 import Footer from "@/components/landing/footer/footer";
 import HeroSection from "@/components/landing/hero/hero";
 import TestimonialsSection from "@/components/landing/testimonial/testimonial";
@@ -34,6 +35,7 @@ export default function Home() {
 
       <HeroSection />
       <TestimonialsSection />
+      <EventsSection />
       <Footer />
     </div>
   );

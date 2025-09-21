@@ -6,7 +6,6 @@ import { JSX, useState } from "react";
 interface FooterLink {
   label: string;
   href: string;
-  isHighlighted?: boolean;
   isNew?: boolean;
   isExternal?: boolean;
 }
@@ -18,36 +17,43 @@ interface FooterColumn {
 
 const footerData: FooterColumn[] = [
   {
-    title: "Experience",
+    title: "Εμπειρία",
     links: [
       { label: "Hookah", href: "#", isExternal: false },
-      { label: "Gift Cards", href: "#", isExternal: false },
+      { label: "Deals & Offers", href: "#", isExternal: false },
     ],
   },
   {
-    title: "Visit Us",
+    title: "Επισκεφτείτε μας",
     links: [
-      { label: "Our Story", href: "#", isExternal: false },
+      { label: "Η Ιστορία μας", href: "#", isExternal: false },
       {
-        label: "Join the Team",
+        label: "Γίνε μέλος της ομάδας",
         href: "#",
-        isHighlighted: true,
-        isNew: true,
+        isNew: false,
         isExternal: false,
       },
       { label: "Flow Events", href: "/events", isExternal: false },
     ],
   },
   {
-    title: "Services",
+    title: "Υπηρεσίες",
     links: [
-      { label: "For Events", href: "/services/events", isExternal: false },
-      { label: "For Partners", href: "/services/partners", isExternal: false },
-      { label: "For Business", href: "/services/business", isExternal: false },
+      { label: "Για Events", href: "/services/events", isExternal: false },
+      {
+        label: "Για Συνεργάτες",
+        href: "/services/partners",
+        isExternal: false,
+      },
+      {
+        label: "Για Επιχειρήσεις",
+        href: "/services/business",
+        isExternal: false,
+      },
     ],
   },
   {
-    title: "Connect",
+    title: "Socials",
     links: [
       {
         label: "Instagram",
@@ -57,10 +63,10 @@ const footerData: FooterColumn[] = [
     ],
   },
   {
-    title: "Support",
+    title: "Υποστήριξη",
     links: [
-      { label: "Terms", href: "/terms", isExternal: false },
-      { label: "Privacy Policy", href: "/privacy", isExternal: false },
+      { label: "Όροι", href: "/terms", isExternal: false },
+      { label: "Πολιτική Απορρήτου", href: "/privacy", isExternal: false },
     ],
   },
 ];
@@ -108,7 +114,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
           {footerData.map((column, idx) => (
             <div key={idx} className="space-y-4">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-800">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-background">
                 {column.title}
               </h3>
               <ul className="space-y-3">
@@ -116,13 +122,11 @@ export default function Footer() {
                   <li key={linkIdx}>
                     <Link
                       href={link.href}
-                      className={`text-sm text-gray-600 hover:text-[#EF5021] transition-all duration-300 inline-flex items-center gap-2 ${
-                        link.isHighlighted ? "text-[#EF5021] font-medium" : ""
-                      }`}
+                      className="text-sm text-[#666666] hover:text-[#EF5021] transition-all duration-300 inline-flex items-center gap-2"
                     >
                       {link.label}
                       {link.isNew && (
-                        <span className="text-[10px] bg-gradient-to-tl from-black to-[#EF5021] text-white px-2 py-0.5 rounded font-semibold">
+                        <span className="text-[10px] bg-gradient-to-bl from-background/95 to-[#EF5021] text-white px-2 py-0.5 rounded font-semibold">
                           New!
                         </span>
                       )}
@@ -135,8 +139,8 @@ export default function Footer() {
 
           {/* Newsletter Column */}
           <div className="col-span-2 md:col-span-3 lg:col-span-1 space-y-4">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-800">
-              Stay Updated
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-background">
+              Μείνε Ενημερωμένος
             </h3>
             <form
               onSubmit={handleNewsletterSubmit}
@@ -146,9 +150,9 @@ export default function Footer() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email address"
+                placeholder="Email"
                 required
-                className="flex-1 px-5 py-3 border-2 border-gray-200 rounded-full text-sm focus:outline-none focus:border-[#EF5021] transition-colors bg-white"
+                className="flex-1 px-5 py-3 border-2 border-gray-200 rounded-full text-background text-sm focus:outline-none focus:border-[#EF5021] transition-colors duration-300 ease-in-out bg-transparent"
               />
               <button
                 type="submit"
@@ -178,17 +182,18 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-xs text-gray-500 text-center md:text-left">
+          <div className="text-xs text-[#666666] text-center md:text-left">
             © 2025 FLOW LOUNGE
             <br />
             ALL RIGHTS RESERVED
           </div>
-          <div className="text-xs text-gray-500 text-center md:text-left">
+          <div className="text-xs text-[#666666] text-center md:text-left">
             created with ❤️ by{" "}
             <Link
               href="https://qaramanis.com"
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:text-black transition-all ease-in-out duration-300"
             >
               qaramanis
             </Link>

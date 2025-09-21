@@ -33,8 +33,8 @@ export default function RootLayout({
         <LenisProvider>
           {children}
           <Nav />
-          <div className="w-screen h-[110vh] fixed top-0 left-0 z-[-1]">
-            <UnicornScene projectId="sleEzr0rL1MREXKhJt1V" />
+          <div className="w-screen h-[150vh] fixed top-0 left-0 z-[-1] opacity-25">
+            <UnicornScene projectId="D3XV9A8wfytqYBlHrrCI" />
           </div>
         </LenisProvider>
       </body>
