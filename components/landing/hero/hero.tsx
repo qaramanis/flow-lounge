@@ -89,9 +89,10 @@ export default function HeroSection() {
         {/* Subtitle */}
         <p
           ref={subtitleRef}
-          className="text-lg md:text-xl lg:text-2xl text-[#666666] max-w-2xl mx-auto mb-12 font-light"
+          className="text-lg md:text-xl lg:text-2xl text-foreground max-w-2xl mx-auto mb-12 font-light"
         >
-          Κάνε ένα βήμα
+          Κάνε ένα βήμα μέσα στον κόσμο του ναργιλέ <br /> και ανακάλυψε τους
+          ατελείωτους πιθανούς συνδυασμούς
         </p>
 
         {/* CTA Buttons */}
@@ -114,9 +115,9 @@ export default function HeroSection() {
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#EF5021]/50 to-transparent" />
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#666666]">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-foreground">
         <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-[2px] h-16 bg-gradient-to-b from-[#666666] to-transparent" />
+        <div className="w-[2px] h-16 bg-gradient-to-b from-foreground to-transparent" />
       </div>
     </section>
   );
