@@ -66,7 +66,7 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen overflow-hidden bg-transparent flex items-center justify-center"
+      className="relative min-h-[844px] md:min-h-screen overflow-hidden bg-transparent flex items-center justify-center"
     >
       {/* Simple static background gradient */}
       {/*<div className="absolute inset-0 pointer-events-none">
@@ -92,7 +92,7 @@ export default function HeroSection() {
           className="text-base md:text-xl text-foreground max-w-2xl mx-auto mb-12 font-light"
         >
           Κάνε ένα βήμα μέσα στον κόσμο του ναργιλέ <br /> και ανακάλυψε τους
-          ατελείωτους πιθανούς συνδυασμούς
+          ατελείωτους συνδυασμούς γεύσεων
         </p>
 
         {/* CTA Buttons */}

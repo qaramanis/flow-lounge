@@ -149,7 +149,6 @@ export default function EventsSection() {
       <div className="md:px-[6rem] px-[2rem]  mx-auto">
         <div className="flex flex-col gap-12 lg:gap-20 items-center md:items-stretch">
           <div className="space-y-6 flex flex-col md:flex-row justify-between items-center border-b border-foreground/15 pb-12">
-            {/*<div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-black to-transparent" />*/}
             <h2
               ref={titleRef}
               className="text-5xl md:text-6xl leading-tight text-foreground text-center md:text-start"

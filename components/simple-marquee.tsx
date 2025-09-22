@@ -12,7 +12,6 @@ import {
 
 import { cn } from "@/lib/utils";
 
-// Custom wrap function
 const wrap = (min: number, max: number, value: number): number => {
   const range = max - min;
   return ((((value - min) % range) + range) % range) + min;
@@ -52,7 +51,7 @@ const SimpleMarquee = ({
   scrollAwareDirection = false,
   scrollSpringConfig = { damping: 50, stiffness: 400 },
   scrollContainer,
-  repeat = 3,
+  repeat = 2,
   draggable = false,
   dragSensitivity = 0.2,
   dragVelocityDecay = 0.96,

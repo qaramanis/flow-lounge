@@ -1,3 +1,5 @@
+"use client";
+
 import SimpleMarquee from "@/components/simple-marquee";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -19,7 +21,7 @@ function MarqueeItem({ text }: { text: string }) {
   );
 }
 
-export default function Marquees() {
+export function Marquees() {
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
@@ -63,5 +65,15 @@ export default function Marquees() {
         </SimpleMarquee>
       </div>
     </section>
+  );
+}
+
+export default function MarqueesSection() {
+  return (
+    <div className="min-h-[844px] md:min-h-screen flex items-center overflow-hidden">
+      <div className="relative">
+        <Marquees />
+      </div>
+    </div>
   );
 }
