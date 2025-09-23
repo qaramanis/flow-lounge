@@ -32,7 +32,7 @@ export default function MenuPage() {
       title: "Ποτά",
       description:
         "Finest whiskey, vodka, gin, and rum from premium distilleries",
-      imageUrl: "/images/spirits-icon-01.webp",
+      imageUrl: "/images/menu/spirits-icon-01.webp",
     },
     {
       title: "Κρασιά",
