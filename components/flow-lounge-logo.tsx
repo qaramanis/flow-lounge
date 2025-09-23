@@ -20,9 +20,9 @@ export default function FlowLoungeLogo() {
           immediate: false,
         });
       } else {
-        // Fallback to window.lenis if available (NO MORE 'any' NEEDED)
-        if (typeof window !== "undefined" && window.lenis) {
-          window.lenis.scrollTo(0, {
+        // Fallback to window.lenis if available
+        if (typeof window !== "undefined" && (window as any).lenis) {
+          (window as any).lenis.scrollTo(0, {
             duration: 1,
             easing: (t: number) => 1 - Math.pow(1 - t, 3),
             immediate: false,
