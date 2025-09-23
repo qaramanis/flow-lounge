@@ -4,6 +4,19 @@ import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import { useLenis } from "@/hooks/use-lenis";
 
+type LenisWindow = Window & {
+  lenis?: {
+    scrollTo: (
+      target: number,
+      options?: {
+        duration?: number;
+        easing?: (t: number) => number;
+        immediate?: boolean;
+      },
+    ) => void;
+  };
+};
+
 export default function FlowLoungeLogo() {
   const router = useRouter();
   const pathname = usePathname();
@@ -16,13 +29,12 @@ export default function FlowLoungeLogo() {
       if (lenis) {
         lenis.scrollTo(0, {
           duration: 2,
-          easing: (t: number) => 1 - Math.pow(1 - t, 3), // easeOutCubic
+          easing: (t: number) => 1 - Math.pow(1 - t, 3),
           immediate: false,
         });
       } else {
-        // Fallback to window.lenis if available
-        if (typeof window !== "undefined" && (window as any).lenis) {
-          (window as any).lenis.scrollTo(0, {
+        if (typeof window !== "undefined" && (window as LenisWindow).lenis) {
+          (window as LenisWindow).lenis?.scrollTo(0, {
             duration: 1,
             easing: (t: number) => 1 - Math.pow(1 - t, 3),
             immediate: false,
@@ -33,7 +45,6 @@ export default function FlowLoungeLogo() {
         }
       }
     } else {
-      // If on another page, navigate to home
       router.push("/");
     }
   };
