@@ -4,6 +4,8 @@ import "./globals.css";
 import Nav from "@/components/navigation/nav";
 import LenisProvider from "@/components/providers/lenis-provider";
 import UnicornScene from "@/components/unicorn-react";
+import { Analytics } from "@vercel/analytics/next";
+import Footer from "@/components/landing/footer/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,12 +32,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Analytics />
         <LenisProvider>
           {children}
           <Nav />
-          <div className="w-screen h-[150vh] fixed top-0 left-0 z-[-1] opacity-25">
+          <div className="w-screen h-[150vh] fixed top-0 left-0 z-[-1] opacity-50">
             <UnicornScene projectId="D3XV9A8wfytqYBlHrrCI" />
           </div>
+          <Footer />
         </LenisProvider>
       </body>
     </html>

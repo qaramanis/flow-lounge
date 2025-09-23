@@ -13,7 +13,6 @@ export default function TestimonialsSection() {
   const rightContentRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
 
   useIsomorphicLayoutEffect(() => {
@@ -68,7 +67,7 @@ export default function TestimonialsSection() {
 
           {/* Floating stat card */}
           <div className="absolute top-6 left-6 md:top-8 md:left-8 z-20">
-            <div className="bg-white/95 backdrop-blur-md p-4 md:p-6 rounded-xl md:rounded-2xl shadow-2xl">
+            <div className="bg-white/65 backdrop-blur-md p-4 md:p-6 rounded-xl md:rounded-2xl shadow-2xl">
               <div className="text-black text-4xl md:text-5xl lg:text-6xl font-bold flex items-baseline">
                 <CountUp
                   from={0}
@@ -90,7 +89,7 @@ export default function TestimonialsSection() {
         {/* Right side - Dark card with Flow Lounge theme */}
         <div
           ref={rightContentRef}
-          className="flex flex-col w-full md:w-[60%] rounded-2xl md:rounded-3xl p-6 md:p-12 justify-between min-h-[450px] md:h-full md:min-h-[700px] relative overflow-hidden text-center"
+          className="flex flex-col w-full md:w-[60%] rounded-2xl md:rounded-3xl p-6 md:p-12 justify-between min-h-[450px] md:h-full md:min-h-[700px] relative overflow-hidden text-center items-center"
         >
           {/* Subtle pattern overlay */}
           <div className="absolute inset-0 opacity-10">
@@ -143,14 +142,14 @@ export default function TestimonialsSection() {
           {/* Statistics section */}
           <div
             ref={statsRef}
-            className="space-y-4 md:space-y-6 mt-8 md:mt-12 relative z-10"
+            className="space-y-4 md:space-y-6 mt-8 md:mt-12 relative z-10 w-full flex flex-col items-center justify-start"
           >
             <div className="flex items-center gap-4 md:gap-6">
               <span className="text-gray-500 text-sm md:text-base lg:text-lg min-w-[70px] md:min-w-[100px]">
                 Πελάτες
               </span>
               <div className="flex items-center gap-3 md:gap-4 flex-1">
-                <div className="flex-1 h-1.5 md:h-2 bg-gray-700/50 rounded-full overflow-hidden max-w-[120px] md:max-w-[180px]">
+                <div className="flex-1 h-1.5 md:h-2 bg-gray-700/50 rounded-full overflow-hidden min-w-[108px] md:min-w-[162px] max-w-[120px] md:max-w-[180px]">
                   <div className="w-[90%] h-full bg-gradient-to-r from-[#EF5021] to-[#ff8c5a] rounded-full"></div>
                 </div>
                 <span className="text-white font-bold text-base md:text-lg lg:text-xl">
@@ -166,12 +165,12 @@ export default function TestimonialsSection() {
               </div>
             </div>
 
-            <div className="flex items-center gap-4 md:gap-6">
+            <div className="-ml-2 flex items-center gap-4 md:gap-6">
               <span className="text-gray-500 text-sm md:text-base lg:text-lg min-w-[70px] md:min-w-[100px]">
                 Γεύσεις
               </span>
               <div className="flex items-center gap-3 md:gap-4 flex-1">
-                <div className="flex-1 h-1.5 md:h-2 bg-gray-700/50 rounded-full overflow-hidden max-w-[120px] md:max-w-[180px]">
+                <div className="flex-1 h-1.5 md:h-2 bg-gray-700/50 rounded-full overflow-hidden min-w-[108px] md:min-w-[162px] max-w-[120px] md:max-w-[180px]">
                   <div className="w-[70%] h-full bg-gradient-to-r from-[#EF5021] to-[#ff8c5a] rounded-full"></div>
                 </div>
                 <span className="text-white font-bold text-base md:text-lg lg:text-xl">

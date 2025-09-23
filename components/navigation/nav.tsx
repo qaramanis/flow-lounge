@@ -3,9 +3,11 @@ import { cn } from "@/lib/utils";
 import { Squash as Hamburger } from "hamburger-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import { gsap } from "@/lib/gsap";
 import { useLenis } from "@/hooks/use-lenis";
+import FlowLoungeLogo from "../flow-lounge-logo";
 
 function NavItem({
   title,
@@ -19,16 +21,18 @@ function NavItem({
   onClick?: () => void;
 }) {
   const { scrollTo } = useLenis();
+  const router = useRouter();
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
 
-    // If it's a hash link, use Lenis smooth scroll
     if (href.startsWith("#")) {
       scrollTo(href, {
         duration: 2,
         easing: (t: number) => 1 - Math.pow(1 - t, 3), // easeOutCubic
       });
+    } else {
+      router.push(href);
     }
 
     if (onClick) {
@@ -138,6 +142,9 @@ export default function Nav() {
 
   return (
     <div className="fixed right-[2rem] top-[2rem] z-[100] flex">
+      <div className="fixed top-[1rem] left-[1rem] z-101">
+        <FlowLoungeLogo />
+      </div>
       <button
         className="bg-[#EF5021] rounded-md items-center justify-center z-10 cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
@@ -159,22 +166,22 @@ export default function Nav() {
         )}
       >
         <div className="flex flex-col gap-3">
-          <NavItem title="Menu" href="#menu" index="01." onClick={closeMenu} />
+          <NavItem title="Menu" href="/menu" index="01." onClick={closeMenu} />
           <NavItem
             title="Hookah"
-            href="#hookah"
+            href="/hookah"
             index="02."
             onClick={closeMenu}
           />
           <NavItem
             title="Events"
-            href="#events"
+            href="/events"
             index="03."
             onClick={closeMenu}
           />
           <NavItem
             title="Playroom"
-            href="#playroom"
+            href="/playroom"
             index="04."
             onClick={closeMenu}
           />

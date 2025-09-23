@@ -68,12 +68,6 @@ export default function HeroSection() {
       ref={containerRef}
       className="relative min-h-[844px] md:min-h-screen overflow-hidden bg-transparent flex items-center justify-center"
     >
-      {/* Simple static background gradient */}
-      {/*<div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-tr from-black via-black to-[#EF5021]/20" />
-      </div>*/}
-
-      {/* Content Container */}
       <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
         {/* Main Title */}
         <h1

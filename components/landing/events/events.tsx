@@ -137,8 +137,6 @@ function EventCard({ event, index }: { event: Event; index: number }) {
 export default function EventsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const descriptionRef = useRef<HTMLParagraphElement>(null);
-  const readMoreRef = useRef<HTMLButtonElement>(null);
 
   return (
     <section
