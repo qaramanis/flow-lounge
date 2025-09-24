@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { JSX, useState } from "react";
 
 interface FooterLink {
   label: string;
@@ -17,18 +16,18 @@ interface FooterColumn {
 
 const footerData: FooterColumn[] = [
   {
-    title: "Εμπειρία",
+    title: "Experience",
     links: [
       { label: "Hookah", href: "#", isExternal: false },
       { label: "Deals & Offers", href: "#", isExternal: false },
     ],
   },
   {
-    title: "Επισκεφτείτε μας",
+    title: "About Us",
     links: [
-      { label: "Η Ιστορία μας", href: "#", isExternal: false },
+      { label: "Our Story", href: "#", isExternal: false },
       {
-        label: "Γίνε μέλος της ομάδας",
+        label: "Join the Team",
         href: "#",
         isNew: false,
         isExternal: false,
@@ -37,16 +36,16 @@ const footerData: FooterColumn[] = [
     ],
   },
   {
-    title: "Υπηρεσίες",
+    title: "Services",
     links: [
-      { label: "Για Events", href: "/services/events", isExternal: false },
+      { label: "For Events", href: "/services/events", isExternal: false },
       {
-        label: "Για Συνεργάτες",
+        label: "For Partners",
         href: "/services/partners",
         isExternal: false,
       },
       {
-        label: "Για Επιχειρήσεις",
+        label: "For Businesses",
         href: "/services/business",
         isExternal: false,
       },
@@ -60,43 +59,47 @@ const footerData: FooterColumn[] = [
         href: "https://instagram.com/flowlounge",
         isExternal: true,
       },
+      {
+        label: "LinkTree",
+        href: "https://linktr.ee/flowlounge",
+        isExternal: true,
+      },
     ],
   },
   {
-    title: "Υποστήριξη",
+    title: "Support",
     links: [
-      { label: "Όροι", href: "/terms", isExternal: false },
-      { label: "Πολιτική Απορρήτου", href: "/privacy", isExternal: false },
+      { label: "Terms", href: "/terms", isExternal: false },
+      { label: "Privacy Policy", href: "/privacy-policy", isExternal: false },
     ],
   },
 ];
 
-const SocialIcon = ({ platform }: { platform: string }) => {
-  const icons: { [key: string]: JSX.Element } = {
-    instagram: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z" />
-        <path d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z" />
-        <circle cx="18.406" cy="5.594" r="1.44" />
-      </svg>
-    ),
-  };
+// Instagram Icon
+// const SocialIcon = ({ platform }: { platform: string }) => {
+//   const icons: { [key: string]: JSX.Element } = {
+//     instagram: (
+//       <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+//         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z" />
+//         <path d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z" />
+//         <circle cx="18.406" cy="5.594" r="1.44" />
+//       </svg>
+//     ),
+//   };
 
-  return icons[platform] || null;
-};
+//   return icons[platform] || null;
+// };
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Handle newsletter submission
-    console.log("Newsletter signup:", email);
-    setEmail("");
-  };
+  // const handleNewsletterSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // TODO: Handle newsletter submission
+  //   console.log("Newsletter signup:", email);
+  //   setEmail("");
+  // };
 
   return (
-    <footer className="relative bg-foreground rounded-t-[40px] mt-auto">
+    <footer className="relative bg-[#f3f3f2] rounded-t-[40px] mt-auto">
       <div className="px-8 md:px-20 pt-12 pb-10">
         <h2
           className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter pb-16 bg-clip-text text-transparent"
@@ -111,7 +114,7 @@ export default function Footer() {
         </h2>
 
         {/* Footer Content Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:flex md:flex-row md:justify-start gap-8 md:gap-[10rem] mb-16">
           {footerData.map((column, idx) => (
             <div key={idx} className="space-y-4">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-background">
@@ -126,7 +129,7 @@ export default function Footer() {
                     >
                       {link.label}
                       {link.isNew && (
-                        <span className="text-[10px] bg-gradient-to-bl from-background/95 to-[#EF5021] text-white px-2 py-0.5 rounded font-semibold">
+                        <span className="text-[10px] bg-gradient-to-bl from-background/95 to-[#EF5021] text-foreground px-2 py-0.5 rounded font-semibold">
                           New!
                         </span>
                       )}
@@ -138,7 +141,7 @@ export default function Footer() {
           ))}
 
           {/* Newsletter Column */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-1 space-y-4">
+          {/*<div className="col-span-2 md:col-span-3 lg:col-span-1 space-y-4">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-background">
               Μείνε Ενημερωμένος
             </h3>
@@ -162,7 +165,6 @@ export default function Footer() {
               </button>
             </form>
 
-            {/* Social Links */}
             <div className="flex gap-3 mt-6">
               {["instagram"].map((platform) => (
                 <Link
@@ -177,7 +179,7 @@ export default function Footer() {
                 </Link>
               ))}
             </div>
-          </div>
+          </div>*/}
         </div>
 
         {/* Footer Bottom */}
