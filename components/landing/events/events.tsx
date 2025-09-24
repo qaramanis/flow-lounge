@@ -153,7 +153,7 @@ export default function EventsSection() {
             >
               Keep Up With <br />
               Our{" "}
-              <a className="self-center text-6xl md:text-[9.5rem] font-echelon italic">
+              <a className="self-center text-6xl md:text-[9.5rem] font-echelon italic text-[#EF5021]">
                 Events
               </a>
             </h2>

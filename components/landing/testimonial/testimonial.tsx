@@ -54,12 +54,11 @@ export default function TestimonialsSection() {
         {/* Left side - Image with overlay */}
         <div
           ref={leftContentRef}
-          className="relative w-full md:w-[40%] h-[400px] md:h-full md:min-h-[700px] rounded-2xl md:rounded-3xl overflow-hidden group"
+          className="relative w-full md:w-[40%] h-[400px] md:h-full md:min-h-[700px] rounded-xl overflow-hidden group"
         >
-          {/* Placeholder for actual hookah image */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#EF5021]/20 to-[#EF5021]/5 z-10" />
           <Image
-            src="/flow-lounge.svg" // Replace with actual hookah image
+            src="/flow-lounge.svg"
             alt="Flow Lounge Hookah Experience"
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -67,7 +66,7 @@ export default function TestimonialsSection() {
 
           {/* Floating stat card */}
           <div className="absolute top-6 left-6 md:top-8 md:left-8 z-20">
-            <div className="bg-white/65 backdrop-blur-md p-4 md:p-6 rounded-xl md:rounded-2xl shadow-2xl">
+            <div className="bg-white/65 backdrop-blur-md p-4 md:p-6 rounded-lg shadow-2xl">
               <div className="text-black text-4xl md:text-5xl lg:text-6xl font-bold flex items-baseline">
                 <CountUp
                   from={0}

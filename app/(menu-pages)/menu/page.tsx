@@ -11,49 +11,60 @@ export default function MenuPage() {
 
   const menuCategories = [
     {
-      title: "Κοκτεΐλς",
+      title: "Hookah",
       description:
-        "Premium συλλογή χειροποίητων κοκτεΐλς με φρέκσα υλικά. Βρείτε τα κλασσικά και τα signature κοκτεΐλς μας.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      imageUrl: "/images/menu/hookah-ultra.webp",
+      link: "/hookah",
+    },
+    {
+      title: "Cocktails",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       imageUrl: "/images/menu/cocktail-icon-01.webp",
+      link: "/menu/cocktails",
     },
     {
-      title: "Καφέδες",
+      title: "Homemade Lemonades",
       description:
-        "Premium selection of handcrafted cocktails with fresh ingredients",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       imageUrl: "/images/menu/coffee-icon-01.webp",
+      link: "/menu/lemonades",
     },
     {
-      title: "Μπύρες",
+      title: "Soft Drinks and Juices",
       description:
-        "Local craft and imported beer selection from around the world",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       imageUrl: "/images/menu/beer-icon-01.webp",
+      link: "/menu/soft-drinks",
     },
     {
-      title: "Ποτά",
+      title: "Tea and Coffee",
       description:
-        "Finest whiskey, vodka, gin, and rum from premium distilleries",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       imageUrl: "/images/spirits-icon-01.webp",
+      link: "/menu/tea-coffee",
     },
     {
-      title: "Κρασιά",
+      title: "Drinks",
       description:
-        "Carefully curated collection of red, white, and sparkling wines",
-      imageUrl: "/images/menu/wine-icon-01.webp",
-    },
-    {
-      title: "Αναψυκτικά",
-      description: "Refreshing non-alcoholic beverages and fresh juices",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       imageUrl: "/images/menu/soft-drinks-icon-01.webp",
+      link: "/menu/drinks",
     },
     {
-      title: "Τσάι",
-      description: "Artisanal coffee, premium teas, and specialty hot drinks",
+      title: "Wines",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      imageUrl: "/images/menu/wine-icon-01.webp",
+      link: "/menu/wines",
+    },
+    {
+      title: "Beers and Ciders",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       imageUrl: "/images/menu/tea-icon-01.webp",
-    },
-    {
-      title: "Χυμοί",
-      description: "Artisanal coffee, premium teas, and specialty hot drinks",
-      imageUrl: "/images/menu/juice-icon-01.webp",
+      link: "/menu/beers-ciders",
     },
   ];
 
@@ -75,14 +86,14 @@ export default function MenuPage() {
           ref={subtitleRef}
           className="text-lg md:text-xl text-white/70 max-w-2xl font-light"
         >
-          Εξερευνήστε το πλούσιο μενού μας
+          Discover our extensive menu, where classics meet modern creativity.
         </p>
       </div>
 
       {/* Menu Grid */}
       <div
         ref={gridRef}
-        className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 items-center"
+        className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 items-center mb-6"
       >
         {menuCategories.map((category, index) => (
           <MenuCard
@@ -90,18 +101,9 @@ export default function MenuPage() {
             title={category.title}
             description={category.description}
             imageUrl={category.imageUrl}
+            link={category.link}
           />
         ))}
-      </div>
-
-      {/* Optional CTA Section */}
-      <div className="mt-20 text-center">
-        <p className="text-white/60 mb-6">
-          Can&apos;t find what you&apos;re looking for?
-        </p>
-        <button className="px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:border-[#EF5021]/50 transition-all duration-300">
-          Ask Our Bartender
-        </button>
       </div>
     </div>
   );

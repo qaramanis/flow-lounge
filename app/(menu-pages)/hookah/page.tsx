@@ -106,7 +106,7 @@ export default function HookahPage() {
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
 
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
+      <div className="self-center items-center text-center mb-8 mt-24 md:mb-16 md:mt-12">
         <h1 className="text-5xl md:text-7xl">Refill Bowls</h1>
       </div>
       <div
@@ -124,14 +124,13 @@ export default function HookahPage() {
         ))}
       </div>
 
-      {/* Optional CTA Section */}
       <div className="mt-20 text-center">
-        <p className="text-white/60 mb-6">
-          Ρωτήστε τον Hookah Master για τυχόν απορίες
+        <p className="text-white/60 mb-4">
+          All prices listed above include vat 24% and municipal taxes 0.5%
+          <br />
+          Market Law Health Officer: Kyriakos Katikaridis
         </p>
-        <button className="px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:border-[#EF5021]/50 transition-all duration-300">
-          Ask Our Hookah Master
-        </button>
+        {/*<button className="px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:border-[#EF5021]/50 transition-all duration-300"></button>*/}
       </div>
     </div>
   );
