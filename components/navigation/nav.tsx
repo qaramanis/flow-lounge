@@ -265,7 +265,7 @@ export default function Nav() {
             onClick={closeMenu}
           />
           <NavItem
-            title="Special Events"
+            title="Your Events"
             href="/#"
             index="06."
             onClick={closeMenu}

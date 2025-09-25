@@ -74,7 +74,7 @@ export default function HookahPage() {
     <div ref={containerRef} className="pt-32 px-8 md:px-20 mb-12">
       <h1
         ref={titleRef}
-        className="text-5xl md:text-7xl font-light tracking-tighter text-white mb-24"
+        className="text-5xl md:text-7xl font-light tracking-tighter text-white mb-24 md:px-4"
       >
         The{" "}
         <a className="text-[#EF5021] font-echelon italic text-6xl md:text-9xl">

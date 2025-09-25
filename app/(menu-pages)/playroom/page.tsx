@@ -38,7 +38,7 @@ export default function PlayroomPage() {
 
   return (
     <div ref={containerRef} className="px-4 pt-32 pb-20">
-      <div className="px-4 md:px-16">
+      <div className="px-4 md:px-20">
         <h1
           ref={titleRef}
           className="text-6xl md:text-8xl font-light tracking-tighter text-foreground mb-8"
@@ -81,6 +81,8 @@ export default function PlayroomPage() {
                 </span>
                 <br />
                 and many more
+                <br />
+                for free!
               </h2>
             </div>
             <p className="text-foreground/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl pt-8 md:pt-12 ">
@@ -92,7 +94,9 @@ export default function PlayroomPage() {
 
       <div className="self-center items-center text-center mb-8 mt-24 md:mb-16 md:mt-36 flex flex-row">
         <div className="bottom-0 w-[45%] h-px bg-gradient-to-r from-transparent to-foreground/50" />
-        <h1 className="text-5xl md:text-7xl px-8">OR</h1>
+        <h1 className="text-5xl md:text-7xl px-8 font-echelon italic select-none text-foreground/75">
+          /
+        </h1>
         <div className="bottom-0 w-[45%] h-px bg-gradient-to-l from-transparent to-foreground/50" />
       </div>
 
