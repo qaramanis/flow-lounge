@@ -93,16 +93,18 @@ export default function MenuPage() {
       {/* Menu Grid */}
       <div
         ref={gridRef}
-        className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 items-center mb-6"
+        className="flex flex-wrap justify-center gap-6 lg:gap-8 mb-6"
       >
         {menuCategories.map((category, index) => (
-          <MenuCard
-            key={index}
-            title={category.title}
-            description={category.description}
-            imageUrl={category.imageUrl}
-            link={category.link}
-          />
+          <div key={index} className="w-full md:w-[calc(23%-1.5rem)]">
+            <MenuCard
+              key={index}
+              title={category.title}
+              description={category.description}
+              imageUrl={category.imageUrl}
+              link={category.link}
+            />
+          </div>
         ))}
       </div>
     </div>
