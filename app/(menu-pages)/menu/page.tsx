@@ -14,56 +14,44 @@ export default function MenuPage() {
       title: "Hookah",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      imageUrl: "/images/menu/hookah-ultra.webp",
       link: "/hookah",
     },
     {
       title: "Cocktails",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      imageUrl: "/images/menu/cocktail-icon-01.webp",
       link: "/menu/cocktails",
     },
     {
       title: "Homemade Lemonades",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      imageUrl: "/images/menu/coffee-icon-01.webp",
       link: "/menu/lemonades",
     },
     {
       title: "Soft Drinks and Juices",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      imageUrl: "/images/menu/beer-icon-01.webp",
       link: "/menu/soft-drinks",
     },
     {
       title: "Tea and Coffee",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      imageUrl: "/images/spirits-icon-01.webp",
       link: "/menu/tea-coffee",
     },
     {
       title: "Drinks",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      imageUrl: "/images/menu/soft-drinks-icon-01.webp",
       link: "/menu/drinks",
     },
     {
       title: "Wines",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      imageUrl: "/images/menu/wine-icon-01.webp",
       link: "/menu/wines",
     },
     {
       title: "Beers and Ciders",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      imageUrl: "/images/menu/tea-icon-01.webp",
       link: "/menu/beers-ciders",
     },
   ];
@@ -101,7 +89,7 @@ export default function MenuPage() {
               key={index}
               title={category.title}
               description={category.description}
-              imageUrl={category.imageUrl}
+              // imageUrl={category.imageUrl}
               link={category.link}
             />
           </div>

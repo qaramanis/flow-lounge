@@ -14,28 +14,28 @@ export default function HookahPage() {
       title: "Classic",
       description:
         "Μεγάλη ποικιλία γεύσεων ξανθού καπνού. Συστήνεται είτε για αρχάριους, είτε για εκείνους που δεν έχουν μεγάλη εμπειρία.",
-      imageUrl: "/images/hookah/hookah-classic.webp",
+      // imageUrl: "/images/hookah/hookah-classic.webp",
       price: "14.00 €",
     },
     {
       title: "Premium",
       description:
         "Σειρά ξανθών καπνών. Συστήνεται για εκείνους που τους αρέσει ο ξανθός καπνός και θέλουν το κάτι παραπάνω",
-      imageUrl: "/images/hookah/hookah-premium.webp",
+      // imageUrl: "/images/hookah/hookah-premium.webp",
       price: "18.00 €",
     },
     {
       title: "Exclusive",
       description:
         "Τεράστια ποικιλία μαύρου καπνού, από φύλλα Virginia, Burley, Συστήνεται για καπνιστές.",
-      imageUrl: "/images/hookah/hookah-exclusive.webp",
+      // imageUrl: "/images/hookah/hookah-exclusive.webp",
       price: "24.00 €",
     },
     {
       title: "Ultra",
       description:
         "Απολαύστε εξοτικές γεύσεις με εκλεπτυσμένα καπνικά στοιχεία, συμπληρωμένα με αρώματα πούρου. Μια ultra εμπειρία από την αρχή ως το τέλος.",
-      imageUrl: "/images/hookah/hookah-ultra.webp",
+      // imageUrl: "/images/hookah/hookah-ultra.webp",
       price: "34.00 €",
     },
   ];
@@ -45,27 +45,27 @@ export default function HookahPage() {
       title: "Classic",
       description:
         "Μεγάλη ποικιλία γεύσεων ξανθού καπνού. Συστήνεται είτε για αρχάριους, είτε για εκείνους που δεν έχουν μεγάλη εμπειρία.",
-      imageUrl: "/images/hookah/refill-classic.webp",
+      // imageUrl: "/images/hookah/refill-classic.webp",
       price: "7.00 €",
     },
     {
       title: "Premium",
       description: "Refill Premium γεύσης στον ναργιλές σας",
-      imageUrl: "/images/hookah/refill-classic.webp",
+      // imageUrl: "/images/hookah/refill-classic.webp",
       price: "9.00 €",
     },
     {
       title: "Exclusive",
       description:
         "Τεράστια ποικιλία μαύρου καπνού, από φύλλα Virginia, Burley, Συστήνεται για καπνιστές.",
-      imageUrl: "/images/hookah/refill-exclusive.webp",
+      // imageUrl: "/images/hookah/refill-exclusive.webp",
       price: "12.00 €",
     },
     {
       title: "Ultra",
       description:
         "Απολαύστε εξοτικές γεύσεις με εκλεπτυσμένα καπνικά στοιχεία, συμπληρωμένα με αρώματα πούρου. Μια ultra εμπειρία από την αρχή ως το τέλος.",
-      imageUrl: "/images/hookah/refill-ultra.webp",
+      // imageUrl: "/images/hookah/refill-ultra.webp",
       price: "20.00 €",
     },
   ];
