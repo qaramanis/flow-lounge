@@ -29,7 +29,7 @@ export function Marquees() {
   }, []);
 
   if (!hasMounted) {
-    return null; //TODO: create loading placeholder
+    return null; //@TODO: create loading placeholder
   }
 
   return (

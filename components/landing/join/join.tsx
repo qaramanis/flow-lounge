@@ -54,7 +54,7 @@ export default function JoinSection() {
                   <br />
                 </div>
                 <div>
-                  Get in touch with us today and ask for details about open
+                  Get in touch with us today and get details about open
                   positions.
                 </div>
               </div>
