@@ -45,7 +45,7 @@ export default function JoinSection() {
               />
             </div>
             <div className="flex flex-col justify-between w-full h-[60%]">
-              <div className="text-base md:text-lg text-foreground leading-relaxed md:max-w-3/4 flex flex-col gap-4">
+              <div className="text-xl md:text-2xl text-foreground leading-relaxed md:max-w-3/4 flex flex-col gap-4">
                 <div>
                   Looking to work with us? Are you{" "}
                   <a className="font-bold">ambitious</a>,{" "}
