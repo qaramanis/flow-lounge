@@ -141,7 +141,7 @@ export default function EventsSection() {
   return (
     <section
       ref={containerRef}
-      className="py-20 lg:py-32  lg:px-20 bg-transparent"
+      className="py-20 lg:py-32 lg:px-20 bg-transparent"
       id="events"
     >
       <div className="md:px-[6rem] px-[2rem]  mx-auto">

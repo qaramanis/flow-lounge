@@ -275,14 +275,25 @@ export default function Nav() {
           <span className="text-[#EF5021] text-xl tracking-tighter mb-4 mbn-item">
             Socials
           </span>
-          <div className="flex flex-row gap-12">
-            <Link
-              href="https://www.instagram.com/webconf2026"
-              className="mbn-item hover:text-[#EF5021] transition-all duration-300"
-              target="_blank"
-            >
-              Instagram
-            </Link>
+          <div className="flex flex-row gap-2">
+            <div className="flex flex-row gap-12">
+              <Link
+                href="https://www.instagram.com/flow__lounge/"
+                className="mbn-item hover:text-[#EF5021] transition-all duration-300"
+                target="_blank"
+              >
+                Instagram
+              </Link>
+            </div>
+            <div className="flex flex-row gap-12">
+              <Link
+                href="https://www.instagram.com/flow__lounge/"
+                className="mbn-item hover:text-[#EF5021] transition-all duration-300"
+                target="_blank"
+              >
+                LinkTree
+              </Link>
+            </div>
           </div>
         </div>
       </div>
