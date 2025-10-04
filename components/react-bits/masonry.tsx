@@ -106,8 +106,9 @@ function MasonryModal({ isOpen, onClose, item }: MasonryModalProps) {
   useEffect(() => {
     if (isOpen) {
       // Stop smooth scrolling if using Lenis
-      if (typeof window !== "undefined" && (window as any).lenis) {
-        (window as any).lenis.stop();
+      const lenis = (window as unknown as { lenis?: { stop: () => void; start: () => void } }).lenis;
+      if (typeof window !== "undefined" && lenis) {
+        lenis.stop();
       }
 
       // Calculate scrollbar width to prevent layout shift
@@ -139,8 +140,9 @@ function MasonryModal({ isOpen, onClose, item }: MasonryModalProps) {
       }
 
       // Restart smooth scrolling if using Lenis
-      if (typeof window !== "undefined" && (window as any).lenis) {
-        (window as any).lenis.start();
+      const lenis = (window as unknown as { lenis?: { stop: () => void; start: () => void } }).lenis;
+      if (typeof window !== "undefined" && lenis) {
+        lenis.start();
       }
     }
 
@@ -158,8 +160,9 @@ function MasonryModal({ isOpen, onClose, item }: MasonryModalProps) {
           window.scrollTo(0, parseInt(storedScrollY, 10) * -1);
         }
 
-        if (typeof window !== "undefined" && (window as any).lenis) {
-          (window as any).lenis.start();
+        const lenis = (window as unknown as { lenis?: { stop: () => void; start: () => void } }).lenis;
+        if (typeof window !== "undefined" && lenis) {
+          lenis.start();
         }
       }
     };
