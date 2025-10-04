@@ -287,7 +287,7 @@ export default function Nav() {
             </div>
             <div className="flex flex-row gap-12">
               <Link
-                href="https://www.instagram.com/flow__lounge/"
+                href="https://linktr.ee/flowlounge"
                 className="mbn-item hover:text-[#EF5021] transition-all duration-300"
                 target="_blank"
               >

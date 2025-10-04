@@ -6,19 +6,28 @@ import React, {
   useState,
 } from "react";
 import { gsap } from "gsap";
+import { X } from "lucide-react";
 
 const useMedia = (
   queries: string[],
   values: number[],
   defaultValue: number,
 ): number => {
-  const get = () =>
-    values[queries.findIndex((q) => matchMedia(q).matches)] ?? defaultValue;
+  const get = () => {
+    // Check if we're in the browser
+    if (typeof window === "undefined") return defaultValue;
+    return (
+      values[queries.findIndex((q) => matchMedia(q).matches)] ?? defaultValue
+    );
+  };
 
-  const [value, setValue] = useState<number>(get);
+  const [value, setValue] = useState<number>(defaultValue);
 
   useEffect(() => {
-    const handler = () => setValue(get);
+    // Set initial value after mount
+    setValue(get());
+
+    const handler = () => setValue(get());
     queries.forEach((q) => matchMedia(q).addEventListener("change", handler));
     return () =>
       queries.forEach((q) =>
@@ -62,7 +71,9 @@ const preloadImages = async (urls: string[]): Promise<void> => {
 interface Item {
   id: string;
   img: string;
-  url: string;
+  title: string;
+  description: string;
+  date: string;
   height: number;
 }
 
@@ -83,6 +94,156 @@ interface MasonryProps {
   hoverScale?: number;
   blurToFocus?: boolean;
   colorShiftOnHover?: boolean;
+}
+
+interface MasonryModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  item: Item | null;
+}
+
+function MasonryModal({ isOpen, onClose, item }: MasonryModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      // Stop smooth scrolling if using Lenis
+      if (typeof window !== "undefined" && (window as any).lenis) {
+        (window as any).lenis.stop();
+      }
+
+      // Calculate scrollbar width to prevent layout shift
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+
+      // Prevent body scroll
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+      // Add padding to compensate for scrollbar
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      }
+    } else {
+      // Restore body scroll position
+      const storedScrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+
+      // Restore scroll position
+      if (storedScrollY) {
+        window.scrollTo(0, parseInt(storedScrollY, 10) * -1);
+      }
+
+      // Restart smooth scrolling if using Lenis
+      if (typeof window !== "undefined" && (window as any).lenis) {
+        (window as any).lenis.start();
+      }
+    }
+
+    return () => {
+      // Cleanup on unmount
+      if (isOpen) {
+        const storedScrollY = document.body.style.top;
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        document.body.style.overflow = "";
+        document.body.style.paddingRight = "";
+
+        if (storedScrollY) {
+          window.scrollTo(0, parseInt(storedScrollY, 10) * -1);
+        }
+
+        if (typeof window !== "undefined" && (window as any).lenis) {
+          (window as any).lenis.start();
+        }
+      }
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscape);
+      return () => document.removeEventListener("keydown", handleEscape);
+    }
+  }, [isOpen, onClose]);
+
+  if (!isOpen || !item) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+
+      {/* Modal container */}
+      <div
+        className="relative bg-[#1a1618] border border-white/10 rounded-2xl max-w-4xl w-full max-h-[85vh] shadow-2xl flex flex-col"
+        onClick={(e) => e.stopPropagation()}
+        data-lenis-prevent
+      >
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300 group z-10"
+          aria-label="Close modal"
+        >
+          <X className="w-5 h-5 text-white group-hover:text-[#EF5021] transition-colors duration-300" />
+        </button>
+
+        {/* Scrollable content container */}
+        <div className="overflow-y-auto overscroll-contain">
+          {/* Image Header */}
+          <div className="relative w-full h-[300px] md:h-[400px] overflow-hidden rounded-t-2xl">
+            <img
+              src={item.img}
+              alt={item.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1a1618] via-transparent to-transparent" />
+          </div>
+
+          {/* Content */}
+          <div className="p-8">
+            {/* Date */}
+            <div className="mb-4">
+              <span className="inline-block px-3 py-1 bg-[#EF5021]/20 text-[#EF5021] text-sm font-semibold rounded-full">
+                {item.date}
+              </span>
+            </div>
+
+            {/* Title */}
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {item.title}
+            </h2>
+
+            {/* Divider */}
+            <div className="h-px bg-gradient-to-r from-[#EF5021] via-white/20 to-transparent mb-6" />
+
+            {/* Description */}
+            <div className="text-white/80 text-base md:text-lg leading-relaxed">
+              {item.description}
+            </div>
+
+            {/* Additional spacing at bottom */}
+            <div className="h-8" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 const Masonry: React.FC<MasonryProps> = ({
@@ -109,6 +270,8 @@ const Masonry: React.FC<MasonryProps> = ({
 
   const [containerRef, { width }] = useMeasure<HTMLDivElement>();
   const [imagesReady, setImagesReady] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const getInitialPosition = (item: GridItem) => {
     const containerRect = containerRef.current?.getBoundingClientRect();
@@ -152,7 +315,14 @@ const Masonry: React.FC<MasonryProps> = ({
     const totalGaps = (columns - 1) * gap;
     const columnWidth = (width - totalGaps) / columns;
 
-    const gridItems = items.map((child) => {
+    // Sort items by id in descending order
+    const sortedItems = [...items].sort((a, b) => {
+      const idA = parseInt(a.id);
+      const idB = parseInt(b.id);
+      return idB - idA; // Descending order
+    });
+
+    const gridItems = sortedItems.map((child) => {
       const col = colHeights.indexOf(Math.min(...colHeights));
       const x = col * (columnWidth + gap);
       const height = child.height;
@@ -237,33 +407,62 @@ const Masonry: React.FC<MasonryProps> = ({
     }
   };
 
+  const handleItemClick = (item: Item) => {
+    setSelectedItem(item);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    // Small delay before clearing selected item to allow for closing animation
+    setTimeout(() => setSelectedItem(null), 300);
+  };
+
   return (
-    <div
-      ref={containerRef}
-      className="relative w-full"
-      style={{ height: containerHeight }}
-    >
-      {grid.map((item) => (
-        <div
-          key={item.id}
-          data-key={item.id}
-          className="absolute box-content"
-          style={{ willChange: "transform, width, height, opacity" }}
-          onClick={() => window.open(item.url, "_blank", "noopener")}
-          onMouseEnter={(e) => handleMouseEnter(item.id, e.currentTarget)}
-          onMouseLeave={(e) => handleMouseLeave(item.id, e.currentTarget)}
-        >
+    <>
+      <div
+        ref={containerRef}
+        className="relative w-full"
+        style={{ height: containerHeight }}
+      >
+        {grid.map((item) => (
           <div
-            className="relative w-full h-full bg-cover bg-center rounded-[10px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)] uppercase text-[10px] leading-[10px]"
-            style={{ backgroundImage: `url(${item.img})` }}
+            key={item.id}
+            data-key={item.id}
+            className="absolute box-content cursor-pointer"
+            style={{ willChange: "transform, width, height, opacity" }}
+            onClick={() => handleItemClick(item)}
+            onMouseEnter={(e) => handleMouseEnter(item.id, e.currentTarget)}
+            onMouseLeave={(e) => handleMouseLeave(item.id, e.currentTarget)}
           >
-            {colorShiftOnHover && (
-              <div className="color-overlay absolute inset-0 rounded-[10px] bg-gradient-to-tr from-pink-500/50 to-sky-500/50 opacity-0 pointer-events-none" />
-            )}
+            <div
+              className="relative w-full h-full bg-cover bg-center rounded-[10px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)]"
+              style={{ backgroundImage: `url(${item.img})` }}
+            >
+              {/* Gradient overlay for better text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded-[10px]" />
+
+              {/* Item info overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <p className="text-xs text-white/70 mb-1">{item.date}</p>
+                <h3 className="text-lg font-bold line-clamp-2">{item.title}</h3>
+              </div>
+
+              {colorShiftOnHover && (
+                <div className="color-overlay absolute inset-0 rounded-[10px] bg-gradient-to-tr from-pink-500/50 to-sky-500/50 opacity-0 pointer-events-none" />
+              )}
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+
+      {/* Modal */}
+      <MasonryModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        item={selectedItem}
+      />
+    </>
   );
 };
 

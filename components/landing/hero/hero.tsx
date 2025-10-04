@@ -92,14 +92,16 @@ export default function HeroSection() {
         {/* CTA Buttons */}
         <div ref={ctaContainerRef} className="flex gap-4 justify-center">
           <button className="relative px-4 py-4 rounded-xl bg-[#EF5021] text-white font-medium overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(239,80,33,0.6)] group cursor-pointer">
-            <span className="relative z-10 transition-colors duration-300 group-hover:text-[#EF5021] tracking-tight">
-              Μάθε Περισσότερα
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-[#EF5021] tracking-tight font-bold">
+              Learn More
             </span>
             <span className="absolute inset-0 bg-white scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-xl" />
           </button>
 
           <button className="relative px-8 py-4 rounded-xl border border-white/20 text-white font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:border-white/40 group cursor-pointer">
-            <span className="relative z-10 tracking-tight">Δες το Μενού</span>
+            <span className="relative z-10 font-bold tracking-tight">
+              View Menu
+            </span>
             <span className="absolute inset-0 bg-white/10 scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-xl origin-center" />
           </button>
         </div>

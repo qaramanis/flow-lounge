@@ -24,7 +24,7 @@ export default function JoinSection() {
             Team
           </a>
         </h2>
-        <div className="h-full flex flex-row gap-6 p-4 mt-4">
+        <div className="h-full flex flex-row gap-12 p-4 mt-4">
           <div className="md:w-[45%] h-[500px] rounded-xl">
             <Image
               src="/flow-lounge.svg"
@@ -34,7 +34,7 @@ export default function JoinSection() {
               className="object-fit"
             />
           </div>
-          <div className="flex flex-col md:w-[55%] h-[500px] rounded-xl gap-2">
+          <div className="flex flex-col md:w-[55%] h-[500px] rounded-xl gap-4">
             <div className="flex flex-col w-full h-[40%] rounded-xl items-center overflow-clip justify-center">
               <Image
                 src="/flow-lounge.svg"
@@ -45,7 +45,7 @@ export default function JoinSection() {
               />
             </div>
             <div className="flex flex-col justify-between w-full h-[60%]">
-              <div className="text-xl md:text-2xl text-foreground leading-relaxed md:max-w-3/4 flex flex-col gap-4">
+              <div className="text-xl md:text-2xl text-foreground leading-relaxed md:max-w-full flex flex-col gap-4">
                 <div>
                   Looking to work with us? Are you{" "}
                   <a className="font-bold">ambitious</a>,{" "}
