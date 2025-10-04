@@ -135,7 +135,7 @@ export default function EventsPage() {
 
       {/* Masonry Grid */}
 
-      <div className="min-h-[600px]">
+      {/*<div className="min-h-[600px]">
         <Masonry
           items={items}
           ease="power3.out"
@@ -147,7 +147,7 @@ export default function EventsPage() {
           blurToFocus={true}
           colorShiftOnHover={false}
         />
-      </div>
+      </div>*/}
     </div>
   );
 }

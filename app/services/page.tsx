@@ -1,21 +1,63 @@
 "use client";
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import Image from "next/image";
 
+const ServiceCard = memo(
+  ({
+    service,
+  }: {
+    service: {
+      id: string;
+      category: string;
+      title: string;
+      subtitle?: string;
+      description: string;
+      color: string;
+    };
+  }) => (
+    <div
+      className="w-full md:w-[calc(30%-1.5rem)] service-card bg-[#241f21]/80 backdrop-blur-sm rounded-sm p-8 hover:bg-[#241f21] border border-white/10 group transition-all duration-300"
+      style={{ "--service-color": service.color } as React.CSSProperties}
+    >
+      <div className="flex items-center gap-2 mb-4">
+        <div
+          className="w-3 h-3 rounded"
+          style={{ backgroundColor: "var(--service-color)" }}
+        />
+        <span
+          className="text-sm font-semibold tracking-wider"
+          style={{ color: "var(--service-color)" }}
+        >
+          {service.category}
+        </span>
+      </div>
+
+      <h3 className="text-2xl font-semibold text-white mb-3">
+        {service.title}
+      </h3>
+
+      {service.subtitle && (
+        <p className="text-white/75 font-medium mb-4 group-hover:text-white transition-all duration-300">
+          {service.subtitle}
+        </p>
+      )}
+
+      <p className="text-white/50 leading-relaxed">{service.description}</p>
+    </div>
+  ),
+);
+
+ServiceCard.displayName = "ServiceCard";
+
 export default function PlayroomPage() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
-      tl.fromTo(
-        titleRef.current,
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
-      );
+
       tl.fromTo(
         ".service-card",
         { opacity: 0, y: 30 },
@@ -34,6 +76,7 @@ export default function PlayroomPage() {
 
   const services = [
     {
+      id: "mixology",
       category: "MIXOLOGY",
       title: "Get Custom Mixology Menu",
       // subtitle: "Lorem ipsum dolor sit amet",
@@ -42,6 +85,7 @@ export default function PlayroomPage() {
       color: "#21c0ef",
     },
     {
+      id: "degustation",
       category: "DEGUSTATION",
       title: "Try our Best Mixes",
       subtitle: "Sample our mixes and find your favorite",
@@ -50,6 +94,7 @@ export default function PlayroomPage() {
       color: "#efb721",
     },
     {
+      id: "lorem-ipsum",
       category: "LOREM IPSUM",
       title: "Lorem ipsum dolor sit amet",
       subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
@@ -62,10 +107,7 @@ export default function PlayroomPage() {
   return (
     <div ref={containerRef} className="px-4 pt-32 pb-20">
       <div className="px-4 md:px-20">
-        <h1
-          ref={titleRef}
-          className="text-6xl md:text-8xl font-light tracking-tighter text-foreground mb-8"
-        >
+        <h1 className="text-6xl md:text-8xl font-light tracking-tighter text-foreground mb-8">
           Special Services
         </h1>
         <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mb-16">
@@ -91,13 +133,14 @@ export default function PlayroomPage() {
         <div className="flex justify-center mb-16 md:mb-16">
           <a
             href="https://hookahjoy.gr/"
+            target="_blank"
             className="w-full md:w-[20%] opacity-100 md:opacity-90 hover:opacity-100 transition-opacity duration-300 select-none"
           >
             <Image
               src="/hookah-joy.webp"
               alt="Hookah Joy Logo"
-              width={1200}
-              height={800}
+              width={150}
+              height={100}
               className="w-full h-auto object-contain"
               draggable="false"
               priority
@@ -106,39 +149,13 @@ export default function PlayroomPage() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-6 w-full">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="w-full md:w-[calc(30%-1.5rem)] service-card bg-[#241f21]/80 backdrop-blur-sm rounded-sm p-8 hover:bg-[#241f21]  border border-white/10 group transition-all duration-300"
-            >
-              <div className="flex items-center gap-2 mb-4">
-                <div
-                  className="w-3 h-3 rounded"
-                  style={{ backgroundColor: service.color }}
-                />
-                <span
-                  className="text-sm font-semibold tracking-wider"
-                  style={{ color: service.color }}
-                >
-                  {service.category}
-                </span>
-              </div>
-
-              <h3 className="text-2xl font-semibold text-white mb-3">
-                {service.title}
-              </h3>
-
-              <p className="text-white/75 font-medium mb-4 group-hover:text-white transition-all duration-300">
-                {service.subtitle}
-              </p>
-
-              <p className="text-white/50 leading-relaxed">
-                {service.description}
-              </p>
-            </div>
-          ))}
+          {/*{services.map((service) => (
+            <ServiceCard key={service.id} service={service} />
+          ))}*/}
         </div>
       </div>
     </div>
   );
 }
+
+// @TODO mobile view, fix service card rendering

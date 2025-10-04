@@ -73,6 +73,7 @@ const footerData: FooterColumn[] = [
     links: [
       { label: "Terms", href: "/terms", isExternal: false },
       { label: "Privacy Policy", href: "/privacy-policy", isExternal: false },
+      { label: "Contact", href: "/contact", isExternal: false },
     ],
   },
 ];

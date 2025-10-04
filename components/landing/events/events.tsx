@@ -69,7 +69,7 @@ function EventCard({ event, index }: { event: Event; index: number }) {
   return (
     <div
       ref={cardRef}
-      className="p-[2rem] flex flex-col md:flex-row gap-6 group cursor-pointer items-center justify-between border-b border-foreground/15"
+      className="flex flex-col md:flex-row gap-6 group cursor-pointer items-center justify-between border-b border-foreground/15"
     >
       <div className="hidden md:block text-5xl md:text-6xl font-light text-foreground min-w-[80px]">
         {event.number}.

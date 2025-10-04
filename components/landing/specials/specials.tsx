@@ -11,7 +11,7 @@ export default function SpecialsSection() {
     <section
       ref={containerRef}
       className="py-20 lg:py-32 lg:px-20 bg-transparent"
-      id="special"
+      id="specials"
     >
       <div className="md:px-[6rem] px-[2rem] mx-auto">
         <h2
@@ -61,3 +61,5 @@ export default function SpecialsSection() {
     </section>
   );
 }
+
+// @TODO mobile view

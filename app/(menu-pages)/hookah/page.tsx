@@ -98,7 +98,7 @@ export default function HookahPage() {
             key={index}
             title={category.title}
             description={category.description}
-            imageUrl={category.imageUrl}
+            // imageUrl={category.imageUrl}
             price={category.price}
           />
         ))}
@@ -118,7 +118,7 @@ export default function HookahPage() {
             key={index}
             title={category.title}
             description={category.description}
-            imageUrl={category.imageUrl}
+            // imageUrl={category.imageUrl}
             price={category.price}
           />
         ))}
