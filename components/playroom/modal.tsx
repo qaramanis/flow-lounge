@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { X } from "lucide-react";
 import Image from "next/image";
+import { useLenis } from "@/hooks/use-lenis";
 
 interface PlayroomModalProps {
   isOpen: boolean;
@@ -20,17 +21,53 @@ interface Game {
 }
 
 export default function PlayroomModal({ isOpen, onClose }: PlayroomModalProps) {
+  const { stop, start } = useLenis();
+
   useEffect(() => {
     if (isOpen) {
+      // Stop Lenis smooth scrolling
+      stop();
+
+      // Prevent body scroll
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset";
+      // Restore body scroll position
+      const storedScrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+
+      // Restore scroll position
+      if (storedScrollY) {
+        window.scrollTo(0, parseInt(storedScrollY, 10) * -1);
+      }
+
+      // Restart Lenis smooth scrolling
+      start();
     }
 
     return () => {
-      document.body.style.overflow = "unset";
+      // Cleanup on unmount
+      if (isOpen) {
+        const storedScrollY = document.body.style.top;
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        document.body.style.overflow = "";
+
+        if (storedScrollY) {
+          window.scrollTo(0, parseInt(storedScrollY, 10) * -1);
+        }
+
+        start();
+      }
     };
-  }, [isOpen]);
+  }, [isOpen, stop, start]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -85,18 +122,13 @@ export default function PlayroomModal({ isOpen, onClose }: PlayroomModalProps) {
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
 
-      {/* KEY CHANGE 1: This is the main modal frame.
-        It is NOT scrollable. `overflow-y-auto` has been removed.
-        It sets the positioning context with `relative`.
-      */}
+      {/* Modal container with fixed positioning for close button */}
       <div
         className="relative bg-[#1a1618] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[85vh] shadow-2xl flex flex-col"
         onClick={(e) => e.stopPropagation()}
+        data-lenis-prevent
       >
-        {/* KEY CHANGE 2: The close button uses `absolute` positioning.
-          It is positioned relative to the non-scrolling parent above,
-          so it will always stay in the top-right corner.
-        */}
+        {/* Close button - absolutely positioned */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300 group z-10"
@@ -105,10 +137,8 @@ export default function PlayroomModal({ isOpen, onClose }: PlayroomModalProps) {
           <X className="w-5 h-5 text-white group-hover:text-[#EF5021] transition-colors duration-300" />
         </button>
 
-        {/* KEY CHANGE 3: This new inner div wraps ALL the content.
-          THIS is the element that scrolls, leaving the button unaffected.
-        */}
-        <div className="overflow-y-auto">
+        {/* Scrollable content container */}
+        <div className="overflow-y-auto overscroll-contain">
           {/* Header */}
           <div className="p-8 pb-6 border-b border-white/10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
@@ -163,7 +193,7 @@ export default function PlayroomModal({ isOpen, onClose }: PlayroomModalProps) {
               {availableGames.map((game, index) => (
                 <div
                   key={index}
-                  className="w-[calc(45%)] md:w-[calc(45%-1.5rem)] bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 group cursor-default aspect-[3/4] overflow-hidden"
+                  className="w-[calc(45%)] md:w-[calc(50%-1.5rem)] bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 group cursor-default aspect-[3/4] overflow-hidden"
                   title={game.name}
                 >
                   <Image
@@ -179,7 +209,7 @@ export default function PlayroomModal({ isOpen, onClose }: PlayroomModalProps) {
             <div className="mt-6 p-4 bg-[#EF5021]/10 border border-[#EF5021]/20 rounded-lg">
               <p className="text-white/70 text-sm">
                 <span className="text-[#EF5021] font-semibold">Note: </span>
-                Don&apos;t hesitate to address our staff for any questions.
+                Ask our staff for more information.
               </p>
             </div>
           </div>
