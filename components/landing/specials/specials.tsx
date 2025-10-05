@@ -19,7 +19,7 @@ export default function SpecialsSection() {
           className="text-5xl md:text-6xl leading-tight text-foreground text-center md:text-start border-b border-foreground/15 pb-12"
         >
           Planning something{" "}
-          <a className="self-center text-6xl md:text-[7rem] font-echelon italic text-[#EF5021]">
+          <a className="self-center text-6xl md:text-[7rem] font-echelon italic text-accent">
             Special
           </a>{" "}
         </h2>

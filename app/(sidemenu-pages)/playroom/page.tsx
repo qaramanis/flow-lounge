@@ -51,7 +51,7 @@ export default function PlayroomPage() {
 
           <p className="text-xl text-foreground/80 max-w-3xl mb-16">
             Enjoy our{" "}
-            <span className="text-[#EF5021] font-echelon italic text-3xl md:text-5xl">
+            <span className="text-accent font-echelon italic text-3xl md:text-5xl">
               Playroom
             </span>{" "}
             , equipped with board and console games.
@@ -78,7 +78,7 @@ export default function PlayroomPage() {
                 <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                   Enjoy Games Like
                   <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EF5021] to-[#ff8c5a]">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#ff8c5a]">
                     FIFA 25, UFC 25,
                     <br /> NBA 2K25, Tekken 7
                   </span>
@@ -91,7 +91,7 @@ export default function PlayroomPage() {
               <div className="pt-8 md:pt-12">
                 <p
                   onClick={() => setIsModalOpen(true)}
-                  className="text-foreground/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl pt-8 md:pt-12 group cursor-pointer hover:underline hover:text-[#EF5021] transition-all duration-800"
+                  className="text-foreground/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl pt-8 md:pt-12 group cursor-pointer hover:underline hover:text-accent transition-all duration-800"
                 >
                   Click here for details
                 </p>
@@ -118,7 +118,7 @@ export default function PlayroomPage() {
                   Challenge your friends
                   <br />
                   to a game of{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EF5021] to-[#ff8c5a]">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#ff8c5a]">
                     Chess
                   </span>
                 </h2>

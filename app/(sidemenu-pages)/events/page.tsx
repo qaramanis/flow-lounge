@@ -36,7 +36,7 @@ const items = [
   {
     id: "4",
     img: "/flow-lounge.svg",
-    title: "Hookah Festival Schedule",
+    title: "Hookah Festival - Schedule",
     description:
       "ΤΟ HOOKAH FESTIVAL ΣΤΗ ΘΕΣΣΑΛΟΝΙΚΗ ΕΙΝΑΙ ΠΛΕΟΝ ΓΕΓΟΝΟΣ! 😮‍💨😮‍💨 Κάθε παρέα δικαιούται απο ένα ΔΩΡΕΑΝ ναργιλέ ❗️❗️❗️3 μέρες γεμάτες μουσική και ζωντάνια, κάντε swipe δεξιά για να δείτε το πρόγραμμα του Festival! Να είστε όλοι εκεί! ",
     date: "26-28 Σεπτεμβρίου 2025",
@@ -94,6 +94,8 @@ export default function EventsPage() {
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useIsomorphicLayoutEffect(() => {
+    window.scrollTo(0, 0);
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
         titleRef.current,
@@ -114,7 +116,7 @@ export default function EventsPage() {
           className="text-6xl md:text-8xl font-light tracking-tighter text-white mb-6"
         >
           Flow{" "}
-          <span className="text-[#EF5021] font-echelon italic text-7xl md:text-9xl drop-shadow-[0_0_40px_rgba(239,80,33,0.8)]">
+          <span className="text-accent font-echelon italic text-7xl md:text-9xl drop-shadow-[0_0_40px_rgba(239,80,33,0.8)]">
             Events
           </span>
         </h1>

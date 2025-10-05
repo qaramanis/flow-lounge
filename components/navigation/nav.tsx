@@ -44,11 +44,11 @@ function NavItem({
     <Link
       href={href}
       onClick={handleClick}
-      className="w-full text-background hover:text-[#EF5021] tracking-tight flex flex-col leading-none transition-all duration-300"
+      className="w-full text-background hover:text-accent tracking-tight flex flex-col leading-none transition-all duration-300"
     >
       <div className="flex flex-row">
         <span className="mbn-item text-5xl">{title}</span>
-        <div className="ml-2 text-lg mbn-item text-[#EF5021]">{index}</div>
+        <div className="ml-2 text-lg mbn-item text-accent">{index}</div>
       </div>
 
       <div className="w-full h-[1px] bg-black/10 my-2 mbn-line" />
@@ -62,10 +62,8 @@ export default function Nav() {
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  // Handle click outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // Check if the click is outside both the menu and the hamburger button
       if (
         isOpen &&
         menuRef.current &&
@@ -77,9 +75,7 @@ export default function Nav() {
       }
     };
 
-    // Add event listener when menu is open
     if (isOpen) {
-      // Add a small delay to prevent immediate closing when opening
       const timeoutId = setTimeout(() => {
         document.addEventListener("mousedown", handleClickOutside);
         document.addEventListener(
@@ -99,10 +95,8 @@ export default function Nav() {
     }
   }, [isOpen]);
 
-  // Handle body scroll lock
   useEffect(() => {
     if (isOpen) {
-      // Stop smooth scrolling when menu is open
       stop();
 
       const scrollY = window.scrollY;
@@ -119,7 +113,6 @@ export default function Nav() {
         document.body.style.overflow = "";
         window.scrollTo(0, parseInt(storedScrollY || "0", 10) * -1);
 
-        // Restart smooth scrolling when menu is closed
         start();
       };
     }
@@ -129,7 +122,6 @@ export default function Nav() {
     setIsOpen(false);
   };
 
-  // Handle escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
@@ -196,20 +188,18 @@ export default function Nav() {
 
   return (
     <>
-      {/* Logo - remains visible */}
       <div className="fixed top-[1rem] left-[1rem] z-[101]">
         <FlowLoungeLogo />
       </div>
 
-      {/* Hamburger button */}
       <div className="fixed right-[2rem] top-[2rem] z-[100] flex">
         <button
           ref={buttonRef}
-          className="relative rounded-md bg-[#EF5021] items-center justify-center z-10 cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(239,80,33,0.6)] group overflow-hidden"
+          className="relative rounded-md bg-accent items-center justify-center z-10 cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(239,80,33,0.6)] group overflow-hidden"
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
         >
-          <span className="relative z-10 transition-colors duration-300 group-hover:text-[#EF5021]">
+          <span className="relative z-10 transition-colors duration-300 group-hover:text-accent">
             <Hamburger
               size={25}
               color="#000"
@@ -220,7 +210,6 @@ export default function Nav() {
         </button>
       </div>
 
-      {/* Overlay background - clickable to close menu */}
       <div
         className={cn(
           "fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 z-[98]",
@@ -232,7 +221,6 @@ export default function Nav() {
         aria-hidden="true"
       />
 
-      {/* Menu panel */}
       <div
         ref={menuRef}
         className={cn(
@@ -272,14 +260,14 @@ export default function Nav() {
           />
         </div>
         <div className="text-3xl text-black">
-          <span className="text-[#EF5021] text-xl tracking-tighter mb-4 mbn-item">
+          <span className="text-accent text-xl tracking-tighter mb-4 mbn-item">
             Socials
           </span>
           <div className="flex flex-row gap-2">
             <div className="flex flex-row gap-12">
               <Link
                 href="https://www.instagram.com/flow__lounge/"
-                className="mbn-item hover:text-[#EF5021] transition-all duration-300"
+                className="mbn-item hover:text-accent transition-all duration-300"
                 target="_blank"
               >
                 Instagram
@@ -288,7 +276,7 @@ export default function Nav() {
             <div className="flex flex-row gap-12">
               <Link
                 href="https://linktr.ee/flowlounge"
-                className="mbn-item hover:text-[#EF5021] transition-all duration-300"
+                className="mbn-item hover:text-accent transition-all duration-300"
                 target="_blank"
               >
                 LinkTree

@@ -38,9 +38,9 @@ export default function MenuCard({
   return (
     <div
       onClick={handleCardClick}
-      className={`menu-card relative w-full aspect-[2/3] rounded-sm overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-3xl hover:shadow-[#EF5021]/10 ${className}`}
+      className={`menu-card relative w-full aspect-[2/3] rounded-sm overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-3xl hover:shadow-accent/10 ${className}`}
     >
-      <div className="absolute top-0 right-0 p-3 flex text-xl md:text-3xl text-[#EF5021] bg-background/30 rounded-bl-xl font-bold z-10 ">
+      <div className="absolute top-0 right-0 p-3 flex text-xl md:text-3xl text-accent bg-background/30 rounded-bl-xl font-bold z-10 ">
         {price}
       </div>
 
@@ -60,7 +60,7 @@ export default function MenuCard({
       <div className="absolute bottom-0 left-0 right-0 bg-[#f3f3f2]/85 md:group-hover:bg-[#f3f3f2] transition-all duration-800 ease-in-out rounded-t-sm">
         <div className="relative overflow-hidden">
           <div className="p-4">
-            <h3 className="text-2xl lg:text-3xl text-background mb-0 tracking-tight group-hover:text-[#EF5021] transition-colors duration-300">
+            <h3 className="text-2xl lg:text-3xl text-background mb-0 tracking-tight group-hover:text-accent transition-colors duration-300">
               {title}
             </h3>
           </div>
@@ -76,10 +76,10 @@ export default function MenuCard({
       </div>
 
       <div className="absolute inset-0 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-        <div className="absolute inset-[1px] rounded-sm border border-[#EF5021]/20" />
+        <div className="absolute inset-[1px] rounded-sm border border-accent/20" />
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#EF5021]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
     </div>
   );
 }

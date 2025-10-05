@@ -134,7 +134,7 @@ export default function PlayroomModal({ isOpen, onClose }: PlayroomModalProps) {
           className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300 group z-10"
           aria-label="Close modal"
         >
-          <X className="w-5 h-5 text-white group-hover:text-[#EF5021] transition-colors duration-300" />
+          <X className="w-5 h-5 text-white group-hover:text-accent transition-colors duration-300" />
         </button>
 
         {/* Scrollable content container */}
@@ -153,7 +153,7 @@ export default function PlayroomModal({ isOpen, onClose }: PlayroomModalProps) {
           <div className="p-8 pb-6">
             <div className="mb-6">
               <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
-                <span className="w-1 h-6 bg-[#EF5021] rounded-full" />
+                <span className="w-1 h-6 bg-accent rounded-full" />
                 Minimum Consumption
               </h3>
               <p className="text-white/50 text-sm mb-6">
@@ -167,7 +167,7 @@ export default function PlayroomModal({ isOpen, onClose }: PlayroomModalProps) {
                   key={index}
                   className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 group"
                 >
-                  <span className="text-[#EF5021] font-semibold min-w-[120px]">
+                  <span className="text-accent font-semibold min-w-[120px]">
                     {rule.people}
                   </span>
                   <span className="text-white/80 text-sm md:text-base group-hover:text-white transition-colors duration-300">
@@ -186,7 +186,7 @@ export default function PlayroomModal({ isOpen, onClose }: PlayroomModalProps) {
           {/* Available Games Section */}
           <div className="p-8 pt-6">
             <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
-              <span className="w-1 h-6 bg-[#EF5021] rounded-full" />
+              <span className="w-1 h-6 bg-accent rounded-full" />
               Available Games
             </h3>
             <div className="flex flex-wrap justify-center gap-6 lg:gap-8 mb-6">
@@ -206,9 +206,9 @@ export default function PlayroomModal({ isOpen, onClose }: PlayroomModalProps) {
                 </div>
               ))}
             </div>
-            <div className="mt-6 p-4 bg-[#EF5021]/10 border border-[#EF5021]/20 rounded-lg">
+            <div className="mt-6 p-4 bg-accent/10 border border-accent/20 rounded-lg">
               <p className="text-white/70 text-sm">
-                <span className="text-[#EF5021] font-semibold">Note: </span>
+                <span className="text-accent font-semibold">Note: </span>
                 Ask our staff for more information.
               </p>
             </div>

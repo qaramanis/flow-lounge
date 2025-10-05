@@ -17,13 +17,11 @@ export default function TestimonialsSection() {
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Set initial states
       gsap.set([leftContentRef.current, rightContentRef.current], {
         opacity: 0,
         y: 50,
       });
 
-      // Create scroll trigger animation
       gsap.to([leftContentRef.current, rightContentRef.current], {
         opacity: 1,
         y: 0,
@@ -56,7 +54,7 @@ export default function TestimonialsSection() {
           ref={leftContentRef}
           className="relative w-full md:w-[40%] h-[400px] md:h-full md:min-h-[700px] rounded-xl overflow-hidden group"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#EF5021]/20 to-[#EF5021]/5 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 z-10" />
           <Image
             src="/flow-lounge.svg"
             alt="Flow Lounge Hookah Experience"
@@ -76,7 +74,7 @@ export default function TestimonialsSection() {
                   duration={2}
                   className="count-up-text"
                 />
-                <span className="text-[#EF5021] ml-1">+</span>
+                <span className="text-accent ml-1">+</span>
               </div>
               <p className="text-black/80 text-sm md:text-base lg:text-lg mt-1 md:mt-2 font-medium">
                 Μοναδικές Γεύσεις
@@ -112,7 +110,7 @@ export default function TestimonialsSection() {
               <br />
               Ποιότητα Σε Κάθε
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EF5021] to-[#ff8c5a]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#ff8c5a]">
                 Εμπειρία.
               </span>
             </h2>
@@ -134,7 +132,7 @@ export default function TestimonialsSection() {
               <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
                 Μάθετε Περισσότερα
               </span>
-              <span className="absolute inset-0 bg-gradient-to-r from-[#EF5021] to-[#ff6b3d] scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-full origin-center" />
+              <span className="absolute inset-0 bg-gradient-to-r from-accent to-[#ff6b3d] scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-full origin-center" />
             </button>*/}
           </div>
 
@@ -149,7 +147,7 @@ export default function TestimonialsSection() {
               </span>
               <div className="flex items-center gap-3 md:gap-4 flex-1">
                 <div className="flex-1 h-1.5 md:h-2 bg-gray-700/50 rounded-full overflow-hidden min-w-[108px] md:min-w-[162px] max-w-[120px] md:max-w-[180px]">
-                  <div className="w-[90%] h-full bg-gradient-to-r from-[#EF5021] to-[#ff8c5a] rounded-full"></div>
+                  <div className="w-[90%] h-full bg-gradient-to-r from-accent to-[#ff8c5a] rounded-full"></div>
                 </div>
                 <span className="text-white font-bold text-base md:text-lg lg:text-xl">
                   <CountUp
@@ -170,7 +168,7 @@ export default function TestimonialsSection() {
               </span>
               <div className="flex items-center gap-3 md:gap-4 flex-1">
                 <div className="flex-1 h-1.5 md:h-2 bg-gray-700/50 rounded-full overflow-hidden min-w-[108px] md:min-w-[162px] max-w-[120px] md:max-w-[180px]">
-                  <div className="w-[70%] h-full bg-gradient-to-r from-[#EF5021] to-[#ff8c5a] rounded-full"></div>
+                  <div className="w-[70%] h-full bg-gradient-to-r from-accent to-[#ff8c5a] rounded-full"></div>
                 </div>
                 <span className="text-white font-bold text-base md:text-lg lg:text-xl">
                   <CountUp

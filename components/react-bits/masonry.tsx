@@ -203,7 +203,7 @@ function MasonryModal({ isOpen, onClose, item }: MasonryModalProps) {
           className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300 group z-10"
           aria-label="Close modal"
         >
-          <X className="w-5 h-5 text-white group-hover:text-[#EF5021] transition-colors duration-300" />
+          <X className="w-5 h-5 text-white group-hover:text-accent transition-colors duration-300" />
         </button>
 
         {/* Scrollable content container */}
@@ -222,7 +222,7 @@ function MasonryModal({ isOpen, onClose, item }: MasonryModalProps) {
           <div className="p-8">
             {/* Date */}
             <div className="mb-4">
-              <span className="inline-block px-3 py-1 bg-[#EF5021]/20 text-[#EF5021] text-sm font-semibold rounded-full">
+              <span className="inline-block px-3 py-1 bg-accent/20 text-accent text-sm font-semibold rounded-full">
                 {item.date}
               </span>
             </div>
@@ -233,7 +233,7 @@ function MasonryModal({ isOpen, onClose, item }: MasonryModalProps) {
             </h2>
 
             {/* Divider */}
-            <div className="h-px bg-gradient-to-r from-[#EF5021] via-white/20 to-transparent mb-6" />
+            <div className="h-px bg-gradient-to-r from-accent via-white/20 to-transparent mb-6" />
 
             {/* Description */}
             <div className="text-white/80 text-base md:text-lg leading-relaxed">

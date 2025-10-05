@@ -114,14 +114,14 @@ export default function PlayroomPage() {
           Collaboration with{" "}
           <a
             href="https://hookahjoy.gr/"
-            className="text-[#EF5021] hover:text-foreground hover:underline hover:underline-offset-2 hover:decoration-1 transition-all duration-300"
+            className="text-accent hover:text-foreground hover:underline hover:underline-offset-2 hover:decoration-1 transition-all duration-300"
           >
             Hookah Joy
           </a>{" "}
           and{" "}
           <a
             href="https://linktr.ee/tittoperonetti"
-            className="text-[#EF5021] hover:text-foreground hover:underline hover:underline-offset-2 hover:decoration-1 transition-all duration-300"
+            className="text-accent hover:text-foreground hover:underline hover:underline-offset-2 hover:decoration-1 transition-all duration-300"
           >
             Titto Peronetti
           </a>{" "}

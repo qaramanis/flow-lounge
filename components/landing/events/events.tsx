@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface Event {
   id: string;
@@ -46,6 +47,11 @@ const events: Event[] = [
 
 function EventCard({ event, index }: { event: Event; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  const handleEventsRedirect = () => {
+    router.push("/events");
+  };
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -69,7 +75,8 @@ function EventCard({ event, index }: { event: Event; index: number }) {
   return (
     <div
       ref={cardRef}
-      className="flex flex-col md:flex-row gap-6 group cursor-pointer items-center justify-between border-b border-foreground/15"
+      className="flex flex-col md:flex-row gap-6 group cursor-pointer items-center justify-between pb-8 border-b border-foreground/15"
+      onClick={handleEventsRedirect}
     >
       <div className="hidden md:block text-5xl md:text-6xl font-light text-foreground min-w-[80px]">
         {event.number}.
@@ -112,7 +119,7 @@ function EventCard({ event, index }: { event: Event; index: number }) {
 
       {/* Arrow Button */}
       <div className="hidden md:block">
-        <button className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-black flex items-center justify-center group-hover:bg-[#EF5021] transition-all duration-300 group-hover:scale-110">
+        <button className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-black flex items-center justify-center group-hover:bg-accent transition-all duration-300 group-hover:scale-110">
           <svg
             width="20"
             height="20"
@@ -145,7 +152,7 @@ export default function EventsSection() {
       id="events"
     >
       <div className="md:px-[6rem] px-[2rem]  mx-auto">
-        <div className="flex flex-col gap-12 lg:gap-20 items-center md:items-stretch">
+        <div className="flex flex-col space-y-10 lg:space-y-16 items-center md:items-stretch">
           <div className="space-y-6 flex flex-col md:flex-row justify-between items-center border-b border-foreground/15 pb-12">
             <h2
               ref={titleRef}
@@ -153,7 +160,7 @@ export default function EventsSection() {
             >
               Keep Up With <br />
               Our{" "}
-              <a className="self-center text-6xl md:text-[9.5rem] font-echelon italic text-[#EF5021]">
+              <a className="self-center text-6xl md:text-[9.5rem] font-echelon italic text-accent">
                 Events
               </a>
             </h2>

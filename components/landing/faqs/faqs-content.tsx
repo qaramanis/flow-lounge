@@ -46,34 +46,32 @@ export default function FaqsContent() {
       {faqs.map((faq, index) => (
         <div
           key={index}
-          className="text-lg bg-foreground/20 hover:bg-foreground/25 rounded-md p-[1rem] cursor-pointer transition-all duration-300"
+          className="text-lg bg-accent hover:bg-accent/80 rounded-md p-[1rem] cursor-pointer transition-all duration-300"
           onClick={() => toggleExpanded(index)}
         >
           <div className="flex flex-row justify-between items-center gap-4">
-            <h2 className="text-3xl">{faq.question}</h2>
+            <h2 className="text-3xl text-foreground">{faq.question}</h2>
             <ChevronsDown
-              className={`text-[#666666] transition-transform duration-300 ${expandedIndex === index ? "-rotate-180" : ""}
+              className={`text-foreground transition-transform duration-300 ${expandedIndex === index ? "-rotate-180" : ""}
               `}
               size={24}
             />
           </div>
           <div
-            className={`text-foreground/75 max-w-[75%] overflow-hidden transition-all ${
+            className={`text-foreground max-w-[75%] overflow-hidden transition-all ${
               expandedIndex === index
                 ? "max-h-[500px] opacity-100 pt-[0.5rem] duration-300 ease-in"
                 : "max-h-0 opacity-0 py-0 duration-300 ease-out"
             }`}
           >
-            {faq.answer.description && (
-              <p className="">{faq.answer.description}</p>
-            )}
+            {faq.answer.description && <p>{faq.answer.description}</p>}
             {faq.answer.items && faq.answer.items.length > 0 && (
               <div className="flex flex-col gap-[0.5rem] pt-[1rem]">
                 {faq.answer.items.map((item, itemIndex) => (
                   <div key={itemIndex}>
                     <div className="flex flex-row items-center">
                       <Minus
-                        className="mr-2 mt-[0.5px] text-foreground/75"
+                        className="mr-2 mt-[0.5px] text-foreground"
                         size={16}
                       />{" "}
                       {item}

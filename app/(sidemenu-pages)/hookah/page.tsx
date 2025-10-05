@@ -77,11 +77,11 @@ export default function HookahPage() {
         className="text-5xl md:text-7xl font-light tracking-tighter text-white mb-24 md:px-4"
       >
         The{" "}
-        <a className="text-[#EF5021] font-echelon italic text-6xl md:text-9xl">
+        <a className="text-accent font-echelon italic text-6xl md:text-9xl">
           Real
         </a>{" "}
         Hookah{" "}
-        <span className="text-[#EF5021] font-echelon italic text-6xl md:text-9xl">
+        <span className="text-accent font-echelon italic text-6xl md:text-9xl">
           Experience
         </span>
       </h1>
@@ -130,7 +130,7 @@ export default function HookahPage() {
           <br />
           Market Law Health Officer: Kyriakos Katikaridis
         </p>
-        {/*<button className="px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:border-[#EF5021]/50 transition-all duration-300"></button>*/}
+        {/*<button className="px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:border-accent/50 transition-all duration-300"></button>*/}
       </div>
     </div>
   );

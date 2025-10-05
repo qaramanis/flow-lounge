@@ -30,7 +30,7 @@ const footerData: FooterColumn[] = [
       { label: "Our Story", href: "#", isExternal: false },
       {
         label: "Join the Team",
-        href: "#",
+        href: "/contact",
         isNew: false,
         isExternal: false,
       },
@@ -199,11 +199,11 @@ export default function Footer() {
                       }
                       target={link.isExternal ? "_blank" : undefined}
                       rel={link.isExternal ? "noopener noreferrer" : undefined}
-                      className="text-sm text-[#666666] hover:text-[#EF5021] transition-all duration-300 inline-flex items-center gap-2"
+                      className="text-sm text-[#666666] hover:text-accent transition-all duration-300 inline-flex items-center gap-2"
                     >
                       {link.label}
                       {link.isNew && (
-                        <span className="text-[10px] bg-gradient-to-bl from-background/95 to-[#EF5021] text-foreground px-2 py-0.5 rounded font-semibold">
+                        <span className="text-[10px] bg-gradient-to-bl from-background/95 to-accent text-foreground px-2 py-0.5 rounded font-semibold">
                           New!
                         </span>
                       )}

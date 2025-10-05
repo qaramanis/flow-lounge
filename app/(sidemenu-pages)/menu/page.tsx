@@ -65,7 +65,7 @@ export default function MenuPage() {
           className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter text-white mb-6"
         >
           Our{" "}
-          <span className="text-[#EF5021] text-6xl md:text-9xl font-echelon italic  drop-shadow-[0_0_30px_rgba(239,80,33,0.5)]">
+          <span className="text-accent text-6xl md:text-9xl font-echelon italic  drop-shadow-[0_0_30px_rgba(239,80,33,0.5)]">
             Menu
           </span>
         </h1>

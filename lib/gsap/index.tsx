@@ -1,9 +1,11 @@
 import gsap from "gsap";
 import { CustomEase } from "gsap/dist/CustomEase";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 import SplitText from "gsap/dist/SplitText";
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(CustomEase);
 gsap.registerPlugin(SplitText);
 

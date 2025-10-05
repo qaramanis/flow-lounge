@@ -168,7 +168,7 @@ export default function HookahPage() {
         className="text-5xl md:text-7xl font-light tracking-tighter text-white mb-24"
       >
         Our{" "}
-        <a className="text-[#EF5021] font-echelon italic text-6xl md:text-9xl">
+        <a className="text-accent font-echelon italic text-6xl md:text-9xl">
           Cocktail
         </a>{" "}
         List

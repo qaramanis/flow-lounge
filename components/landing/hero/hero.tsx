@@ -75,11 +75,10 @@ export default function HeroSection() {
           className="font-light tracking-wider text-white mb-8"
         >
           <span className="text-5xl md:text-8xl block">Immersive</span>
-          <span className="block text-[#EF5021] text-8xl md:text-[14rem] font-echelon italic drop-shadow-[0_0_40px_rgba(239,80,33,1)]">
+          <span className="block text-accent text-8xl md:text-[14rem] font-echelon italic drop-shadow-[0_0_40px_rgba(239,80,33,1)]">
             Experience
           </span>
         </h1>
-
         {/* Subtitle */}
         <p
           ref={subtitleRef}
@@ -89,10 +88,23 @@ export default function HeroSection() {
           ατελείωτους συνδυασμούς γεύσεων
         </p>
 
-        {/* CTA Buttons */}
         <div ref={ctaContainerRef} className="flex gap-4 justify-center">
-          <button className="relative px-4 py-4 rounded-xl bg-[#EF5021] text-white font-medium overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(239,80,33,0.6)] group cursor-pointer">
-            <span className="relative z-10 transition-colors duration-300 group-hover:text-[#EF5021] tracking-tight font-bold">
+          <button
+            onClick={() => {
+              const heroSection = containerRef.current;
+              const nextSection =
+                heroSection?.nextElementSibling as HTMLElement;
+              if (nextSection) {
+                gsap.to(window, {
+                  duration: 1.5,
+                  scrollTo: { y: nextSection, offsetY: 0 },
+                  ease: "power2.inOut",
+                });
+              }
+            }}
+            className="relative px-4 py-4 rounded-xl bg-accent text-white font-medium overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(239,80,33,0.6)] group cursor-pointer"
+          >
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-accent tracking-tight font-bold">
               Learn More
             </span>
             <span className="absolute inset-0 bg-white scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-xl" />
