@@ -101,7 +101,6 @@ export default function Footer() {
     href: string,
     isExternal?: boolean,
   ) => {
-    // If it's an external link, let the default behavior handle it
     if (
       isExternal ||
       href.startsWith("http://") ||
@@ -110,7 +109,6 @@ export default function Footer() {
       return;
     }
 
-    // If it's just a hash, prevent default
     if (href === "#") {
       e.preventDefault();
       return;
@@ -128,7 +126,6 @@ export default function Footer() {
           immediate: false,
         });
       } else {
-        // Fallback to window.lenis if available
         if (typeof window !== "undefined" && (window as LenisWindow).lenis) {
           (window as LenisWindow).lenis?.scrollTo(0, {
             duration: 1.5,
@@ -136,16 +133,12 @@ export default function Footer() {
             immediate: false,
           });
         } else {
-          // Final fallback to native scroll
           window.scrollTo({ top: 0, behavior: "smooth" });
         }
       }
     } else {
-      // Navigate to the new page and scroll to top
       router.push(href);
 
-      // Ensure the new page starts at the top
-      // Use setTimeout to allow the route change to begin
       setTimeout(() => {
         if (lenis) {
           lenis.scrollTo(0, {
@@ -223,11 +216,11 @@ export default function Footer() {
             ALL RIGHTS RESERVED
           </div>
           <div className="text-xs text-[#666666] text-center md:text-left">
-            created with ❤️ by{" "}
+            created by{" "}
             <Link
               href="https://qaramanis.com"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="hover:text-black transition-all ease-in-out duration-300"
             >
               qaramanis
