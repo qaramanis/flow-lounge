@@ -6,6 +6,7 @@ import LenisProvider from "@/components/providers/lenis-provider";
 import UnicornScene from "@/components/unicorn-react";
 import { Analytics } from "@vercel/analytics/next";
 import Footer from "@/components/landing/footer/footer";
+import UnderDevDisclaimerWrapper from "@/components/under-dev";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Analytics />
+        <UnderDevDisclaimerWrapper />
         <LenisProvider>
           {children}
           <Nav />
