@@ -12,7 +12,7 @@ export default function JoinButton() {
   return (
     <button
       onClick={handleContactRedirect}
-      className="flex flex-row bg-accent text-white text-xl md:text-2xl py-2 px-4 rounded-full gap-4 items-center hover:scale-105 transition-all duration-500 cursor-pointer group"
+      className="flex flex-row bg-accent text-white text-xl md:text-2xl py-2 pl-4 pr-2 rounded-full gap-4 items-center hover:scale-105 transition-all duration-500 cursor-pointer group"
     >
       {/*@TODO: add button functionality*/}
       <div>Join the team</div>

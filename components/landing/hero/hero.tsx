@@ -3,12 +3,18 @@
 import { useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
+import { useRouter } from "next/navigation";
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaContainerRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  const handleMenuRedirect = () => {
+    router.push("/menu");
+  };
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -75,7 +81,7 @@ export default function HeroSection() {
           className="font-light tracking-wider text-white mb-8"
         >
           <span className="text-5xl md:text-8xl block">Immersive</span>
-          <span className="block text-accent text-8xl md:text-[14rem] font-echelon italic drop-shadow-[0_0_40px_rgba(239,80,33,1)]">
+          <span className="block text-accent text-8xl md:text-[14rem] font-echelon italic drop-shadow-[0_0_50px_rgba(239,80,33,1)]">
             Experience
           </span>
         </h1>
@@ -84,8 +90,8 @@ export default function HeroSection() {
           ref={subtitleRef}
           className="text-base md:text-xl text-foreground max-w-2xl mx-auto mb-12 font-light"
         >
-          Κάνε ένα βήμα μέσα στον κόσμο του ναργιλέ <br /> και ανακάλυψε τους
-          ατελείωτους συνδυασμούς γεύσεων
+          Take a step into the world of hookah <br /> and discover all the
+          unique combinations of flavors
         </p>
 
         <div ref={ctaContainerRef} className="flex gap-4 justify-center">
@@ -110,7 +116,10 @@ export default function HeroSection() {
             <span className="absolute inset-0 bg-white scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-xl" />
           </button>
 
-          <button className="relative px-8 py-4 rounded-xl border border-white/20 text-white font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:border-white/40 group cursor-pointer">
+          <button
+            onClick={handleMenuRedirect}
+            className="relative px-8 py-4 rounded-xl border border-white/20 text-white font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:border-white/40 group cursor-pointer"
+          >
             <span className="relative z-10 font-bold tracking-tight">
               View Menu
             </span>

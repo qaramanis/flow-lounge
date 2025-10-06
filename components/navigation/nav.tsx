@@ -195,7 +195,7 @@ export default function Nav() {
       <div className="fixed right-[2rem] top-[2rem] z-[100] flex">
         <button
           ref={buttonRef}
-          className="relative rounded-md bg-accent items-center justify-center z-10 cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(239,80,33,0.6)] group overflow-hidden"
+          className="relative rounded-md bg-accent items-center justify-center z-10 cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(239,80,33,0.6)] group overflow-hidden drop-shadow-2xl border border-background/10"
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
         >

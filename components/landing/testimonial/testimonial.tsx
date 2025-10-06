@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
           ref={leftContentRef}
           className="relative w-full md:w-[40%] h-[400px] md:h-full md:min-h-[700px] rounded-xl overflow-hidden group"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 z-10" />
+          <div className="absolute inset-0 z-10" />
           <Image
             src="/flow-lounge.svg"
             alt="Flow Lounge Hookah Experience"
@@ -64,8 +64,8 @@ export default function TestimonialsSection() {
 
           {/* Floating stat card */}
           <div className="absolute top-6 left-6 md:top-8 md:left-8 z-20">
-            <div className="bg-white/65 backdrop-blur-md p-4 md:p-6 rounded-lg shadow-2xl">
-              <div className="text-black text-4xl md:text-5xl lg:text-6xl font-bold flex items-baseline">
+            <div className="bg-foreground/65 backdrop-blur-md p-4 md:p-6 rounded-lg shadow-2xl">
+              <div className="text-background text-4xl md:text-5xl lg:text-6xl font-bold flex items-baseline">
                 <CountUp
                   from={0}
                   to={200}
@@ -76,7 +76,7 @@ export default function TestimonialsSection() {
                 />
                 <span className="text-accent ml-1">+</span>
               </div>
-              <p className="text-black/80 text-sm md:text-base lg:text-lg mt-1 md:mt-2 font-medium">
+              <p className="text-background/80 text-base md:text-lg mt-1 md:mt-2 font-medium">
                 Μοναδικές Γεύσεις
               </p>
             </div>
@@ -89,7 +89,7 @@ export default function TestimonialsSection() {
           className="flex flex-col w-full md:w-[60%] rounded-2xl md:rounded-3xl p-6 md:p-12 justify-between min-h-[450px] md:h-full md:min-h-[700px] relative overflow-hidden text-center items-center"
         >
           {/* Subtle pattern overlay */}
-          <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 opacity-30">
             <div
               className="absolute inset-0"
               style={{

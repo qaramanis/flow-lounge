@@ -23,9 +23,9 @@ export default function SpecialsSection() {
             Special
           </a>{" "}
         </h2>
-        <div className="h-full flex flex-row gap-6 p-4 mt-4">
-          <div className="flex flex-col md:w-[55%] h-[500px] rounded-xl gap-2">
-            <div className="flex flex-col justify-between w-full h-full">
+        <div className="h-full flex flex-col md:flex-row gap-6 p-4 mt-4">
+          <div className="flex flex-col md:w-[55%] md:h-[500px] h-[400px] rounded-xl gap-2">
+            <div className="flex flex-col justify-between items-center md:items-start w-full h-full">
               <div className="text-xl md:text-2xl text-foreground leading-relaxed md:max-w-3/4 flex flex-col gap-6">
                 <div>
                   Are you organizing your own{" "}

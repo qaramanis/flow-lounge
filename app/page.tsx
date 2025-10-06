@@ -11,9 +11,9 @@ export default function Home() {
     <div className="relative overflow-hidden">
       <HeroSection />
       <TestimonialsSection />
-      <SpecialsSection />
-      <MarqueesSection />
       <EventsSection />
+      <MarqueesSection />
+      <SpecialsSection />
       <FaqsSection />
       <JoinSection />
     </div>

@@ -42,19 +42,20 @@ export default function FaqsContent() {
   };
 
   return (
-    <div className="flex flex-col w-[40vw] gap-[1rem]">
+    <div className="flex flex-col md:w-[40vw] gap-[1rem]">
       {faqs.map((faq, index) => (
         <div
           key={index}
-          className="text-lg bg-accent hover:bg-accent/80 rounded-md p-[1rem] cursor-pointer transition-all duration-300"
+          className="text-lg bg-accent hover:bg-accent/85 rounded-md p-[1rem] cursor-pointer transition-all duration-300"
           onClick={() => toggleExpanded(index)}
         >
-          <div className="flex flex-row justify-between items-center gap-4">
-            <h2 className="text-3xl text-foreground">{faq.question}</h2>
+          <div className="flex flex-row justify-between items-center gap-4 ">
+            <h2 className="text-3xl text-foreground max-w-[85%]">
+              {faq.question}
+            </h2>
             <ChevronsDown
-              className={`text-foreground transition-transform duration-300 ${expandedIndex === index ? "-rotate-180" : ""}
+              className={`text-foreground transition-transform duration-300 w-8 h-8 md:w-6 md:h-6 ${expandedIndex === index ? "-rotate-180" : ""}
               `}
-              size={24}
             />
           </div>
           <div

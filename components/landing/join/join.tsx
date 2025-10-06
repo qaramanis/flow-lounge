@@ -24,8 +24,8 @@ export default function JoinSection() {
             Team
           </a>
         </h2>
-        <div className="h-full flex flex-row gap-12 p-4 mt-4">
-          <div className="md:w-[45%] h-[500px] rounded-xl">
+        <div className="h-full flex flex-col md:flex-row gap-12 p-4 mt-4">
+          <div className="w-full md:w-[45%] h-[300px] md:h-[500px] rounded-xl flex items-center justify-center order-3 md:order-1">
             <Image
               src="/flow-lounge.svg"
               alt="Flow Lounge Hookah"
@@ -34,8 +34,8 @@ export default function JoinSection() {
               className="object-fit"
             />
           </div>
-          <div className="flex flex-col md:w-[55%] h-[500px] rounded-xl gap-4">
-            <div className="flex flex-col w-full h-[40%] rounded-xl items-center overflow-clip justify-center">
+          <div className="flex flex-col w-full md:w-[55%] md:h-[500px] rounded-xl gap-4 order-2">
+            <div className="flex flex-col w-full h-[200px] md:h-[40%] rounded-xl items-center overflow-clip justify-center order-1 md:order-1">
               <Image
                 src="/flow-lounge.svg"
                 alt="Flow Lounge Hookah"
@@ -44,12 +44,12 @@ export default function JoinSection() {
                 className="object-fit"
               />
             </div>
-            <div className="flex flex-col justify-between w-full h-[60%]">
+            <div className="flex flex-col w-full md:h-[60%] order-2 md:order-2 gap-6">
               <div className="text-xl md:text-2xl text-foreground leading-relaxed md:max-w-full flex flex-col gap-4">
                 <div>
                   Looking to work with us? Are you{" "}
                   <a className="font-bold">ambitious</a>,{" "}
-                  <a className="font-bold">passionate</a> ready to work with{" "}
+                  <a className="font-bold">passionate</a> and ready to work with{" "}
                   <a className="font-bold">great</a> people?
                   <br />
                 </div>
@@ -58,7 +58,7 @@ export default function JoinSection() {
                   positions.
                 </div>
               </div>
-              <div>
+              <div className="flex justify-center md:justify-start">
                 <JoinButton />
               </div>
             </div>
@@ -68,5 +68,3 @@ export default function JoinSection() {
     </section>
   );
 }
-
-// @TODO mobile view
