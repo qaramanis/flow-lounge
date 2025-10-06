@@ -42,7 +42,7 @@ export default function FaqsContent() {
   };
 
   return (
-    <div className="flex flex-col md:w-[40vw] gap-[1rem]">
+    <div className="flex flex-col md:max-w-[50%] gap-[1rem]">
       {faqs.map((faq, index) => (
         <div
           key={index}

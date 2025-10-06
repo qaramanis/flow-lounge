@@ -77,7 +77,7 @@ export default function TestimonialsSection() {
                 <span className="text-accent ml-1">+</span>
               </div>
               <p className="text-background/80 text-base md:text-lg mt-1 md:mt-2 font-medium">
-                Μοναδικές Γεύσεις
+                Unique Flavours
               </p>
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function TestimonialsSection() {
         {/* Right side - Dark card with Flow Lounge theme */}
         <div
           ref={rightContentRef}
-          className="flex flex-col w-full md:w-[60%] rounded-2xl md:rounded-3xl p-6 md:p-12 justify-between min-h-[450px] md:h-full md:min-h-[700px] relative overflow-hidden text-center items-center"
+          className="flex flex-col w-full md:w-[60%] rounded-2xl md:rounded-3xl p-6 md:p-12 justify-center min-h-[450px] md:h-full md:min-h-[700px] relative overflow-hidden text-center items-center"
         >
           {/* Subtle pattern overlay */}
           <div className="absolute inset-0 opacity-30">
@@ -106,12 +106,12 @@ export default function TestimonialsSection() {
               ref={titleRef}
               className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
             >
-              Εγγυημένη
+              Guaranteed
               <br />
-              Ποιότητα Σε Κάθε
+              Quality in Every
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#ff8c5a]">
-                Εμπειρία.
+                Experience.
               </span>
             </h2>
 
@@ -119,9 +119,9 @@ export default function TestimonialsSection() {
               ref={textRef}
               className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-md"
             >
-              Με τον προσωπικό σας Shisha Master, ανακαλύψτε το τέλειο mix από
-              200+ premium γεύσεις. Κάθε ναργιλές είναι μια μοναδική εμπειρία
-              προσαρμοσμένη στις προτιμήσεις σας.
+              Guided by your personal Shisha Master, discover the perfect mix of
+              200+ premium flavors. Each shisha session is a unique experience
+              tailored to your preferences.
             </p>
 
             {/* Learn More Button with Flow Lounge style */}
@@ -137,7 +137,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Statistics section */}
-          <div
+          {/*<div
             ref={statsRef}
             className="space-y-4 md:space-y-6 mt-8 md:mt-12 relative z-10 w-full flex flex-col items-center justify-start"
           >
@@ -182,7 +182,7 @@ export default function TestimonialsSection() {
                 </span>
               </div>
             </div>
-          </div>
+          </div>*/}
         </div>
       </div>
     </div>

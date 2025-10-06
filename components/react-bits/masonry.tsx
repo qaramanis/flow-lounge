@@ -106,7 +106,9 @@ function MasonryModal({ isOpen, onClose, item }: MasonryModalProps) {
   useEffect(() => {
     if (isOpen) {
       // Stop smooth scrolling if using Lenis
-      const lenis = (window as unknown as { lenis?: { stop: () => void; start: () => void } }).lenis;
+      const lenis = (
+        window as unknown as { lenis?: { stop: () => void; start: () => void } }
+      ).lenis;
       if (typeof window !== "undefined" && lenis) {
         lenis.stop();
       }
@@ -140,7 +142,9 @@ function MasonryModal({ isOpen, onClose, item }: MasonryModalProps) {
       }
 
       // Restart smooth scrolling if using Lenis
-      const lenis = (window as unknown as { lenis?: { stop: () => void; start: () => void } }).lenis;
+      const lenis = (
+        window as unknown as { lenis?: { stop: () => void; start: () => void } }
+      ).lenis;
       if (typeof window !== "undefined" && lenis) {
         lenis.start();
       }
@@ -160,7 +164,11 @@ function MasonryModal({ isOpen, onClose, item }: MasonryModalProps) {
           window.scrollTo(0, parseInt(storedScrollY, 10) * -1);
         }
 
-        const lenis = (window as unknown as { lenis?: { stop: () => void; start: () => void } }).lenis;
+        const lenis = (
+          window as unknown as {
+            lenis?: { stop: () => void; start: () => void };
+          }
+        ).lenis;
         if (typeof window !== "undefined" && lenis) {
           lenis.start();
         }
@@ -189,21 +197,21 @@ function MasonryModal({ isOpen, onClose, item }: MasonryModalProps) {
       onClick={onClose}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-background/70 backdrop-blur-sm" />
 
       {/* Modal container */}
       <div
-        className="relative bg-[#1a1618] border border-white/10 rounded-2xl max-w-4xl w-full max-h-[85vh] shadow-2xl flex flex-col"
+        className="relative bg-[#1a1618] border border-foreground/10 rounded-2xl max-w-4xl w-full max-h-[85vh] shadow-2xl flex flex-col"
         onClick={(e) => e.stopPropagation()}
         data-lenis-prevent
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300 group z-10"
+          className="absolute top-4 right-4 p-2 rounded-full bg-foreground/10 hover:bg-foreground/20 transition-colors duration-300 group z-10 cursor-pointer"
           aria-label="Close modal"
         >
-          <X className="w-5 h-5 text-white group-hover:text-accent transition-colors duration-300" />
+          <X className="w-5 h-5 text-foreground transition-colors duration-300 " />
         </button>
 
         {/* Scrollable content container */}

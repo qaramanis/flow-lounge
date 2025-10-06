@@ -91,7 +91,7 @@ export default function PlayroomPage() {
               <div className="pt-8 md:pt-12">
                 <p
                   onClick={() => setIsModalOpen(true)}
-                  className="text-foreground/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl pt-8 md:pt-12 group cursor-pointer hover:underline hover:text-accent transition-all duration-800"
+                  className="text-foreground/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl pt-8 md:pt-12 group cursor-pointer hover:underline hover:text-accent transition-all duration-0"
                 >
                   Click here for details
                 </p>
