@@ -252,19 +252,13 @@ export default function Nav() {
             index="05."
             onClick={closeMenu}
           />
-          <NavItem
-            title="Special Events"
-            href="/#"
-            index="06."
-            onClick={closeMenu}
-          />
         </div>
         <div className="text-3xl text-black">
           <span className="text-accent text-xl tracking-tighter mb-4 mbn-item">
             Socials
           </span>
-          <div className="flex flex-row gap-2">
-            <div className="flex flex-row gap-12">
+          <div className="flex flex-row gap-4 md:gap-6">
+            <div className="flex flex-row">
               <Link
                 href="https://www.instagram.com/flow__lounge/"
                 className="mbn-item hover:text-accent transition-all duration-300"
@@ -273,7 +267,7 @@ export default function Nav() {
                 Instagram
               </Link>
             </div>
-            <div className="flex flex-row gap-12">
+            <div className="flex flex-row">
               <Link
                 href="https://linktr.ee/flowlounge"
                 className="mbn-item hover:text-accent transition-all duration-300"
