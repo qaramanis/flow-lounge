@@ -189,11 +189,11 @@ export default function PlayroomModal({ isOpen, onClose }: PlayroomModalProps) {
               <span className="w-1 h-6 bg-accent rounded-full" />
               Available Games
             </h3>
-            <div className="flex flex-wrap justify-center gap-6 lg:gap-8 mb-6">
+            <div className="grid grid-cols-2 gap-6 lg:gap-8 mb-6">
               {availableGames.map((game, index) => (
                 <div
                   key={index}
-                  className="w-[calc(45%)] md:w-[calc(50%-1.5rem)] bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 group cursor-default aspect-[3/4] overflow-hidden"
+                  className="bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 group cursor-default aspect-[3/4] overflow-hidden"
                   title={game.name}
                 >
                   <Image

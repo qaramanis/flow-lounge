@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef } from "react";
+import { gsap } from "@/lib/gsap";
+import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import MenuCard from "@/components/menu/card";
 
 export default function MenuPage() {
@@ -8,6 +10,34 @@ export default function MenuPage() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+
+  useIsomorphicLayoutEffect(() => {
+    window.scrollTo(0, 0);
+
+    const ctx = gsap.context(() => {
+      // Animate title
+      gsap.fromTo(
+        titleRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+      );
+
+      // Animate menu cards with stagger
+      gsap.fromTo(
+        ".menu-card",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "elastic.in",
+        },
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const menuCategories = [
     {
@@ -79,20 +109,15 @@ export default function MenuPage() {
       </div>
 
       {/* Menu Grid */}
-      <div
-        ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8 mb-6"
-      >
+      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
         {menuCategories.map((category, index) => (
-          <div key={index} className="w-full md:w-[calc(23%-1.5rem)]">
-            <MenuCard
-              key={index}
-              title={category.title}
-              description={category.description}
-              // imageUrl={category.imageUrl}
-              link={category.link}
-            />
-          </div>
+          <MenuCard
+            key={index}
+            title={category.title}
+            description={category.description}
+            // imageUrl={category.imageUrl}
+            link={category.link}
+          />
         ))}
       </div>
     </div>

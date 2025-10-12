@@ -38,7 +38,7 @@ export default function MenuCard({
   return (
     <div
       onClick={handleCardClick}
-      className={`menu-card relative w-full aspect-[2/3] rounded-sm overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-3xl hover:shadow-accent/10 ${className}`}
+      className={`menu-card relative w-full aspect-[2/3] rounded-sm overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-3xl hover:shadow-accent/10 opacity-0 ${className}`}
     >
       <div className="absolute top-0 right-0 p-3 flex text-xl md:text-3xl text-accent bg-background/30 rounded-bl-xl font-bold z-10 ">
         {price}

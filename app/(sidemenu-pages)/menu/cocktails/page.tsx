@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef } from "react";
+import { gsap } from "@/lib/gsap";
+import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
 import MenuCard from "@/components/menu/card";
 
@@ -8,6 +10,35 @@ export default function HookahPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+
+  useIsomorphicLayoutEffect(() => {
+    window.scrollTo(0, 0);
+
+    const ctx = gsap.context(() => {
+      // Animate title
+      gsap.fromTo(
+        titleRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+      );
+
+      // Animate menu cards with stagger
+      gsap.fromTo(
+        ".menu-card",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          // delay: 0.5,
+          stagger: 0.08,
+          ease: "elastic.in",
+        },
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const signatureCocktails = [
     {
@@ -180,17 +211,16 @@ export default function HookahPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8"
       >
         {signatureCocktails.map((cocktail, index) => (
-          <div key={index} className="w-full md:w-[calc(23%-1.5rem)]">
-            <MenuCard
-              title={cocktail.title}
-              description={cocktail.description}
-              // imageUrl={cocktail.imageUrl}
-              price={cocktail.price}
-            />
-          </div>
+          <MenuCard
+            key={index}
+            title={cocktail.title}
+            description={cocktail.description}
+            // imageUrl={cocktail.imageUrl}
+            price={cocktail.price}
+          />
         ))}
       </div>
 
@@ -202,18 +232,16 @@ export default function HookahPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8"
       >
         {classicCocktails.map((cocktail, index) => (
-          <div key={index} className="w-full md:w-[calc(23%-1.5rem)]">
-            <MenuCard
-              key={index}
-              title={cocktail.title}
-              description={cocktail.description}
-              // imageUrl={cocktail.imageUrl}
-              price={cocktail.price}
-            />
-          </div>
+          <MenuCard
+            key={index}
+            title={cocktail.title}
+            description={cocktail.description}
+            // imageUrl={cocktail.imageUrl}
+            price={cocktail.price}
+          />
         ))}
       </div>
 
@@ -225,18 +253,16 @@ export default function HookahPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8"
       >
         {aperitifs.map((aperitif, index) => (
-          <div key={index} className="w-full md:w-[calc(23%-1.5rem)]">
-            <MenuCard
-              key={index}
-              title={aperitif.title}
-              description={aperitif.description}
-              // imageUrl={aperitif.imageUrl}
-              price={aperitif.price}
-            />
-          </div>
+          <MenuCard
+            key={index}
+            title={aperitif.title}
+            description={aperitif.description}
+            // imageUrl={aperitif.imageUrl}
+            price={aperitif.price}
+          />
         ))}
       </div>
 
@@ -248,18 +274,16 @@ export default function HookahPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8"
       >
         {mocktails.map((mocktail, index) => (
-          <div key={index} className="w-full md:w-[calc(23%-1.5rem)]">
-            <MenuCard
-              key={index}
-              title={mocktail.title}
-              description={mocktail.description}
-              // imageUrl={mocktail.imageUrl}
-              price={mocktail.price}
-            />
-          </div>
+          <MenuCard
+            key={index}
+            title={mocktail.title}
+            description={mocktail.description}
+            // imageUrl={mocktail.imageUrl}
+            price={mocktail.price}
+          />
         ))}
       </div>
 
