@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import { useRouter } from "next/navigation";
+import { useLenis } from "@/hooks/use-lenis";
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -11,9 +12,18 @@ export default function HeroSection() {
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const { lenis } = useLenis();
 
   const handleMenuRedirect = () => {
-    router.push("/menu");
+    // Stop scroll momentum and reset position before navigation
+    if (lenis) {
+      lenis.stop();
+      lenis.scrollTo(0, { immediate: true });
+    }
+    // Small delay to ensure scroll is stopped
+    setTimeout(() => {
+      router.push("/menu");
+    }, 50);
   };
 
   useIsomorphicLayoutEffect(() => {

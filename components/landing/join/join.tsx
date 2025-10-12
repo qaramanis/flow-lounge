@@ -2,7 +2,8 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import JoinButton from "./join-button";
+import ActionButton from "@/components/action-button";
+import { ArrowUpRight } from "lucide-react";
 
 export default function JoinSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -59,7 +60,11 @@ export default function JoinSection() {
                 </div>
               </div>
               <div className="flex justify-center md:justify-start">
-                <JoinButton />
+                <ActionButton
+                  text="Join the team"
+                  icon={ArrowUpRight}
+                  href="/contact"
+                />
               </div>
             </div>
           </div>

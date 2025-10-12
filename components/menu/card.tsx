@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useLenis } from "@/hooks/use-lenis";
 
 interface MenuCardProps {
   title: string;
@@ -21,6 +22,7 @@ export default function MenuCard({
   price = "",
 }: MenuCardProps) {
   const router = useRouter();
+  const { lenis } = useLenis();
 
   const handleCardClick = () => {
     if (link === "#") {
@@ -32,7 +34,14 @@ export default function MenuCard({
     if (link.startsWith("http://") || link.startsWith("https://")) {
       window.open(link, "_blank", "noopener,noreferrer");
     } else {
-      router.push(link);
+      // Stop scroll momentum and reset position before navigation
+      if (lenis) {
+        lenis.stop();
+        lenis.scrollTo(0, { immediate: true });
+      }
+      setTimeout(() => {
+        router.push(link);
+      }, 50);
     }
   };
   return (

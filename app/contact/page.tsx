@@ -3,11 +3,14 @@
 import { useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
+import ContactForm from "@/components/contact/contact-form";
+import ReservationForm from "@/components/contact/reservation-form";
 
 export default function ContactPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
 
   useIsomorphicLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -23,6 +26,12 @@ export default function ContactPage() {
         contentRef.current,
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.8, delay: 0.3, ease: "power3.out" },
+      );
+
+      gsap.fromTo(
+        formRef.current,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.8, delay: 0.5, ease: "power3.out" },
       );
     }, containerRef);
 
@@ -48,10 +57,10 @@ export default function ContactPage() {
       </div>
 
       {/* Contact Information */}
-      <div ref={contentRef} className="space-y-8 max-w-2xl">
+      <div ref={contentRef} className="space-y-8 max-w-4xl mb-16">
         <div className="border-b border-white/15 pb-6">
           <h2 className="text-xl text-white/60 mb-2">Name</h2>
-          <p className="text-3xl text-white font-light">Titto Peronetti</p>
+          <p className="text-3xl text-white font-light">Apostolos Karamanis</p>
         </div>
 
         <div className="border-b border-white/15 pb-6">
@@ -74,6 +83,14 @@ export default function ContactPage() {
             info@flowlounge.gr
           </a>
         </div>
+      </div>
+
+      <div
+        ref={formRef}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16"
+      >
+        <ContactForm />
+        <ReservationForm />
       </div>
     </div>
   );

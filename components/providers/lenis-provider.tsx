@@ -1,6 +1,7 @@
 "use client";
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useEffect, useLayoutEffect, useRef } from "react";
 import Lenis from "lenis";
+import { usePathname } from "next/navigation";
 
 interface LenisProviderProps {
   children: ReactNode;
@@ -28,6 +29,7 @@ export default function LenisProvider({
   options = {},
 }: LenisProviderProps) {
   const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -64,6 +66,29 @@ export default function LenisProvider({
       }
     };
   }, [options]);
+
+  // Reset scroll position and stop momentum on route change
+  useLayoutEffect(() => {
+    if (lenisRef.current) {
+      // Stop current scroll momentum immediately
+      lenisRef.current.stop();
+
+      // Immediately scroll to top
+      lenisRef.current.scrollTo(0, { immediate: true, force: true });
+
+      // Also reset native scroll position
+      window.scrollTo(0, 0);
+
+      // Restart Lenis after a brief delay
+      const timeoutId = setTimeout(() => {
+        if (lenisRef.current) {
+          lenisRef.current.start();
+        }
+      }, 100);
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [pathname]);
 
   return <>{children}</>;
 }

@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useRef } from "react";
-import SpecialsButton from "./specials-button";
+import ActionButton from "@/components/action-button";
+import { ArrowUpRight } from "lucide-react";
 
 export default function SpecialsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,7 +22,7 @@ export default function SpecialsSection() {
           Planning something{" "}
           <a className="self-center text-6xl md:text-[7rem] font-echelon italic text-accent">
             Special
-          </a>{" "}
+          </a>
         </h2>
         <div className="h-full flex flex-col md:flex-row gap-6 p-4 mt-4">
           <div className="flex flex-col md:w-[55%] md:h-[500px] h-[400px] rounded-xl gap-2">
@@ -43,7 +44,11 @@ export default function SpecialsSection() {
                 <div>Get in touch and learn more.</div>
               </div>
               <div>
-                <SpecialsButton />
+                <ActionButton
+                  text="Learn More"
+                  icon={ArrowUpRight}
+                  href="/contact"
+                />
               </div>
             </div>
           </div>

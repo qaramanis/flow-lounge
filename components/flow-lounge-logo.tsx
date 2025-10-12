@@ -45,7 +45,14 @@ export default function FlowLoungeLogo() {
         }
       }
     } else {
-      router.push("/");
+      // Stop scroll momentum and reset position before navigation
+      if (lenis) {
+        lenis.stop();
+        lenis.scrollTo(0, { immediate: true });
+      }
+      setTimeout(() => {
+        router.push("/");
+      }, 50);
     }
   };
 

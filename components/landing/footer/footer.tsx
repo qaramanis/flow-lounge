@@ -137,26 +137,14 @@ export default function Footer() {
         }
       }
     } else {
-      router.push(href);
-
+      // Stop scroll momentum and reset position before navigation
+      if (lenis) {
+        lenis.stop();
+        lenis.scrollTo(0, { immediate: true });
+      }
       setTimeout(() => {
-        if (lenis) {
-          lenis.scrollTo(0, {
-            duration: 0,
-            immediate: true,
-          });
-        } else if (
-          typeof window !== "undefined" &&
-          (window as LenisWindow).lenis
-        ) {
-          (window as LenisWindow).lenis?.scrollTo(0, {
-            duration: 0,
-            immediate: true,
-          });
-        } else {
-          window.scrollTo(0, 0);
-        }
-      }, 0);
+        router.push(href);
+      }, 50);
     }
   };
 

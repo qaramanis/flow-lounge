@@ -20,7 +20,7 @@ function NavItem({
   index: string;
   onClick?: () => void;
 }) {
-  const { scrollTo } = useLenis();
+  const { scrollTo, lenis } = useLenis();
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent) => {
@@ -32,7 +32,15 @@ function NavItem({
         easing: (t: number) => 1 - Math.pow(1 - t, 3), // easeOutCubic
       });
     } else {
-      router.push(href);
+      // Stop scroll momentum and reset position before navigation
+      if (lenis) {
+        lenis.stop();
+        lenis.scrollTo(0, { immediate: true });
+      }
+      // Small delay to ensure scroll is stopped
+      setTimeout(() => {
+        router.push(href);
+      }, 50);
     }
 
     if (onClick) {

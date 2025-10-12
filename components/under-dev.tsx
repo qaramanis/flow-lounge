@@ -10,7 +10,7 @@ export function UnderDevDisclaimer({
 }) {
   return (
     <motion.div
-      className="w-screen fixed bottom-0 left-0 z-50 py-4 md:py-6 pl-3 md:pl-4 pr-4 md:pr-8 flex items-center justify-center md:justify-end"
+      className="w-fit fixed bottom-0 right-0 z-50 py-4 md:py-6 pl-3 md:pl-4 pr-4 md:pr-8 flex items-center justify-center md:justify-end"
       initial={{
         opacity: 0,
         x: 100,
@@ -38,7 +38,7 @@ export function UnderDevDisclaimer({
           This website is under development.
         </h1>
         <button
-          className="size-9 lg:size-10 ml-auto cursor-pointer rounded-full bg-accent flex items-center justify-center relative overflow-hidden text-background hover:scale-110 transtion-all duration-300"
+          className="size-9 lg:size-10 shrink-0 cursor-pointer rounded-full bg-accent flex items-center justify-center relative overflow-hidden text-background hover:scale-105 transtion-all duration-300"
           onClick={() => setIsOpen(false)}
         >
           <X size={24} />

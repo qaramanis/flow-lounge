@@ -5,6 +5,7 @@ import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useLenis } from "@/hooks/use-lenis";
 
 interface Event {
   id: string;
@@ -48,9 +49,17 @@ const events: Event[] = [
 function EventCard({ event, index }: { event: Event; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const { lenis } = useLenis();
 
   const handleEventsRedirect = () => {
-    router.push("/events");
+    // Stop scroll momentum and reset position before navigation
+    if (lenis) {
+      lenis.stop();
+      lenis.scrollTo(0, { immediate: true });
+    }
+    setTimeout(() => {
+      router.push("/events");
+    }, 50);
   };
 
   useIsomorphicLayoutEffect(() => {
