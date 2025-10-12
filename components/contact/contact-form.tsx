@@ -57,7 +57,7 @@ export default function ContactForm() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -150,7 +150,7 @@ export default function ContactForm() {
           />
         </div>
 
-        <div className="flex flex-col md:flex-row gap-4 md:items-center">
+        <div className="flex flex-col w-fit md:flex-row gap-4 md:items-center">
           <ActionButton
             type="submit"
             text={isSubmitting ? "Sending..." : "Send Message"}

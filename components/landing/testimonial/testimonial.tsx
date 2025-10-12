@@ -13,7 +13,6 @@ export default function TestimonialsSection() {
   const rightContentRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -135,54 +134,6 @@ export default function TestimonialsSection() {
               <span className="absolute inset-0 bg-gradient-to-r from-accent to-[#ff6b3d] scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-full origin-center" />
             </button>*/}
           </div>
-
-          {/* Statistics section */}
-          {/*<div
-            ref={statsRef}
-            className="space-y-4 md:space-y-6 mt-8 md:mt-12 relative z-10 w-full flex flex-col items-center justify-start"
-          >
-            <div className="flex items-center gap-4 md:gap-6">
-              <span className="text-gray-500 text-sm md:text-base lg:text-lg min-w-[70px] md:min-w-[100px]">
-                Πελάτες
-              </span>
-              <div className="flex items-center gap-3 md:gap-4 flex-1">
-                <div className="flex-1 h-1.5 md:h-2 bg-gray-700/50 rounded-full overflow-hidden min-w-[108px] md:min-w-[162px] max-w-[120px] md:max-w-[180px]">
-                  <div className="w-[90%] h-full bg-gradient-to-r from-accent to-[#ff8c5a] rounded-full"></div>
-                </div>
-                <span className="text-white font-bold text-base md:text-lg lg:text-xl">
-                  <CountUp
-                    from={0}
-                    to={5000}
-                    duration={2}
-                    delay={0.5}
-                    className="inline"
-                  />
-                  +
-                </span>
-              </div>
-            </div>
-
-            <div className="-ml-2 flex items-center gap-4 md:gap-6">
-              <span className="text-gray-500 text-sm md:text-base lg:text-lg min-w-[70px] md:min-w-[100px]">
-                Γεύσεις
-              </span>
-              <div className="flex items-center gap-3 md:gap-4 flex-1">
-                <div className="flex-1 h-1.5 md:h-2 bg-gray-700/50 rounded-full overflow-hidden min-w-[108px] md:min-w-[162px] max-w-[120px] md:max-w-[180px]">
-                  <div className="w-[70%] h-full bg-gradient-to-r from-accent to-[#ff8c5a] rounded-full"></div>
-                </div>
-                <span className="text-white font-bold text-base md:text-lg lg:text-xl">
-                  <CountUp
-                    from={0}
-                    to={200}
-                    duration={2}
-                    delay={0.7}
-                    className="inline"
-                  />
-                  +
-                </span>
-              </div>
-            </div>
-          </div>*/}
         </div>
       </div>
     </div>

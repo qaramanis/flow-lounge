@@ -40,7 +40,13 @@ export default function ReservationForm() {
           type: "success",
           message: "Reservation request sent. Please check your emails.",
         });
-        setReservationData({ name: "", email: "", phone: "", date: "", people: "2" });
+        setReservationData({
+          name: "",
+          email: "",
+          phone: "",
+          date: "",
+          people: "2",
+        });
       } else {
         setReservationStatus({
           type: "error",
@@ -180,7 +186,7 @@ export default function ReservationForm() {
           </select>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-4 md:items-center">
+        <div className="flex flex-col w-fit md:flex-row gap-4 md:items-center">
           <ActionButton
             type="submit"
             text={isSubmittingReservation ? "Submitting..." : "Reserve Table"}
