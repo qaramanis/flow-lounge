@@ -78,7 +78,7 @@ export default function ContactForm() {
 
   return (
     <div>
-      <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
+      <h2 className="text-4xl md:text-5xl font-light text-foreground mb-8">
         Send us a{" "}
         <span className="text-accent font-echelon italic">Message</span>
       </h2>
@@ -86,7 +86,7 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="email" className="block text-lg text-white/60 mb-2">
+            <label htmlFor="email" className="block text-lg text-foreground/60 mb-2">
               Your Email
             </label>
             <input
@@ -96,13 +96,13 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-accent transition-colors duration-300"
+              className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
               placeholder="your@email.com"
             />
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-lg text-white/60 mb-2">
+            <label htmlFor="phone" className="block text-lg text-foreground/60 mb-2">
               Phone Number
             </label>
             <input
@@ -112,14 +112,14 @@ export default function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-accent transition-colors duration-300"
+              className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
               placeholder="+30 123 456 7890"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="subject" className="block text-lg text-white/60 mb-2">
+          <label htmlFor="subject" className="block text-lg text-foreground/60 mb-2">
             Subject
           </label>
           <input
@@ -129,13 +129,13 @@ export default function ContactForm() {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-accent transition-colors duration-300"
+            className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
             placeholder="What's this about?"
           />
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-lg text-white/60 mb-2">
+          <label htmlFor="message" className="block text-lg text-foreground/60 mb-2">
             Message
           </label>
           <textarea
@@ -145,7 +145,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             rows={6}
-            className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-accent transition-colors duration-300 resize-none"
+            className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300 resize-none"
             placeholder="Tell us more..."
           />
         </div>

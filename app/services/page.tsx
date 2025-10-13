@@ -18,7 +18,7 @@ const ServiceCard = memo(
     };
   }) => (
     <div
-      className="w-full md:w-[calc(30%-1.5rem)] service-card bg-[#241f21]/80 backdrop-blur-sm rounded-sm p-8 hover:bg-[#241f21] border border-white/10 group transition-all duration-300"
+      className="service-card bg-[#241f21]/80 backdrop-blur-sm rounded-sm p-8 hover:bg-[#241f21] border border-white/10 group transition-all duration-300"
       style={{ "--service-color": service.color } as React.CSSProperties}
     >
       <div className="flex items-center gap-2 mb-4">
@@ -53,10 +53,17 @@ ServiceCard.displayName = "ServiceCard";
 
 export default function PlayroomPage() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
+
+      tl.fromTo(
+        titleRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+      );
 
       tl.fromTo(
         ".service-card",
@@ -107,7 +114,10 @@ export default function PlayroomPage() {
   return (
     <div ref={containerRef} className="px-4 pt-32 pb-20">
       <div className="px-4 md:px-20">
-        <h1 className="text-6xl md:text-8xl font-light tracking-tighter text-foreground mb-8">
+        <h1
+          ref={titleRef}
+          className="text-6xl md:text-8xl font-light tracking-tighter text-foreground mb-8"
+        >
           Special Services
         </h1>
         <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mb-16">
@@ -148,7 +158,7 @@ export default function PlayroomPage() {
           </a>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
           {/*{services.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}*/}

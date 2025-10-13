@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Calendar } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import ActionButton from "@/components/action-button";
+import { Calendar22 } from "@/components/contact/calendar-22";
 
 export default function ReservationForm() {
   const [reservationData, setReservationData] = useState({
@@ -86,14 +87,14 @@ export default function ReservationForm() {
 
   return (
     <div>
-      <h2 className="text-4xl md:text-5xl font-light text-white mb-8">
+      <h2 className="text-4xl md:text-5xl font-light text-foreground mb-8">
         Make a{" "}
         <span className="text-accent font-echelon italic">Reservation</span>
       </h2>
 
       <form onSubmit={handleReservationSubmit} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-lg text-white/60 mb-2">
+          <label htmlFor="name" className="block text-lg text-foreground/60 mb-2">
             Name
           </label>
           <input
@@ -103,14 +104,14 @@ export default function ReservationForm() {
             value={reservationData.name}
             onChange={handleReservationChange}
             required
-            className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-accent transition-colors duration-300"
+            className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
             placeholder="Your name"
           />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="email" className="block text-lg text-white/60 mb-2">
+            <label htmlFor="email" className="block text-lg text-foreground/60 mb-2">
               Email
             </label>
             <input
@@ -120,13 +121,13 @@ export default function ReservationForm() {
               value={reservationData.email}
               onChange={handleReservationChange}
               required
-              className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-accent transition-colors duration-300"
+              className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
               placeholder="your@email.com"
             />
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-lg text-white/60 mb-2">
+            <label htmlFor="phone" className="block text-lg text-foreground/60 mb-2">
               Phone Number
             </label>
             <input
@@ -136,32 +137,24 @@ export default function ReservationForm() {
               value={reservationData.phone}
               onChange={handleReservationChange}
               required
-              className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-accent transition-colors duration-300"
+              className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
               placeholder="+30 123 456 7890"
             />
           </div>
         </div>
 
-        <div>
-          <label htmlFor="date" className="block text-lg text-white/60 mb-2">
-            Date
-          </label>
-          <div className="relative">
-            <input
-              type="date"
-              id="date"
-              name="date"
-              value={reservationData.date}
-              onChange={handleReservationChange}
-              required
-              min={new Date().toISOString().split("T")[0]}
-              className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-accent transition-colors duration-300 [&::-webkit-calendar-picker-indicator]:invert [&::-webkit-calendar-picker-indicator]:opacity-60 [&::-webkit-calendar-picker-indicator]:hover:opacity-100"
-            />
-          </div>
-        </div>
+        <Calendar22
+          label="Date"
+          value={reservationData.date}
+          onChange={(date) =>
+            setReservationData({ ...reservationData, date })
+          }
+          minDate={new Date()}
+          required
+        />
 
         <div>
-          <label htmlFor="people" className="block text-lg text-white/60 mb-2">
+          <label htmlFor="people" className="block text-lg text-foreground/60 mb-2">
             Number of People
           </label>
           <select
@@ -170,7 +163,7 @@ export default function ReservationForm() {
             value={reservationData.people}
             onChange={handleReservationChange}
             required
-            className="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors duration-300 appearance-none cursor-pointer"
+            className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors duration-300 appearance-none cursor-pointer"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")`,
               backgroundRepeat: "no-repeat",
