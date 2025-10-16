@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 function MarqueeItem({ text }: { text: string }) {
   return (
     <div className="flex flex-row items-center">
-      <span className="text-5xl lg:text-[6rem] tracking-tight">{text}</span>
+      <span className="text-4xl md:text-5xl tracking-tight">{text}</span>
       <span className="block w-6 lg:w-8 px-8 lg:px-14 box-content mt-2">
         <Image
           src="/flow-lounge.svg"

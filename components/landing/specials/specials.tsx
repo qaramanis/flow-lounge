@@ -11,23 +11,23 @@ export default function SpecialsSection() {
   return (
     <section
       ref={containerRef}
-      className="py-20 lg:py-32 lg:px-20 bg-transparent"
+      className="py-16 lg:py-24 lg:px-16 bg-transparent"
       id="specials"
     >
-      <div className="md:px-[6rem] px-[2rem] mx-auto">
+      <div className="md:px-[4.8rem] px-[1.6rem] mx-auto">
         <h2
           ref={titleRef}
-          className="text-5xl md:text-6xl leading-tight text-foreground text-center md:text-start border-b border-foreground/15 pb-12"
+          className="text-4xl md:text-5xl leading-tight text-foreground text-center md:text-start border-b border-foreground/15 pb-10"
         >
           Planning something{" "}
-          <a className="self-center text-6xl md:text-[7rem] font-echelon italic text-accent">
+          <a className="self-center text-5xl md:text-[5.6rem] font-echelon italic text-accent">
             Special
           </a>
         </h2>
-        <div className="h-full flex flex-col md:flex-row gap-6 p-4 mt-4">
-          <div className="flex flex-col md:w-[55%] md:h-[500px] h-[400px] rounded-xl gap-2">
+        <div className="h-full flex flex-col md:flex-row gap-5 p-3 mt-3">
+          <div className="flex flex-col md:w-[55%] md:h-[400px] h-[320px] rounded-lg gap-1.5">
             <div className="flex flex-col justify-between items-center md:items-start w-full h-full">
-              <div className="text-xl md:text-2xl text-foreground leading-relaxed md:max-w-3/4 flex flex-col gap-6">
+              <div className="text-lg md:text-xl text-foreground leading-relaxed md:max-w-3/4 flex flex-col gap-5">
                 <div>
                   Are you organizing your own{" "}
                   <a className="font-bold">event(s)</a>?
@@ -52,12 +52,12 @@ export default function SpecialsSection() {
               </div>
             </div>
           </div>
-          <div className="md:w-[45%] h-[500px] rounded-xl">
+          <div className="md:w-[45%] h-[400px] rounded-lg">
             <Image
               src="/flow-lounge.svg"
               alt="Flow Lounge Hookah"
-              height={500}
-              width={500}
+              height={400}
+              width={400}
               className="object-fit"
             />
           </div>

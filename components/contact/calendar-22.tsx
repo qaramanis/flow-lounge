@@ -28,7 +28,6 @@ export function Calendar22({
   onChange,
   minDate,
   id = "date",
-  required = false,
 }: Calendar22Props) {
   const [open, setOpen] = React.useState(false);
 

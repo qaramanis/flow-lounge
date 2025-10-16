@@ -59,15 +59,14 @@ export default function FlowLoungeLogo() {
   return (
     <button
       onClick={handleLogoClick}
-      className="relative group cursor-pointer transition-transform duration-300 hover:scale-110"
+      className="relative w-full h-full group cursor-pointer transition-transform duration-300 hover:scale-110"
       aria-label="Flow Lounge - Go to homepage"
     >
       <Image
         src="/flow-lounge.svg"
         alt="Flow Lounge Logo"
-        width={80}
-        height={80}
-        className="rounded-full transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(239,80,33,0.5)]"
+        fill
+        className="rounded-full transition-all duration-500 object-contain"
       />
     </button>
   );

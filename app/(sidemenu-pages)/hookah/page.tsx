@@ -101,66 +101,68 @@ export default function HookahPage() {
   ];
 
   return (
-    <div ref={containerRef} className="pt-32 px-8 md:px-20 mb-12">
-      <h1
-        ref={titleRef}
-        className="text-5xl md:text-7xl font-light tracking-tighter text-white mb-24 md:px-4"
-      >
-        The{" "}
-        <a className="text-accent font-echelon italic text-6xl md:text-9xl">
-          Real
-        </a>{" "}
-        Hookah{" "}
-        <span className="text-accent font-echelon italic text-6xl md:text-9xl">
-          Experience
-        </span>
-      </h1>
+    <div ref={containerRef} className="pt-24 mb-10">
+      <div className="md:px-[4.8rem] px-[1.6rem] mx-auto">
+        <h1
+          ref={titleRef}
+          className="text-4xl md:text-5xl font-light tracking-tighter text-white mb-20"
+        >
+          The{" "}
+          <span className="text-accent font-echelon italic text-5xl md:text-[7.6rem]">
+            Real
+          </span>{" "}
+          Hookah{" "}
+          <span className="text-accent font-echelon italic text-5xl md:text-[7.6rem]">
+            Experience
+          </span>
+        </h1>
 
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-36">
-        <h1 className="text-5xl md:text-7xl">Hookah</h1>
-      </div>
-      <div
-        ref={gridRef}
-        className="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8 items-center"
-      >
-        {hookahCategories.map((category, index) => (
-          <MenuCard
-            key={index}
-            title={category.title}
-            description={category.description}
-            // imageUrl={category.imageUrl}
-            price={category.price}
-          />
-        ))}
-      </div>
+        <div className="self-center items-center text-center mb-6 mt-20 md:mb-10 md:mt-28">
+          <h2 className="text-4xl md:text-5xl">Hookah</h2>
+        </div>
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 md:grid-cols-4 gap-5 lg:gap-6 items-center"
+        >
+          {hookahCategories.map((category, index) => (
+            <MenuCard
+              key={index}
+              title={category.title}
+              description={category.description}
+              // imageUrl={category.imageUrl}
+              price={category.price}
+            />
+          ))}
+        </div>
 
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-20" />
 
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-16 md:mt-12">
-        <h1 className="text-5xl md:text-7xl">Refill Bowls</h1>
-      </div>
-      <div
-        ref={gridRef}
-        className="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8 items-center"
-      >
-        {refillCategories.map((category, index) => (
-          <MenuCard
-            key={index}
-            title={category.title}
-            description={category.description}
-            // imageUrl={category.imageUrl}
-            price={category.price}
-          />
-        ))}
-      </div>
+        <div className="self-center items-center text-center mb-6 mt-20 md:mb-12 md:mt-10">
+          <h2 className="text-4xl md:text-5xl">Refill Bowls</h2>
+        </div>
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 md:grid-cols-4 gap-5 lg:gap-6 items-center"
+        >
+          {refillCategories.map((category, index) => (
+            <MenuCard
+              key={index}
+              title={category.title}
+              description={category.description}
+              // imageUrl={category.imageUrl}
+              price={category.price}
+            />
+          ))}
+        </div>
 
-      <div className="mt-20 text-center">
-        <p className="text-white/60 mb-4">
-          All prices listed above include vat 24% and municipal taxes 0.5%
-          <br />
-          Market Law Health Officer: Kyriakos Katikaridis
-        </p>
-        {/*<button className="px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:border-accent/50 transition-all duration-300"></button>*/}
+        <div className="mt-16 text-center">
+          <p className="text-white/60 mb-3">
+            All prices listed above include vat 24% and municipal taxes 0.5%
+            <br />
+            Market Law Health Officer: Kyriakos Katikaridis
+          </p>
+          {/*<button className="px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:border-accent/50 transition-all duration-300"></button>*/}
+        </div>
       </div>
     </div>
   );

@@ -82,29 +82,29 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[844px] md:min-h-screen overflow-hidden bg-transparent flex items-center justify-center"
+      className="relative min-h-[675px] md:min-h-screen overflow-hidden bg-transparent flex items-center justify-center"
     >
-      <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
+      <div className="relative z-10 text-center px-5 max-w-7xl mx-auto">
         {/* Main Title */}
         <h1
           ref={titleRef}
-          className="font-light tracking-wider text-white mb-8"
+          className="font-light tracking-wider text-white mb-6"
         >
-          <span className="text-5xl md:text-8xl block">Immersive</span>
-          <span className="block text-accent text-8xl md:text-[14rem] font-echelon italic drop-shadow-[0_0_50px_rgba(239,80,33,1)]">
+          <span className="text-4xl md:text-7xl block">Immersive</span>
+          <span className="block text-accent text-7xl md:text-[11.2rem] font-echelon italic drop-shadow-[0_0_40px_rgba(239,80,33,1)]">
             Experience
           </span>
         </h1>
         {/* Subtitle */}
         <p
           ref={subtitleRef}
-          className="text-base md:text-xl text-foreground max-w-2xl mx-auto mb-12 font-light"
+          className="text-sm md:text-lg text-foreground max-w-2xl mx-auto mb-10 font-light"
         >
           Take a step into the world of hookah <br /> and discover all the
           unique combinations of flavors
         </p>
 
-        <div ref={ctaContainerRef} className="flex gap-4 justify-center">
+        <div ref={ctaContainerRef} className="flex gap-3 justify-center">
           <button
             onClick={() => {
               const heroSection = containerRef.current;
@@ -118,22 +118,22 @@ export default function HeroSection() {
                 });
               }
             }}
-            className="relative px-4 py-4 rounded-xl bg-accent text-white font-medium overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(239,80,33,0.6)] group cursor-pointer"
+            className="relative px-3 py-3 rounded-lg bg-accent text-white font-medium overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-[0_0_32px_rgba(239,80,33,0.6)] group cursor-pointer"
           >
             <span className="relative z-10 transition-colors duration-300 group-hover:text-accent tracking-tight font-bold">
               Learn More
             </span>
-            <span className="absolute inset-0 bg-white scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-xl" />
+            <span className="absolute inset-0 bg-white scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-lg" />
           </button>
 
           <button
             onClick={handleMenuRedirect}
-            className="relative px-8 py-4 rounded-xl border border-white/20 text-white font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:border-white/40 group cursor-pointer"
+            className="relative px-6 py-3 rounded-lg border border-white/20 text-white font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_24px_rgba(255,255,255,0.2)] hover:border-white/40 group cursor-pointer"
           >
             <span className="relative z-10 font-bold tracking-tight">
               View Menu
             </span>
-            <span className="absolute inset-0 bg-white/10 scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-xl origin-center" />
+            <span className="absolute inset-0 bg-white/10 scale-0 group-hover:scale-100 transition-transform duration-500 ease-out rounded-lg origin-center" />
           </button>
         </div>
       </div>

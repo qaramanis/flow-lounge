@@ -40,21 +40,18 @@ export default function PlayroomPage() {
 
   return (
     <>
-      <div ref={containerRef} className="px-4 pt-32 pb-20">
-        <div className="px-4 md:px-20">
+      <div ref={containerRef} className="pt-24 pb-20">
+        <div className="md:px-[4.8rem] px-[1.6rem] mx-auto">
           <h1
             ref={titleRef}
-            className="text-6xl md:text-8xl font-light tracking-tighter text-foreground mb-8"
+            className="text-4xl md:text-5xl font-light tracking-tighter text-foreground mb-5"
           >
             Smoke and Play
           </h1>
 
-          <p className="text-xl text-foreground/80 max-w-3xl mb-16">
-            Enjoy our{" "}
-            <span className="text-accent font-echelon italic text-3xl md:text-5xl">
-              Playroom
-            </span>{" "}
-            , equipped with board and console games.
+          <p className="text-base md:text-lg text-foreground/70 max-w-2xl font-light mb-16">
+            Enjoy our <span className="text-accent">Playroom</span> , equipped
+            with board and console games.
           </p>
         </div>
 

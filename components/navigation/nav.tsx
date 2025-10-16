@@ -55,11 +55,11 @@ function NavItem({
       className="w-full text-background hover:text-accent tracking-tight flex flex-col leading-none transition-all duration-300"
     >
       <div className="flex flex-row">
-        <span className="mbn-item text-5xl">{title}</span>
-        <div className="ml-2 text-lg mbn-item text-accent">{index}</div>
+        <span className="mbn-item text-4xl">{title}</span>
+        <div className="ml-1.5 text-base mbn-item text-accent">{index}</div>
       </div>
 
-      <div className="w-full h-[1px] bg-black/10 my-2 mbn-line" />
+      <div className="w-full h-[1px] bg-black/10 my-1.5 mbn-line" />
     </Link>
   );
 }
@@ -196,14 +196,14 @@ export default function Nav() {
 
   return (
     <>
-      <div className="fixed top-[1rem] left-[1rem] z-[101]">
+      <div className="fixed top-[1rem] left-[1rem] z-[101] w-20 h-20">
         <FlowLoungeLogo />
       </div>
 
-      <div className="fixed right-[2rem] top-[2rem] z-[100] flex">
+      <div className="fixed right-[1.6rem] top-[1.6rem] z-[100] flex">
         <button
           ref={buttonRef}
-          className="relative rounded-md bg-accent items-center justify-center z-10 cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-[0_0_40px_rgba(239,80,33,0.6)] group overflow-hidden drop-shadow-2xl border border-background/10"
+          className="relative rounded-sm bg-accent items-center justify-center z-10 cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-[0_0_32px_rgba(239,80,33,0.6)] group overflow-hidden drop-shadow-2xl border border-background/10"
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
         >
@@ -232,14 +232,14 @@ export default function Nav() {
       <div
         ref={menuRef}
         className={cn(
-          "fixed top-0 right-0 h-full bg-white transition-all duration-500 ease-in-out z-[99] px-6 pt-32 flex flex-col justify-between pb-10 md:rounded-l-3xl rounded-none shadow-2xl",
+          "fixed top-0 right-0 h-full bg-white transition-all duration-500 ease-in-out z-[99] px-5 pt-24 flex flex-col justify-between pb-8 md:rounded-l-2xl rounded-none shadow-2xl",
           isOpen
             ? "md:w-[45%] w-full translate-x-0"
             : "md:w-[45%] w-full translate-x-full",
         )}
         aria-hidden={!isOpen}
       >
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-2.5">
           <NavItem title="Home" href="/" index="01." onClick={closeMenu} />
           <NavItem title="Menu" href="/menu" index="02." onClick={closeMenu} />
           <NavItem
@@ -261,11 +261,11 @@ export default function Nav() {
             onClick={closeMenu}
           />
         </div>
-        <div className="text-3xl text-black">
-          <span className="text-accent text-xl tracking-tighter mb-4 mbn-item">
+        <div className="text-2xl text-black">
+          <span className="text-accent text-lg tracking-tighter mb-3 mbn-item">
             Socials
           </span>
-          <div className="flex flex-row gap-4 md:gap-6">
+          <div className="flex flex-row gap-3 md:gap-5">
             <div className="flex flex-row">
               <Link
                 href="https://www.instagram.com/flow__lounge/"

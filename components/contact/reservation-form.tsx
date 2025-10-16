@@ -55,7 +55,7 @@ export default function ReservationForm() {
             data.error || "Failed to submit reservation. Please try again.",
         });
       }
-    } catch (error) {
+    } catch {
       setReservationStatus({
         type: "error",
         message: "Failed to submit reservation. Please try again.",
@@ -87,14 +87,14 @@ export default function ReservationForm() {
 
   return (
     <div>
-      <h2 className="text-4xl md:text-5xl font-light text-foreground mb-8">
+      <h2 className="text-3xl md:text-4xl font-light text-foreground mb-6">
         Make a{" "}
         <span className="text-accent font-echelon italic">Reservation</span>
       </h2>
 
-      <form onSubmit={handleReservationSubmit} className="space-y-6">
+      <form onSubmit={handleReservationSubmit} className="space-y-5">
         <div>
-          <label htmlFor="name" className="block text-lg text-foreground/60 mb-2">
+          <label htmlFor="name" className="block text-base text-foreground/60 mb-1.5">
             Name
           </label>
           <input
@@ -104,14 +104,14 @@ export default function ReservationForm() {
             value={reservationData.name}
             onChange={handleReservationChange}
             required
-            className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
+            className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
             placeholder="Your name"
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="email" className="block text-lg text-foreground/60 mb-2">
+            <label htmlFor="email" className="block text-base text-foreground/60 mb-1.5">
               Email
             </label>
             <input
@@ -121,13 +121,13 @@ export default function ReservationForm() {
               value={reservationData.email}
               onChange={handleReservationChange}
               required
-              className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
+              className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
               placeholder="your@email.com"
             />
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-lg text-foreground/60 mb-2">
+            <label htmlFor="phone" className="block text-base text-foreground/60 mb-1.5">
               Phone Number
             </label>
             <input
@@ -137,7 +137,7 @@ export default function ReservationForm() {
               value={reservationData.phone}
               onChange={handleReservationChange}
               required
-              className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
+              className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
               placeholder="+30 123 456 7890"
             />
           </div>

@@ -48,16 +48,16 @@ export default function ActionButton({
       type={type}
       disabled={disabled}
       onClick={type === "submit" ? undefined : handleClick}
-      className={`flex flex-row bg-accent text-white text-xl md:text-2xl py-2 pl-4 pr-2 rounded-full gap-4 items-center hover:scale-105 transition-all duration-500 cursor-pointer group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${className}`}
+      className={`flex flex-row bg-accent text-white text-lg md:text-xl py-1.5 pl-3 pr-1.5 rounded-full gap-3 items-center hover:scale-105 transition-all duration-500 cursor-pointer group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ${className}`}
       {...props}
     >
       <div>{text}</div>
-      <div className="bg-white text-background rounded-full p-2 overflow-hidden relative w-9 h-9 shrink-0">
+      <div className="bg-white text-background rounded-full p-1.5 overflow-hidden relative w-7 h-7 shrink-0">
         <div className="absolute inset-0 flex items-center justify-center group-hover:translate-x-20 group-hover:-translate-y-20 transition-all duration-500 ease-in-out">
-          <Icon size={24} />
+          <Icon size={19} />
         </div>
         <div className="absolute inset-0 flex items-center justify-center -translate-x-20 translate-y-20 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-          <Icon size={24} />
+          <Icon size={19} />
         </div>
       </div>
     </button>

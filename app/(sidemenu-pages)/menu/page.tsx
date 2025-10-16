@@ -87,38 +87,43 @@ export default function MenuPage() {
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen pt-32 px-8 md:px-20 pb-20">
-      {/* Header */}
-      <div className="mb-16">
-        <h1
-          ref={titleRef}
-          className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter text-white mb-6"
-        >
-          Our{" "}
-          <span className="text-accent text-6xl md:text-9xl font-echelon italic  drop-shadow-[0_0_30px_rgba(239,80,33,0.5)]">
-            Menu
-          </span>
-        </h1>
+    <div ref={containerRef} className="min-h-screen pt-24 pb-16">
+      <div className="md:px-[4.8rem] px-[1.6rem] mx-auto">
+        {/* Header */}
+        <div className="mb-12">
+          <h1
+            ref={titleRef}
+            className="text-4xl md:text-5xl font-light tracking-tighter text-white mb-5"
+          >
+            Our{" "}
+            <span className="text-accent text-5xl md:text-[7.6rem] font-echelon italic drop-shadow-[0_0_24px_rgba(239,80,33,0.5)]">
+              Menu
+            </span>
+          </h1>
 
-        <p
-          ref={subtitleRef}
-          className="text-lg md:text-xl text-white/70 max-w-2xl font-light"
-        >
-          Discover our extensive menu, where classics meet modern creativity.
-        </p>
-      </div>
+          <p
+            ref={subtitleRef}
+            className="text-base md:text-lg text-white/70 max-w-2xl font-light"
+          >
+            Discover our extensive menu, where classics meet modern creativity.
+          </p>
+        </div>
 
-      {/* Menu Grid */}
-      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-        {menuCategories.map((category, index) => (
-          <MenuCard
-            key={index}
-            title={category.title}
-            description={category.description}
-            // imageUrl={category.imageUrl}
-            link={category.link}
-          />
-        ))}
+        {/* Menu Grid */}
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 md:grid-cols-4 gap-3 mb-5"
+        >
+          {menuCategories.map((category, index) => (
+            <MenuCard
+              key={index}
+              title={category.title}
+              description={category.description}
+              // imageUrl={category.imageUrl}
+              link={category.link}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

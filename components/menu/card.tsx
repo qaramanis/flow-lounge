@@ -47,9 +47,9 @@ export default function MenuCard({
   return (
     <div
       onClick={handleCardClick}
-      className={`menu-card relative w-full aspect-[2/3] rounded-sm overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-3xl hover:shadow-accent/10 opacity-0 ${className}`}
+      className={`menu-card relative w-full aspect-[2/3] rounded-[2px] overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-3xl hover:shadow-accent/10 opacity-0 ${className}`}
     >
-      <div className="absolute top-0 right-0 p-3 flex text-xl md:text-3xl text-accent bg-background/30 rounded-bl-xl font-bold z-10 ">
+      <div className="absolute top-0 right-0 p-2.5 flex text-lg md:text-2xl text-accent bg-background/30 rounded-bl-lg font-bold z-10 ">
         {price}
       </div>
 
@@ -66,17 +66,17 @@ export default function MenuCard({
         )}
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 bg-[#f3f3f2]/85 md:group-hover:bg-[#f3f3f2] transition-all duration-800 ease-in-out rounded-t-sm">
+      <div className="absolute bottom-0 left-0 right-0 bg-[#f3f3f2]/85 md:group-hover:bg-[#f3f3f2] transition-all duration-800 ease-in-out rounded-t-[2px]">
         <div className="relative overflow-hidden">
-          <div className="p-4">
-            <h3 className="text-2xl lg:text-3xl text-background mb-0 tracking-tight group-hover:text-accent transition-colors duration-300">
+          <div className="p-3">
+            <h3 className="text-xl lg:text-2xl text-background mb-0 tracking-tight group-hover:text-accent transition-colors duration-300">
               {title}
             </h3>
           </div>
 
-          <div className="h-full md:max-h-0 md:group-hover:max-h-32 transition-all duration-800 ease-in-out overflow-hidden">
-            <div className="px-4 pb-4">
-              <p className="text-background/60 text-sm lg:text-base leading-relaxed group-hover:text-background/80 transition-colors duration-300">
+          <div className="h-full md:max-h-0 md:group-hover:max-h-24 transition-all duration-800 ease-in-out overflow-hidden">
+            <div className="px-3 pb-3">
+              <p className="text-background/60 text-xs lg:text-sm leading-relaxed group-hover:text-background/80 transition-colors duration-300">
                 {description}
               </p>
             </div>
@@ -84,11 +84,11 @@ export default function MenuCard({
         </div>
       </div>
 
-      <div className="absolute inset-0 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-        <div className="absolute inset-[1px] rounded-sm border border-accent/20" />
+      <div className="absolute inset-0 rounded-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+        <div className="absolute inset-[1px] rounded-[2px] border border-accent/20" />
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
     </div>
   );
 }

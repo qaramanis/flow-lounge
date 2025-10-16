@@ -39,46 +39,46 @@ export default function ContactPage() {
   }, []);
 
   return (
-    <div ref={containerRef} className="pt-32 px-8 md:px-20 pb-20">
-      <div className="mb-12">
+    <div ref={containerRef} className="pt-24 px-6 md:px-16 pb-16">
+      <div className="mb-10">
         <h1
           ref={titleRef}
-          className="text-6xl md:text-8xl font-light tracking-tighter text-white mb-6"
+          className="text-5xl md:text-7xl font-light tracking-tighter text-white mb-5"
         >
           Get in{" "}
-          <span className="text-accent font-echelon italic text-7xl md:text-9xl drop-shadow-[0_0_40px_rgba(239,80,33,0.8)]">
+          <span className="text-accent font-echelon italic text-6xl md:text-8xl drop-shadow-[0_0_32px_rgba(239,80,33,0.8)]">
             Touch
           </span>
         </h1>
-        <p className="text-xl text-white/80 max-w-3xl">
+        <p className="text-lg text-white/80 max-w-3xl">
           Reach out to us for reservations, inquiries, or anything else you
           need.
         </p>
       </div>
 
       {/* Contact Information */}
-      <div ref={contentRef} className="space-y-8 max-w-4xl mb-16">
-        <div className="border-b border-white/15 pb-6">
-          <h2 className="text-xl text-white/60 mb-2">Name</h2>
-          <p className="text-3xl text-white font-light">Apostolos Karamanis</p>
+      <div ref={contentRef} className="space-y-6 max-w-4xl mb-12">
+        <div className="border-b border-white/15 pb-5">
+          <h2 className="text-lg text-white/60 mb-1.5">Name</h2>
+          <p className="text-2xl text-white font-light">Apostolos Karamanis</p>
         </div>
 
-        <div className="border-b border-white/15 pb-6">
-          <h2 className="text-xl text-white/60 mb-2">Phone</h2>
+        <div className="border-b border-white/15 pb-5">
+          <h2 className="text-lg text-white/60 mb-1.5">Phone</h2>
           <a
             href="tel:+30"
-            className="text-3xl text-white font-light hover:text-accent transition-colors duration-300"
+            className="text-2xl text-white font-light hover:text-accent transition-colors duration-300"
           >
             {/*+30 697 208 4941*/}
             <br /> +30 693 426 5802
           </a>
         </div>
 
-        <div className="border-b border-white/15 pb-6">
-          <h2 className="text-xl text-white/60 mb-2">Email</h2>
+        <div className="border-b border-white/15 pb-5">
+          <h2 className="text-lg text-white/60 mb-1.5">Email</h2>
           <a
             href="mailto:info@flowlounge.gr"
-            className="text-3xl text-white font-light hover:text-accent transition-colors duration-300"
+            className="text-2xl text-white font-light hover:text-accent transition-colors duration-300"
           >
             info@flowlounge.gr
           </a>
@@ -87,7 +87,7 @@ export default function ContactPage() {
 
       <div
         ref={formRef}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12"
       >
         <ContactForm />
         <ReservationForm />

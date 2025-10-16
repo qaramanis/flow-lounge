@@ -46,7 +46,7 @@ export default function ContactForm() {
           message: data.error || "Failed to send message. Please try again.",
         });
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: "error",
         message: "Failed to send message. Please try again.",
@@ -78,15 +78,15 @@ export default function ContactForm() {
 
   return (
     <div>
-      <h2 className="text-4xl md:text-5xl font-light text-foreground mb-8">
+      <h2 className="text-3xl md:text-4xl font-light text-foreground mb-6">
         Send us a{" "}
         <span className="text-accent font-echelon italic">Message</span>
       </h2>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="email" className="block text-lg text-foreground/60 mb-2">
+            <label htmlFor="email" className="block text-base text-foreground/60 mb-1.5">
               Your Email
             </label>
             <input
@@ -96,13 +96,13 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
+              className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
               placeholder="your@email.com"
             />
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-lg text-foreground/60 mb-2">
+            <label htmlFor="phone" className="block text-base text-foreground/60 mb-1.5">
               Phone Number
             </label>
             <input
@@ -112,14 +112,14 @@ export default function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
+              className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
               placeholder="+30 123 456 7890"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="subject" className="block text-lg text-foreground/60 mb-2">
+          <label htmlFor="subject" className="block text-base text-foreground/60 mb-1.5">
             Subject
           </label>
           <input
@@ -129,13 +129,13 @@ export default function ContactForm() {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
+            className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
             placeholder="What's this about?"
           />
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-lg text-foreground/60 mb-2">
+          <label htmlFor="message" className="block text-base text-foreground/60 mb-1.5">
             Message
           </label>
           <textarea
@@ -144,13 +144,13 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             required
-            rows={6}
-            className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300 resize-none"
+            rows={5}
+            className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300 resize-none"
             placeholder="Tell us more..."
           />
         </div>
 
-        <div className="flex flex-col w-fit md:flex-row gap-4 md:items-center">
+        <div className="flex flex-col w-fit md:flex-row gap-3 md:items-center">
           <ActionButton
             type="submit"
             text={isSubmitting ? "Sending..." : "Send Message"}
@@ -158,7 +158,7 @@ export default function ContactForm() {
             disabled={isSubmitting}
           />
 
-          <div className="flex-1 min-h-[56px] flex items-center">
+          <div className="flex-1 min-h-[44px] flex items-center">
             <AnimatePresence>
               {submitStatus.type && (
                 <motion.div
@@ -166,7 +166,7 @@ export default function ContactForm() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -10 }}
                   transition={{ duration: 0.3 }}
-                  className={`p-4 rounded-lg w-full ${
+                  className={`p-3 rounded-md w-full ${
                     submitStatus.type === "success"
                       ? "bg-green-500/10 border border-green-500/30 text-green-400"
                       : "bg-red-500/10 border border-red-500/30 text-red-400"

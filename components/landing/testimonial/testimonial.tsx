@@ -42,16 +42,16 @@ export default function TestimonialsSection() {
   return (
     <div
       ref={sectionRef}
-      className="min-h-screen flex items-center overflow-hidden bg-background md:p-[4rem] p-[2rem] py-[4rem]"
+      className="min-h-screen flex items-center overflow-hidden bg-background md:p-[3.2rem] p-[1.6rem] py-[3.2rem]"
     >
       <div
         ref={containerRef}
-        className="flex flex-col md:flex-row w-full max-w-7xl mx-auto gap-8 md:gap-12 md:h-[700px]"
+        className="flex flex-col md:flex-row w-full max-w-7xl mx-auto gap-6 md:gap-10 md:h-[560px]"
       >
         {/* Left side - Image with overlay */}
         <div
           ref={leftContentRef}
-          className="relative w-full md:w-[40%] h-[400px] md:h-full md:min-h-[700px] rounded-xl overflow-hidden group"
+          className="relative w-full md:w-[40%] h-[320px] md:h-full md:min-h-[560px] rounded-lg overflow-hidden group"
         >
           <div className="absolute inset-0 z-10" />
           <Image
@@ -62,9 +62,9 @@ export default function TestimonialsSection() {
           />
 
           {/* Floating stat card */}
-          <div className="absolute top-6 left-6 md:top-8 md:left-8 z-20">
-            <div className="bg-foreground/65 backdrop-blur-md p-4 md:p-6 rounded-lg shadow-2xl">
-              <div className="text-background text-4xl md:text-5xl lg:text-6xl font-bold flex items-baseline">
+          <div className="absolute top-5 left-5 md:top-6 md:left-6 z-20">
+            <div className="bg-foreground/65 backdrop-blur-md p-3 md:p-5 rounded-md shadow-2xl">
+              <div className="text-background text-3xl md:text-4xl lg:text-5xl font-bold flex items-baseline">
                 <CountUp
                   from={0}
                   to={200}
@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
                 />
                 <span className="text-accent ml-1">+</span>
               </div>
-              <p className="text-background/80 text-base md:text-lg mt-1 md:mt-2 font-medium">
+              <p className="text-background/80 text-sm md:text-base mt-1 md:mt-1.5 font-medium">
                 Unique Flavours
               </p>
             </div>
@@ -85,7 +85,7 @@ export default function TestimonialsSection() {
         {/* Right side - Dark card with Flow Lounge theme */}
         <div
           ref={rightContentRef}
-          className="flex flex-col w-full md:w-[60%] rounded-2xl md:rounded-3xl p-6 md:p-12 justify-center min-h-[450px] md:h-full md:min-h-[700px] relative overflow-hidden text-center items-center"
+          className="flex flex-col w-full md:w-[60%] rounded-xl md:rounded-2xl p-5 md:p-10 justify-center min-h-[360px] md:h-full md:min-h-[560px] relative overflow-hidden text-center items-center"
         >
           {/* Subtle pattern overlay */}
           <div className="absolute inset-0 opacity-30">
@@ -100,10 +100,10 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Main content */}
-          <div className="space-y-6 md:space-y-8 relative z-10 flex flex-col items-center">
+          <div className="space-y-5 md:space-y-6 relative z-10 flex flex-col items-center">
             <h2
               ref={titleRef}
-              className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+              className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
             >
               Guaranteed
               <br />
@@ -116,7 +116,7 @@ export default function TestimonialsSection() {
 
             <p
               ref={textRef}
-              className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-md"
+              className="text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed max-w-md"
             >
               Guided by your personal Shisha Master, discover the perfect mix of
               200+ premium flavors. Each shisha session is a unique experience
