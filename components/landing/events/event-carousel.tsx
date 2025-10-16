@@ -92,7 +92,7 @@ export default function EventCarousel({ events }: EventCarouselProps) {
       case "center":
         return {
           width: "50%",
-          height: isMobile ? "16rem" : "600px",
+          height: isMobile ? "16rem" : "550px",
           opacity: 1,
         };
       case "right":
@@ -109,7 +109,7 @@ export default function EventCarousel({ events }: EventCarouselProps) {
   return (
     <div className="relative">
       {/* Three Rectangle Layout */}
-      <div className="flex items-end justify-center gap-3 md:gap-6 h-64 md:h-[600px]">
+      <div className="flex items-end justify-center gap-3 md:gap-6 h-64 md:h-[550px]">
         {visibleEvents.map(({ event, position }) => {
           const isCenter = position === "center";
 

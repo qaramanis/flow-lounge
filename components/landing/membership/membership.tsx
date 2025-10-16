@@ -11,7 +11,7 @@ export default function MembershipSection() {
   return (
     <section
       ref={containerRef}
-      className="py-16 lg:py-24 lg:px-16 bg-transparent"
+      className="py-16 lg:py-24 lg:px-16 bg-transparent mb-16 lg:mb-24"
       id="specials"
     >
       <div className="md:px-[4.8rem] px-[1.6rem] mx-auto">
