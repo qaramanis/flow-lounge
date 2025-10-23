@@ -17,14 +17,14 @@ export default function MembershipSection() {
       <div className="md:px-[4.8rem] px-[1.6rem] mx-auto">
         <h2
           ref={titleRef}
-          className="text-4xl md:text-5xl leading-tight text-foreground text-center md:text-start border-b border-foreground/15 pb-10"
+          className="text-4xl md:text-5xl leading-tight text-foreground text-center md:text-start border-b border-foreground/15 pb-5 md:pb-10 mb-5"
         >
           Flow{" "}
           <a className="self-center text-5xl md:text-[5.6rem] font-echelon italic text-accent">
             Community
           </a>
         </h2>
-        <div className="h-full flex flex-col md:flex-row gap-5 p-3 mt-3">
+        <div className="h-full flex flex-col md:flex-row mt-3">
           <div className="md:w-[35%] h-[400px] rounded-lg">
             <Image
               src="/flow-lounge.svg"
@@ -36,7 +36,7 @@ export default function MembershipSection() {
           </div>
           <div className="flex flex-col md:w-[65%] md:h-[400px] h-[320px] rounded-lg gap-1.5">
             <div className="flex flex-col justify-between items-start md:items-start w-full h-full">
-              <div className="text-lg md:text-xl text-foreground leading-relaxed flex flex-col gap-8">
+              <div className="h-full justify-center text-lg md:text-xl text-foreground leading-relaxed flex flex-col gap-8 md:ml-[2rem]">
                 <div>
                   Become a member of the{" "}
                   <a className="font-bold text-accent">

@@ -16,23 +16,19 @@ export default function EventsSection() {
       className="py-16 lg:py-24 lg:px-16 bg-transparent"
       id="events"
     >
-      <div className="md:px-[4.8rem] px-[1.6rem]  mx-auto">
-        <div className="flex flex-col space-y-8 lg:space-y-12 items-center md:items-stretch">
-          <div className="space-y-5 flex flex-col md:flex-row justify-between items-center border-b border-foreground/15 pb-10">
-            <h2
-              ref={titleRef}
-              className="text-4xl md:text-5xl leading-tight text-foreground text-center md:text-start"
-            >
-              Keep Up With <br />
-              Our{" "}
-              <a className="self-center text-5xl md:text-[7.6rem] font-echelon italic text-accent">
-                Events
-              </a>
-            </h2>
-          </div>
+      <div className="md:px-[4.8rem] px-[1.6rem]">
+        <h2
+          ref={titleRef}
+          className="text-4xl md:text-5xl leading-tight text-foreground text-center md:text-start border-b border-foreground/15 pb-5 md:pb-10 mb-5"
+        >
+          Keep Up With <br />
+          Our{" "}
+          <a className="self-center text-5xl md:text-[7.6rem] font-echelon italic text-accent">
+            Events
+          </a>
+        </h2>
 
-          <EventCarousel events={events} eventsPerPage={3} />
-        </div>
+        <EventCarousel events={events} eventsPerPage={3} />
       </div>
     </section>
   );

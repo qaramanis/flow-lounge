@@ -16,6 +16,7 @@ interface EventCarouselProps {
 export default function EventCarousel({ events }: EventCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [autoplayResetKey, setAutoplayResetKey] = useState(0);
   const router = useRouter();
   const { lenis } = useLenis();
 
@@ -35,7 +36,7 @@ export default function EventCarousel({ events }: EventCarouselProps) {
     }, 10000);
 
     return () => clearInterval(autoplayInterval);
-  }, [events.length]);
+  }, [events.length, autoplayResetKey]);
 
   const getVisibleEvents = () => {
     const prevPrev = (currentIndex - 2 + events.length) % events.length;
@@ -57,10 +58,17 @@ export default function EventCarousel({ events }: EventCarouselProps) {
 
   const handlePrevious = () => {
     setCurrentIndex((prev) => (prev - 1 + events.length) % events.length);
+    setAutoplayResetKey((prev) => prev + 1);
   };
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % events.length);
+    setAutoplayResetKey((prev) => prev + 1);
+  };
+
+  const handleDotClick = (index: number) => {
+    setCurrentIndex(index);
+    setAutoplayResetKey((prev) => prev + 1);
   };
 
   const handleEventsRedirect = () => {
@@ -75,30 +83,49 @@ export default function EventCarousel({ events }: EventCarouselProps) {
 
   // Position-based layout variants
   const getPositionStyle = (position: string) => {
+    if (isMobile) {
+      // On mobile, only show center card
+      switch (position) {
+        case "center":
+          return {
+            width: "100%",
+            height: "20rem",
+            opacity: 1,
+          };
+        default:
+          return {
+            width: "0%",
+            height: "20rem",
+            opacity: 0,
+          };
+      }
+    }
+
+    // Desktop layout
     switch (position) {
       case "exit-left":
       case "exit-right":
         return {
           width: "0%",
-          height: isMobile ? "5rem" : "8rem",
+          height: "8rem",
           opacity: 0,
         };
       case "left":
         return {
-          width: "25%",
-          height: isMobile ? "10rem" : "16rem",
+          width: "28%",
+          height: "16rem",
           opacity: 0.6,
         };
       case "center":
         return {
-          width: "50%",
-          height: isMobile ? "16rem" : "550px",
+          width: "44%",
+          height: "550px",
           opacity: 1,
         };
       case "right":
         return {
-          width: "25%",
-          height: isMobile ? "10rem" : "16rem",
+          width: "28%",
+          height: "16rem",
           opacity: 0.6,
         };
       default:
@@ -107,9 +134,9 @@ export default function EventCarousel({ events }: EventCarouselProps) {
   };
 
   return (
-    <div className="relative">
+    <div className="relative w-full">
       {/* Three Rectangle Layout */}
-      <div className="flex items-end justify-center gap-3 md:gap-6 h-64 md:h-[550px]">
+      <div className="flex items-end justify-center gap-3 md:gap-6 h-80 md:h-[550px]">
         {visibleEvents.map(({ event, position }) => {
           const isCenter = position === "center";
 
@@ -154,17 +181,17 @@ export default function EventCarousel({ events }: EventCarouselProps) {
         <div className="flex items-center justify-center gap-3 mt-4">
           <button
             onClick={handlePrevious}
-            className="w-10 h-10 rounded-full bg-white/5 hover:bg-accent border border-white/10 hover:border-accent flex items-center justify-center transition-all duration-300 hover:scale-110 group cursor-pointer"
+            className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-accent border border-foreground/10 hover:border-accent flex items-center justify-center transition-all duration-300 hover:scale-110 group cursor-pointer"
             aria-label="Previous event"
           >
-            <ChevronLeft className="w-5 h-5 text-white group-hover:text-white transition-colors" />
+            <ChevronLeft className="w-5 h-5 text-foreground group-hover:text-background transition-colors" />
           </button>
 
           <div className="flex gap-1.5">
             {events.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => handleDotClick(index)}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
                   index === currentIndex
                     ? "w-6 bg-accent"
@@ -177,10 +204,10 @@ export default function EventCarousel({ events }: EventCarouselProps) {
 
           <button
             onClick={handleNext}
-            className="w-10 h-10 rounded-full bg-white/5 hover:bg-accent border border-white/10 hover:border-accent flex items-center justify-center transition-all duration-300 hover:scale-110 group cursor-pointer"
+            className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-accent border border-foreground/10 hover:border-accent flex items-center justify-center transition-all duration-300 hover:scale-110 group cursor-pointer"
             aria-label="Next event"
           >
-            <ChevronRight className="w-5 h-5 text-foreground group-hover:text-foreground transition-colors" />
+            <ChevronRight className="w-5 h-5 text-foreground group-hover:text-background transition-colors" />
           </button>
         </div>
       )}
