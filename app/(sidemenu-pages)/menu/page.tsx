@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import MenuCard from "@/components/menu/card";
+import { getMenuCategories } from "@/data/menu-categories";
 
 export default function MenuPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,52 +40,7 @@ export default function MenuPage() {
     return () => ctx.revert();
   }, []);
 
-  const menuCategories = [
-    {
-      title: "Hookah",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      link: "/hookah",
-    },
-    {
-      title: "Cocktails",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      link: "/menu/cocktails",
-    },
-    {
-      title: "Homemade Lemonades",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      link: "/menu/lemonades",
-    },
-    {
-      title: "Soft Drinks and Juices",
-      link: "/menu/soft-drinks",
-    },
-    {
-      title: "Tea and Coffee",
-      link: "/menu/tea-coffee",
-    },
-    {
-      title: "Drinks",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      link: "/menu/drinks",
-    },
-    {
-      title: "Wines",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      link: "/menu/wines",
-    },
-    {
-      title: "Beers and Ciders",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      link: "/menu/beers-ciders",
-    },
-  ];
+  const menuCategories = getMenuCategories();
 
   return (
     <div ref={containerRef} className="min-h-screen pt-24 pb-16">

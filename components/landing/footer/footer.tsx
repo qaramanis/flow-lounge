@@ -20,7 +20,7 @@ const footerData: FooterColumn[] = [
   {
     title: "Experience",
     links: [
-      { label: "Hookah", href: "#", isExternal: false },
+      { label: "Hookah", href: "/hookah", isExternal: false },
       { label: "Deals & Offers", href: "#", isExternal: false },
     ],
   },

@@ -167,8 +167,8 @@ export default function EventCarousel({ events }: EventCarouselProps) {
                 fill
                 className={`object-cover transition-all duration-500 ${
                   isCenter
-                    ? "group-hover:scale-105"
-                    : "brightness-75 group-hover:brightness-100"
+                    ? "group-hover:scale-102"
+                    : "brightness-50 group-hover:brightness-100"
                 }`}
               />
             </motion.div>

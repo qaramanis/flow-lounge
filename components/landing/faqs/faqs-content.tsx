@@ -46,7 +46,7 @@ export default function FaqsContent() {
       {faqs.map((faq, index) => (
         <div
           key={index}
-          className={`text-base bg-accent rounded-sm p-[0.8rem] cursor-pointer transition-all duration-300 ${expandedIndex === index ? "" : "hover:scale-102"}`}
+          className="text-base bg-accent rounded-sm p-[0.8rem] cursor-pointer transition-all duration-300"
           onClick={() => toggleExpanded(index)}
         >
           <div className="flex flex-row justify-between items-center gap-3 ">

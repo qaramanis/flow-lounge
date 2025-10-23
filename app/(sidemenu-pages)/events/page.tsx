@@ -36,7 +36,7 @@ export default function EventsPage() {
 
   return (
     <div ref={containerRef} className="pt-24 pb-16">
-      <div className="md:px-[4.8rem] px-[1.6rem] mx-auto">
+      <div className="md:px-[4.8rem] px-[1.6rem]">
         {/* Header */}
         <div className="mb-10">
           <h1
@@ -67,6 +67,15 @@ export default function EventsPage() {
             blurToFocus={true}
             colorShiftOnHover={false}
           />
+        </div>
+        <div className="text-center text-2xl">
+          Stay tuned!
+          <br />
+          More{" "}
+          <span className="text-transparent font-semibold bg-clip-text bg-gradient-to-r from-accent to-[#ff8c5a]">
+            events
+          </span>{" "}
+          coming soon!
         </div>
       </div>
     </div>

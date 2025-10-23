@@ -239,7 +239,7 @@ export default function Nav() {
         )}
         aria-hidden={!isOpen}
       >
-        <div className="flex flex-col gap-2.5">
+        <div className="flex flex-col gap-2.5 mt-8">
           <NavItem title="Home" href="/" index="01." onClick={closeMenu} />
           <NavItem title="Menu" href="/menu" index="02." onClick={closeMenu} />
           <NavItem
@@ -265,7 +265,7 @@ export default function Nav() {
           <span className="text-accent text-lg tracking-tighter mb-3 mbn-item">
             Socials
           </span>
-          <div className="flex flex-row gap-3 md:gap-5">
+          <div className="flex flex-row gap-3">
             <div className="flex flex-row">
               <Link
                 href="https://www.instagram.com/flow__lounge/"

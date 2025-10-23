@@ -6,13 +6,13 @@ import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
 import MenuCard from "@/components/menu/card";
 import {
-  getSignatureCocktails,
-  getClassicCocktails,
-  getAperitifs,
-  getMocktails,
-} from "@/data/cocktails";
+  getRedWines,
+  getWhiteWines,
+  getRoseWines,
+  getSparklingWines,
+} from "@/data/wines";
 
-export default function HookahPage() {
+export default function WinesPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -46,10 +46,10 @@ export default function HookahPage() {
     return () => ctx.revert();
   }, []);
 
-  const signatureCocktails = getSignatureCocktails();
-  const classicCocktails = getClassicCocktails();
-  const aperitifs = getAperitifs();
-  const mocktails = getMocktails();
+  const redWines = getRedWines();
+  const whiteWines = getWhiteWines();
+  const roseWines = getRoseWines();
+  const sparklingWines = getSparklingWines();
 
   return (
     <div ref={containerRef} className="pt-32 px-8 md:px-20 mb-12">
@@ -59,29 +59,29 @@ export default function HookahPage() {
       >
         Our{" "}
         <a className="text-accent font-echelon italic text-6xl md:text-9xl">
-          Cocktail
+          Wine
         </a>{" "}
-        List
+        Selection
       </h1>
 
-      {/* Signature Cocktails */}
+      {/* Red Wines */}
       <div className="self-center items-center text-center mb-8 mt-24 md:mb-16 md:mt-36">
-        <h1 className="text-5xl md:text-7xl">Signature Cocktails</h1>
+        <h1 className="text-5xl md:text-7xl">Red Wines</h1>
       </div>
       <div
         ref={gridRef}
         className="flex flex-wrap justify-center gap-6 lg:gap-8"
       >
-        {signatureCocktails.map((cocktail, index) => (
+        {redWines.map((wine, index) => (
           <div
             key={index}
             className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
           >
             <MenuCard
-              title={cocktail.title}
-              description={cocktail.description}
-              // imageUrl={cocktail.imageUrl}
-              price={cocktail.price}
+              title={wine.title}
+              description={wine.description}
+              // imageUrl={wine.imageUrl}
+              price={wine.price}
             />
           </div>
         ))}
@@ -89,24 +89,24 @@ export default function HookahPage() {
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
 
-      {/* Classic Cocktails */}
+      {/* White Wines */}
       <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
-        <h1 className="text-5xl md:text-7xl">Classic Cocktails</h1>
+        <h1 className="text-5xl md:text-7xl">White Wines</h1>
       </div>
       <div
         ref={gridRef}
         className="flex flex-wrap justify-center gap-6 lg:gap-8"
       >
-        {classicCocktails.map((cocktail, index) => (
+        {whiteWines.map((wine, index) => (
           <div
             key={index}
             className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
           >
             <MenuCard
-              title={cocktail.title}
-              description={cocktail.description}
-              // imageUrl={cocktail.imageUrl}
-              price={cocktail.price}
+              title={wine.title}
+              description={wine.description}
+              // imageUrl={wine.imageUrl}
+              price={wine.price}
             />
           </div>
         ))}
@@ -114,24 +114,24 @@ export default function HookahPage() {
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
 
-      {/* Aperitifs */}
+      {/* Rosé Wines */}
       <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
-        <h1 className="text-5xl md:text-7xl">Aperitifs</h1>
+        <h1 className="text-5xl md:text-7xl">Rosé Wines</h1>
       </div>
       <div
         ref={gridRef}
         className="flex flex-wrap justify-center gap-6 lg:gap-8"
       >
-        {aperitifs.map((aperitif, index) => (
+        {roseWines.map((wine, index) => (
           <div
             key={index}
             className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
           >
             <MenuCard
-              title={aperitif.title}
-              description={aperitif.description}
-              // imageUrl={aperitif.imageUrl}
-              price={aperitif.price}
+              title={wine.title}
+              description={wine.description}
+              // imageUrl={wine.imageUrl}
+              price={wine.price}
             />
           </div>
         ))}
@@ -139,24 +139,24 @@ export default function HookahPage() {
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
 
-      {/* Mocktails */}
+      {/* Sparkling Wines */}
       <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
-        <h1 className="text-5xl md:text-7xl">Mocktails</h1>
+        <h1 className="text-5xl md:text-7xl">Sparkling Wines</h1>
       </div>
       <div
         ref={gridRef}
         className="flex flex-wrap justify-center gap-6 lg:gap-8"
       >
-        {mocktails.map((mocktail, index) => (
+        {sparklingWines.map((wine, index) => (
           <div
             key={index}
             className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
           >
             <MenuCard
-              title={mocktail.title}
-              description={mocktail.description}
-              // imageUrl={mocktail.imageUrl}
-              price={mocktail.price}
+              title={wine.title}
+              description={wine.description}
+              // imageUrl={wine.imageUrl}
+              price={wine.price}
             />
           </div>
         ))}

@@ -5,6 +5,10 @@ import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
 import MenuCard from "@/components/menu/card";
+import {
+  getHookahCategories,
+  getRefillCategories,
+} from "@/data/hookah";
 
 export default function HookahPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,66 +43,8 @@ export default function HookahPage() {
     return () => ctx.revert();
   }, []);
 
-  const hookahCategories = [
-    {
-      title: "Classic",
-      description:
-        "Μεγάλη ποικιλία γεύσεων ξανθού καπνού. Συστήνεται είτε για αρχάριους, είτε για εκείνους που δεν έχουν μεγάλη εμπειρία.",
-      // imageUrl: "/images/hookah/hookah-classic.webp",
-      price: "14.00 €",
-    },
-    {
-      title: "Premium",
-      description:
-        "Σειρά ξανθών καπνών. Συστήνεται για εκείνους που τους αρέσει ο ξανθός καπνός και θέλουν το κάτι παραπάνω",
-      // imageUrl: "/images/hookah/hookah-premium.webp",
-      price: "18.00 €",
-    },
-    {
-      title: "Exclusive",
-      description:
-        "Τεράστια ποικιλία μαύρου καπνού, από φύλλα Virginia, Burley, Συστήνεται για καπνιστές.",
-      // imageUrl: "/images/hookah/hookah-exclusive.webp",
-      price: "24.00 €",
-    },
-    {
-      title: "Ultra",
-      description:
-        "Απολαύστε εξοτικές γεύσεις με εκλεπτυσμένα καπνικά στοιχεία, συμπληρωμένα με αρώματα πούρου. Μια ultra εμπειρία από την αρχή ως το τέλος.",
-      // imageUrl: "/images/hookah/hookah-ultra.webp",
-      price: "34.00 €",
-    },
-  ];
-
-  const refillCategories = [
-    {
-      title: "Classic",
-      description:
-        "Μεγάλη ποικιλία γεύσεων ξανθού καπνού. Συστήνεται είτε για αρχάριους, είτε για εκείνους που δεν έχουν μεγάλη εμπειρία.",
-      // imageUrl: "/images/hookah/refill-classic.webp",
-      price: "7.00 €",
-    },
-    {
-      title: "Premium",
-      description: "Refill Premium γεύσης στον ναργιλές σας",
-      // imageUrl: "/images/hookah/refill-classic.webp",
-      price: "9.00 €",
-    },
-    {
-      title: "Exclusive",
-      description:
-        "Τεράστια ποικιλία μαύρου καπνού, από φύλλα Virginia, Burley, Συστήνεται για καπνιστές.",
-      // imageUrl: "/images/hookah/refill-exclusive.webp",
-      price: "12.00 €",
-    },
-    {
-      title: "Ultra",
-      description:
-        "Απολαύστε εξοτικές γεύσεις με εκλεπτυσμένα καπνικά στοιχεία, συμπληρωμένα με αρώματα πούρου. Μια ultra εμπειρία από την αρχή ως το τέλος.",
-      // imageUrl: "/images/hookah/refill-ultra.webp",
-      price: "20.00 €",
-    },
-  ];
+  const hookahCategories = getHookahCategories();
+  const refillCategories = getRefillCategories();
 
   return (
     <div ref={containerRef} className="pt-24 mb-10">
@@ -117,8 +63,8 @@ export default function HookahPage() {
           </span>
         </h1>
 
-        <div className="self-center items-center text-center mb-6 mt-20 md:mb-10 md:mt-28">
-          <h2 className="text-4xl md:text-5xl">Hookah</h2>
+        <div className="self-center items-center text-center mb-8 mt-24 md:mb-16 md:mt-36">
+          <h1 className="text-5xl md:text-7xl">Hookah</h1>
         </div>
         <div
           ref={gridRef}
@@ -137,8 +83,8 @@ export default function HookahPage() {
 
         <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-20" />
 
-        <div className="self-center items-center text-center mb-6 mt-20 md:mb-12 md:mt-10">
-          <h2 className="text-4xl md:text-5xl">Refill Bowls</h2>
+        <div className="self-center items-center text-center mb-8 mt-24 md:mb-16 md:mt-36">
+          <h1 className="text-5xl md:text-7xl">Refill Bowls</h1>
         </div>
         <div
           ref={gridRef}
