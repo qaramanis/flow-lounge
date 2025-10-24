@@ -52,38 +52,41 @@ export function Calendar22({
 
   return (
     <div>
-      <label htmlFor={id} className="block text-lg text-foreground/60 mb-2">
+      <label htmlFor={id} className="block text-base text-foreground/60 mb-1.5">
         {label}
       </label>
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            id={id}
-            type="button"
-            className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground hover:text-foreground hover:bg-foreground/10 hover:border-accent focus:outline-none focus:border-accent transition-colors duration-300 justify-between font-normal h-auto text-base"
-          >
-            <span className={selectedDate ? "" : "text-foreground/40"}>
-              {selectedDate ? selectedDate.toLocaleDateString() : placeholder}
-            </span>
-            <ChevronDownIcon className="opacity-60 h-5 w-5" />
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-auto overflow-hidden p-0" align="start">
-          <Calendar
-            mode="single"
-            selected={selectedDate}
-            captionLayout="dropdown"
-            onSelect={handleSelect}
-            disabled={(date) => (minDate ? date < minDate : false)}
-            fromDate={minDate}
-            classNames={{
-              today:
-                "bg-accent/40 text-foreground rounded-md data-[selected=true]:rounded-none",
-            }}
-          />
-        </PopoverContent>
-      </Popover>
+      <div className="group relative">
+        <Popover open={open} onOpenChange={setOpen}>
+          <PopoverTrigger asChild>
+            <Button
+              variant="ghost"
+              id={id}
+              type="button"
+              className="w-full bg-foreground/5 hover:bg-foreground/5 rounded-t-sm rounded-b-none border-b border-foreground/15 px-3 py-2.5 text-foreground focus:outline-none transition-colors duration-300 justify-between font-normal h-auto text-base"
+            >
+              <span className={selectedDate ? "" : "text-foreground/40"}>
+                {selectedDate ? selectedDate.toLocaleDateString() : placeholder}
+              </span>
+              <ChevronDownIcon className="opacity-60 h-5 w-5" />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-auto overflow-hidden p-0" align="start">
+            <Calendar
+              mode="single"
+              selected={selectedDate}
+              captionLayout="dropdown"
+              onSelect={handleSelect}
+              disabled={(date) => (minDate ? date < minDate : false)}
+              fromDate={minDate}
+              classNames={{
+                today:
+                  "bg-accent/40 text-foreground rounded-md data-[selected=true]:rounded-none",
+              }}
+            />
+          </PopoverContent>
+        </Popover>
+        <div className="absolute bottom-0 left-0 h-[1px] bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
+      </div>
     </div>
   );
 }

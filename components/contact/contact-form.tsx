@@ -86,68 +86,92 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="email" className="block text-base text-foreground/60 mb-1.5">
+            <label
+              htmlFor="email"
+              className="block text-base text-foreground/60 mb-1.5"
+            >
               Your Email
             </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
-              placeholder="your@email.com"
-            />
+            <div className="group relative">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full bg-foreground/5 rounded-t-sm focus:bg-accent/25 border-b border-foreground/15 px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300 group"
+                placeholder="your@email.com"
+              />
+              <div className="absolute bottom-0 left-0 h-[1px] bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
+            </div>
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-base text-foreground/60 mb-1.5">
+            <label
+              htmlFor="phone"
+              className="block text-base text-foreground/60 mb-1.5"
+            >
               Phone Number
             </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
-              placeholder="+30 123 456 7890"
-            />
+            <div className="group relative">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full bg-foreground/5 rounded-t-sm focus:bg-accent/25 border-b border-foreground/15 px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300 group"
+                placeholder="+30 123 456 7890"
+              />
+              <div className="absolute bottom-0 left-0 h-[1px] bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
+            </div>
           </div>
         </div>
 
         <div>
-          <label htmlFor="subject" className="block text-base text-foreground/60 mb-1.5">
+          <label
+            htmlFor="subject"
+            className="block text-base text-foreground/60 mb-1.5"
+          >
             Subject
           </label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-            className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
-            placeholder="What's this about?"
-          />
+          <div className="group relative">
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+              className="w-full bg-foreground/5 rounded-t-sm focus:bg-accent/25 border-b border-foreground/15 px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300 group"
+              placeholder="What's this about?"
+            />
+            <div className="absolute bottom-0 left-0 h-[1px] bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
+          </div>
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-base text-foreground/60 mb-1.5">
+          <label
+            htmlFor="message"
+            className="block text-base text-foreground/60 mb-1.5"
+          >
             Message
           </label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            rows={5}
-            className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300 resize-none"
-            placeholder="Tell us more..."
-          />
+          <div className="group relative">
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows={5}
+              className="w-full bg-foreground/5 rounded-t-sm focus:bg-accent/25 border-b border-foreground/15 px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300 resize-none group"
+              placeholder="Tell us more..."
+            />
+            <div className="absolute bottom-0.5 left-0 h-[1px] bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
+          </div>
         </div>
 
         <div className="flex flex-col w-fit md:flex-row gap-3 md:items-center">

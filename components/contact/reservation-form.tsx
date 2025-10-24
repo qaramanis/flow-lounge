@@ -94,89 +94,111 @@ export default function ReservationForm() {
 
       <form onSubmit={handleReservationSubmit} className="space-y-5">
         <div>
-          <label htmlFor="name" className="block text-base text-foreground/60 mb-1.5">
+          <label
+            htmlFor="name"
+            className="block text-base text-foreground/60 mb-1.5"
+          >
             Name
           </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={reservationData.name}
-            onChange={handleReservationChange}
-            required
-            className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
-            placeholder="Your name"
-          />
+          <div className="group relative">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={reservationData.name}
+              onChange={handleReservationChange}
+              required
+              className="w-full bg-foreground/5 rounded-t-sm focus:bg-accent/25 border-b border-foreground/15 px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300 group"
+              placeholder="Your name"
+            />
+            <div className="absolute bottom-0 left-0 h-[1px] bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="email" className="block text-base text-foreground/60 mb-1.5">
+            <label
+              htmlFor="email"
+              className="block text-base text-foreground/60 mb-1.5"
+            >
               Email
             </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={reservationData.email}
-              onChange={handleReservationChange}
-              required
-              className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
-              placeholder="your@email.com"
-            />
+            <div className="group relative">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={reservationData.email}
+                onChange={handleReservationChange}
+                required
+                className="w-full bg-foreground/5 rounded-t-sm focus:bg-accent/25 border-b border-foreground/15 px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300 group"
+                placeholder="your@email.com"
+              />
+              <div className="absolute bottom-0 left-0 h-[1px] bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
+            </div>
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-base text-foreground/60 mb-1.5">
+            <label
+              htmlFor="phone"
+              className="block text-base text-foreground/60 mb-1.5"
+            >
               Phone Number
             </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={reservationData.phone}
-              onChange={handleReservationChange}
-              required
-              className="w-full bg-foreground/5 border border-foreground/15 rounded-md px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300"
-              placeholder="+30 123 456 7890"
-            />
+            <div className="group relative">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={reservationData.phone}
+                onChange={handleReservationChange}
+                required
+                className="w-full bg-foreground/5 rounded-t-sm focus:bg-accent/25 border-b border-foreground/15 px-3 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-accent transition-colors duration-300 group"
+                placeholder="+30 123 456 7890"
+              />
+              <div className="absolute bottom-0 left-0 h-[1px] bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
+            </div>
           </div>
         </div>
 
         <Calendar22
           label="Date"
           value={reservationData.date}
-          onChange={(date) =>
-            setReservationData({ ...reservationData, date })
-          }
+          onChange={(date) => setReservationData({ ...reservationData, date })}
           minDate={new Date()}
           required
         />
 
         <div>
-          <label htmlFor="people" className="block text-lg text-foreground/60 mb-2">
+          <label
+            htmlFor="people"
+            className="block text-base text-foreground/60 mb-1.5"
+          >
             Number of People
           </label>
-          <select
-            id="people"
-            name="people"
-            value={reservationData.people}
-            onChange={handleReservationChange}
-            required
-            className="w-full bg-foreground/5 border border-foreground/15 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-accent transition-colors duration-300 appearance-none cursor-pointer"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "right 1rem center",
-              backgroundSize: "1.5rem",
-            }}
-          >
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-              <option key={num} value={num}>
-                {num} {num === 1 ? "Person" : "People"}
-              </option>
-            ))}
-          </select>
+          <div className="group relative">
+            <select
+              id="people"
+              name="people"
+              value={reservationData.people}
+              onChange={handleReservationChange}
+              required
+              className="w-full bg-foreground/5 rounded-t-sm border-b border-foreground/15 px-3 py-2.5 text-foreground focus:outline-none transition-colors duration-300 appearance-none cursor-pointer group"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "right 1rem center",
+                backgroundSize: "1.5rem",
+              }}
+            >
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                <option key={num} value={num}>
+                  {num} {num === 1 ? "Person" : "People"}
+                </option>
+              ))}
+            </select>
+            <div className="absolute bottom-0 left-0 h-[1px] bg-accent w-0 group-hover:w-full transition-all duration-500 ease-in-out" />
+          </div>
         </div>
 
         <div className="flex flex-col w-fit md:flex-row gap-4 md:items-center">

@@ -15,7 +15,7 @@ interface MenuCardProps {
 
 export default function MenuCard({
   title,
-  description,
+  description = "",
   imageUrl = "/flow-lounge.svg",
   className = "",
   link = "#",
@@ -69,7 +69,7 @@ export default function MenuCard({
       <div className="absolute bottom-0 left-0 right-0 bg-[#f3f3f2]/85 md:group-hover:bg-[#f3f3f2] transition-all duration-800 ease-in-out rounded-t-2xl">
         <div className="relative overflow-hidden">
           <div className="p-3">
-            <h3 className="text-xl lg:text-2xl font-semibold text-background mb-0 tracking-tight group-hover:text-accent transition-colors duration-300">
+            <h3 className="text-xl lg:text-2xl font-medium text-background mb-0 tracking-tight group-hover:text-accent transition-colors duration-200">
               {title}
             </h3>
           </div>
@@ -77,7 +77,7 @@ export default function MenuCard({
           <div className="h-full md:max-h-0 md:group-hover:max-h-36 transition-all duration-800 ease-in-out overflow-hidden">
             <div className="px-3 pb-3">
               <div className="text-background/60 text-sm lg:text-base leading-relaxed group-hover:text-background/80 transition-colors duration-300">
-                <div className="text-background font-semibold whitespace-pre-line">
+                <div className="text-background whitespace-pre-line">
                   {price}
                 </div>
                 {description}
