@@ -226,7 +226,7 @@ export default function PrivacyPolicyPage() {
           <li>Providers certified under the EU-U.S. Data Privacy Framework</li>
         </ul>
         <h2 className="text-3xl font-light text-white mt-12 mb-4">
-          9. Children's Privacy
+          9. Children&apos;s Privacy
         </h2>
         <p>
           Our services are not directed to individuals under 16 years of age. We
@@ -261,7 +261,7 @@ export default function PrivacyPolicyPage() {
         <ul className="list-disc pl-4">
           <br />
           <li>Posting the new policy on this page</li>
-          <li>Updating the "Last Updated" date</li>
+          <li>Updating the &quot;Last Updated&quot; date</li>
           <li>
             Sending an email to newsletter subscribers and members (for
             significant changes)
