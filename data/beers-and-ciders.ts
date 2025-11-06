@@ -25,14 +25,14 @@ const beers: MenuItem[] = [
     price: "5.50 €",
   },
   {
-    title: "Ali Ipa",
-    description: "330ml",
-    price: "5.50 €",
+    title: "56 Lager",
+    description: "500ml",
+    price: "6.00 €",
   },
   {
-    title: "Marmita Red Ale",
+    title: "56 Isles Pilsner",
     description: "330ml",
-    price: "5.50 €",
+    price: "6.00 €",
   },
   {
     title: "Blame the Sun Beach Bum",
@@ -40,14 +40,9 @@ const beers: MenuItem[] = [
     price: "6.50 €",
   },
   {
-    title: "Franziskaner Weissbier",
+    title: "Vergina Weiss",
     description: "500ml",
-    price: "6.50 €",
-  },
-  {
-    title: "Surmena Raspberry Shower",
-    description: "500ml",
-    price: "9.00 €",
+    price: "5.50 €",
   },
   {
     title: "Radler",

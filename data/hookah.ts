@@ -12,77 +12,44 @@ const hookahCategories: MenuItem[] = [
   {
     title: "Classic",
     description:
-      "Μεγάλη ποικιλία γεύσεων ξανθού καπνού. Συστήνεται είτε για αρχάριους, είτε για εκείνους που δεν έχουν μεγάλη εμπειρία.",
-    price: "14.00 €",
+      "Μεγάλη ποικιλία γεύσεων ξανθού καπνού, συστήνεται για εκείνους που δεν είναι εξοικειωμένοι!",
+    price: "In house - 16.00 € \n Bowl to go - 6.00€",
   },
   {
     title: "Premium",
     description:
-      "Σειρά ξανθών καπνών. Συστήνεται για εκείνους που τους αρέσει ο ξανθός καπνός και θέλουν το κάτι παραπάνω",
-    price: "18.00 €",
+      "Μεγαλύτερο εύρος ποικιλίας καπνών ξανθών και μαύρων, συστήνεται για εκείνους που θέλουν να πειραματιστούν και να γνωρίσουν νέες γεύσεις!",
+    price: "In house - 20.00 € \n Bowl to go - 7.00€",
   },
   {
     title: "Exclusive",
     description:
-      "Τεράστια ποικιλία μαύρου καπνού, από φύλλα Virginia, Burley, Συστήνεται για καπνιστές.",
-    price: "24.00 €",
+      "Τεράστια ποικιλία μαύρου καπνού, από φύλλα Virginia, Burley. Μια Exclusive εμπειρία από την αρχή ως το τέλος!",
+    price: "In house - 26.00 € \n Bowl to go - 9.00€",
   },
   {
     title: "Ultra",
     description:
-      "Απολαύστε εξοτικές γεύσεις με εκλεπτυσμένα καπνικά στοιχεία, συμπληρωμένα με αρώματα πούρου. Μια ultra εμπειρία από την αρχή ως το τέλος.",
-    price: "34.00 €",
+      "Απολαύστε αυθεντικό ναργιλέ με εκλεπτυσμένα καπνικά στοιχεία και  γευστικές απολαύσεις, συμπληρωμένα με αρώματα πούρου. Συστήνεται για έμπειρους καπνιστές ή για εκείνους που αναζητούν βαρύ κάπνισμα του ναργιλέ ως προς την νικοτίνη!",
+    price: "In house - 34.00 € \n Bowl to go - 12.00€",
   },
 ];
 
 /**
- * Refill Categories
- */
-const refillCategories: MenuItem[] = [
-  {
-    title: "Classic",
-    description:
-      "Μεγάλη ποικιλία γεύσεων ξανθού καπνού. Συστήνεται είτε για αρχάριους, είτε για εκείνους που δεν έχουν μεγάλη εμπειρία.",
-    price: "7.00 €",
-  },
-  {
-    title: "Premium",
-    description: "Refill Premium γεύσης στον ναργιλές σας",
-    price: "9.00 €",
-  },
-  {
-    title: "Exclusive",
-    description:
-      "Τεράστια ποικιλία μαύρου καπνού, από φύλλα Virginia, Burley, Συστήνεται για καπνιστές.",
-    price: "12.00 €",
-  },
-  {
-    title: "Ultra",
-    description:
-      "Απολαύστε εξοτικές γεύσεις με εκλεπτυσμένα καπνικά στοιχεία, συμπληρωμένα με αρώματα πούρου. Μια ultra εμπειρία από την αρχή ως το τέλος.",
-    price: "20.00 €",
-  },
-];
-
-/**
- * All hookah categories with refills
+ * All hookah categories
  */
 export const allHookahCategories: HookahCategory[] = [
   {
     name: "Hookah",
     items: hookahCategories,
   },
-  {
-    name: "Refill Bowls",
-    items: refillCategories,
-  },
 ];
 
 /**
- * Get all hookah items (both hookahs and refills)
+ * Get all hookah items
  */
 export const getAllHookahItems = (): MenuItem[] => {
-  return [...hookahCategories, ...refillCategories];
+  return hookahCategories;
 };
 
 /**
@@ -90,13 +57,6 @@ export const getAllHookahItems = (): MenuItem[] => {
  */
 export const getHookahCategories = (): MenuItem[] => {
   return hookahCategories;
-};
-
-/**
- * Get refill categories
- */
-export const getRefillCategories = (): MenuItem[] => {
-  return refillCategories;
 };
 
 /**

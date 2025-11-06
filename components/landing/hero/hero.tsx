@@ -98,10 +98,13 @@ export default function HeroSection() {
         {/* Subtitle */}
         <p
           ref={subtitleRef}
-          className="text-sm md:text-lg text-foreground max-w-2xl mx-auto mb-10 font-light"
+          className="text-sm md:text-xl text-foreground max-w-2xl mx-auto mb-10 font-light"
         >
-          Take a step into the world of hookah <br /> and discover all the
-          unique combinations of flavors
+          Our mission is to bring people joy
+          <br />
+          Allow yourself to escape from the noise of everyday life
+          <br />
+          and enjoy the moment.
         </p>
 
         <div ref={ctaContainerRef} className="flex gap-3 justify-center">

@@ -75,7 +75,7 @@ export default function MenuPage() {
               key={index}
               title={category.title}
               description={category.description}
-              // imageUrl={category.imageUrl}
+              imageUrl={category.imageUrl}
               link={category.link}
             />
           ))}

@@ -52,13 +52,13 @@ export default function SpecialsSection() {
               </div>
             </div>
           </div>
-          <div className="md:w-[45%] h-[400px] rounded-lg">
+          <div className="md:w-[45%] self-center h-[400px] rounded-lg overflow-hidden">
             <Image
-              src="/flow-lounge.svg"
+              src="/images/landing/specials1.jpg"
               alt="Flow Lounge Hookah"
-              height={400}
-              width={400}
-              className="object-fit"
+              height={800}
+              width={800}
+              className="object-cover object-center h-full w-full"
             />
           </div>
         </div>

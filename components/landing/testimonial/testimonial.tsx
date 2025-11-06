@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
         >
           <div className="absolute inset-0 z-10" />
           <Image
-            src="/flow-lounge.svg"
+            src="/images/landing/testimonial1.jpg"
             alt="Flow Lounge Hookah Experience"
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -116,11 +116,14 @@ export default function TestimonialsSection() {
 
             <p
               ref={textRef}
-              className="text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed max-w-md"
+              className="text-gray-400 text-xs sm:text-sm md:text-lg leading-relaxed max-w-md"
             >
-              Guided by your personal Shisha Master, discover the perfect mix of
-              200+ premium flavors. Each shisha session is a unique experience
-              tailored to your preferences.
+              Join us in the world of hookah and get dvice from your personal{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#ff8c5a]">
+                Hookah Master
+              </span>{" "}
+              ,enjoy the perfect mix tailored to your liking and elevate your
+              experience at Flow Lounge
             </p>
 
             {/* Learn More Button with Flow Lounge style */}

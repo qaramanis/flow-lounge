@@ -26,23 +26,23 @@ export default function JoinSection() {
           </a>
         </h2>
         <div className="h-full flex flex-col md:flex-row gap-10 p-3 mt-3">
-          <div className="w-full md:w-[45%] md:h-[400px] rounded-lg flex items-center justify-center order-3 md:order-1">
+          <div className="w-full md:w-[45%] md:h-[400px] rounded-lg overflow-hidden flex items-center justify-center order-3 md:order-1">
             <Image
-              src="/flow-lounge.svg"
+              src="/images/landing/team.jpg"
               alt="Flow Lounge Hookah"
               height={400}
               width={400}
-              className="object-fill"
+              className="object-cover object-center h-full w-full"
             />
           </div>
           <div className="flex flex-col w-full md:w-[55%] md:h-[400px] rounded-lg gap-3 order-2">
             <div className="flex flex-col w-full h-[160px] md:h-[40%] rounded-lg items-center overflow-clip justify-center order-1 md:order-1">
               <Image
-                src="/flow-lounge.svg"
+                src="/images/landing/team2.jpg"
                 alt="Flow Lounge Hookah"
-                height={140}
-                width={220}
-                className="object-fit"
+                height={1200}
+                width={1200}
+                className="object-cover object-center h-full w-full"
               />
             </div>
             <div className="flex flex-col w-full md:h-[60%] order-2 md:order-2 gap-5">

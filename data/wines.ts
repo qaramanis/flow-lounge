@@ -64,16 +64,8 @@ const sparklingWines: MenuItem[] = [
  */
 export const wineCategories: WinesCategory[] = [
   {
-    name: "Red Wines",
-    items: redWines,
-  },
-  {
-    name: "White Wines",
-    items: whiteWines,
-  },
-  {
-    name: "Rosé Wines",
-    items: roseWines,
+    name: "Wines",
+    items: [...redWines, ...whiteWines, ...roseWines],
   },
   {
     name: "Sparkling Wines",

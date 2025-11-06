@@ -74,10 +74,10 @@ export default function MenuCard({
             </h3>
           </div>
 
-          <div className="h-full md:max-h-0 md:group-hover:max-h-36 transition-all duration-800 ease-in-out overflow-hidden">
+          <div className="h-full md:max-h-0 md:group-hover:max-h-64 transition-all duration-800 ease-in-out overflow-hidden">
             <div className="px-3 pb-3">
               <div className="text-background/60 text-sm lg:text-base leading-relaxed group-hover:text-background/80 transition-colors duration-300">
-                <div className="text-background whitespace-pre-line">
+                <div className="text-background font-semibold whitespace-pre-line">
                   {price}
                 </div>
                 {description}
