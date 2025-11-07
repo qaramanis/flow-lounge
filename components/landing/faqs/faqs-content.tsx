@@ -25,11 +25,16 @@ const faqs: FAQ[] = [
       description:
         "We have a wide variety of beers available, including IPAs, Stouts, Lagers and more. Our suggestions are:",
       items: [
-        "Ali Ipa",
         "Marmita Red Ale",
         "Blame the Sun Beach Bum",
         "Surmena Raspberry Shower",
       ],
+    },
+  },
+  {
+    question: "What is so special about the tea?",
+    answer: {
+      description: "@TODO",
     },
   },
 ];

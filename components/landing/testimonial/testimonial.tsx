@@ -118,11 +118,11 @@ export default function TestimonialsSection() {
               ref={textRef}
               className="text-gray-400 text-xs sm:text-sm md:text-lg leading-relaxed max-w-md"
             >
-              Join us in the world of hookah and get dvice from your personal{" "}
+              Join us in the world of hookah and get advice from your personal{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#ff8c5a]">
                 Hookah Master
-              </span>{" "}
-              ,enjoy the perfect mix tailored to your liking and elevate your
+              </span>
+              , enjoy the perfect mix tailored to your liking and elevate your
               experience at Flow Lounge
             </p>
 

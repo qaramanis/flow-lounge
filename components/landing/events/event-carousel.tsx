@@ -88,14 +88,14 @@ export default function EventCarousel({ events }: EventCarouselProps) {
       switch (position) {
         case "center":
           return {
-            width: "100%",
-            height: "20rem",
+            width: "240px",
+            height: "320px",
             opacity: 1,
           };
         default:
           return {
             width: "0%",
-            height: "20rem",
+            height: "320px",
             opacity: 0,
           };
       }
@@ -118,7 +118,7 @@ export default function EventCarousel({ events }: EventCarouselProps) {
         };
       case "center":
         return {
-          width: "44%",
+          width: "412.5px",
           height: "550px",
           opacity: 1,
         };

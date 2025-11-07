@@ -95,10 +95,6 @@ export async function POST(request: Request) {
                         <p style="margin: 0 0 10px 0; color: #666; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Άτομα</p>
                         <p style="margin: 0; color: #000; font-size: 16px; font-weight: 500;">${people} ${people === "1" ? "Άτομο" : "Άτομα"}</p>
                       </div>
-
-                      <div style="background-color: #FFF3E0; border: 2px solid #EF5021; border-radius: 8px; padding: 20px; margin-top: 30px; text-align: center;">
-                        <p style="margin: 0; color: #000; font-size: 14px;">Παρακαλώ επιβεβαιώστε την κράτηση με τον πελάτη</p>
-                      </div>
                     </td>
                   </tr>
 
@@ -160,7 +156,7 @@ export async function POST(request: Request) {
 
                       <p style="color: #000; font-size: 16px; line-height: 1.6; margin-bottom: 30px;">
                         Γεια σας ${name},<br><br>
-                        Σας ευχαριστούμε για την κράτηση στο Flow Lounge. Λάβαμε το αίτημά σας και θα σας επικοινωνήσουμε σύντομα για επιβεβαίωση.
+                        Σας ευχαριστούμε για την κράτηση στο Flow Lounge.
                       </p>
 
                       <div style="background-color: #f9f9f9; border-left: 4px solid #EF5021; padding: 20px; margin-bottom: 20px;">
@@ -181,10 +177,6 @@ export async function POST(request: Request) {
                       <div style="background-color: #f9f9f9; border-left: 4px solid #EF5021; padding: 20px;">
                         <p style="margin: 0 0 10px 0; color: #666; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Άτομα</p>
                         <p style="margin: 0; color: #000; font-size: 16px; font-weight: 500;">${people} ${people === "1" ? "Άτομο" : "Άτομα"}</p>
-                      </div>
-
-                      <div style="background-color: #E3F2FD; border: 2px solid #2196F3; border-radius: 8px; padding: 20px; margin-top: 30px; text-align: center;">
-                        <p style="margin: 0; color: #000; font-size: 14px;">Περιμένετε email επιβεβαίωσης από εμάς</p>
                       </div>
                     </td>
                   </tr>

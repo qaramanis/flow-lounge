@@ -69,13 +69,23 @@ const footerData: FooterColumn[] = [
     ],
   },
   {
-    title: "Support",
+    title: "Contact",
     links: [
-      { label: "Terms", href: "/terms", isExternal: false },
-      { label: "Contact", href: "/contact", isExternal: false },
-      { label: "Privacy Policy", href: "/privacy", isExternal: false },
+      {
+        label: "Get in Touch",
+        href: "/contact",
+        isExternal: false,
+      },
     ],
   },
+  // {
+  //   title: "Support",
+  //   links: [
+  //     { label: "Terms", href: "/terms", isExternal: false },
+  //     { label: "Contact", href: "/contact", isExternal: false },
+  //     { label: "Privacy Policy", href: "/privacy", isExternal: false },
+  //   ],
+  // }, @TODO remove comment later
 ];
 
 type LenisWindow = Window & {

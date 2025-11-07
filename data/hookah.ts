@@ -12,26 +12,78 @@ const hookahCategories: MenuItem[] = [
   {
     title: "Classic",
     description:
-      "Μεγάλη ποικιλία γεύσεων ξανθού καπνού, συστήνεται για εκείνους που δεν είναι εξοικειωμένοι!",
+      "Wide variety of blonde tobacco flavors, recommended for those who are not familiar!",
     price: "In house - 16.00 € \n Bowl to go - 6.00€",
+    imageUrl: "/images/hookah/hookah-classic.webp",
   },
   {
     title: "Premium",
     description:
-      "Μεγαλύτερο εύρος ποικιλίας καπνών ξανθών και μαύρων, συστήνεται για εκείνους που θέλουν να πειραματιστούν και να γνωρίσουν νέες γεύσεις!",
+      "Wider range of blonde and dark tobacco varieties, recommended for those who want to experiment and discover new flavors!",
     price: "In house - 20.00 € \n Bowl to go - 7.00€",
+    imageUrl: "/images/hookah/hookah-premium.webp",
   },
   {
     title: "Exclusive",
     description:
-      "Τεράστια ποικιλία μαύρου καπνού, από φύλλα Virginia, Burley. Μια Exclusive εμπειρία από την αρχή ως το τέλος!",
+      "Huge variety of dark tobacco, from Virginia and Burley leaves. An Exclusive experience from start to finish!",
     price: "In house - 26.00 € \n Bowl to go - 9.00€",
+    imageUrl: "/images/hookah/hookah-exclusiv.webp",
   },
   {
     title: "Ultra",
     description:
-      "Απολαύστε αυθεντικό ναργιλέ με εκλεπτυσμένα καπνικά στοιχεία και  γευστικές απολαύσεις, συμπληρωμένα με αρώματα πούρου. Συστήνεται για έμπειρους καπνιστές ή για εκείνους που αναζητούν βαρύ κάπνισμα του ναργιλέ ως προς την νικοτίνη!",
+      "Enjoy authentic Hookah with refined tobacco elements and flavor delights, completed with cigar aromas. Recommended for experienced smokers or those seeking heavy hookah smoking in terms of nicotine!",
     price: "In house - 34.00 € \n Bowl to go - 12.00€",
+    imageUrl: "/images/hookah/hookah-ultra.webp",
+  },
+];
+
+/**
+ * Special Hookah
+ */
+const specialHookah: MenuItem[] = [
+  {
+    title: "Solomon",
+    description: "",
+    price: "+20.00 €",
+    imageUrl: "/images/menu/hookah-solomon.jpg",
+  },
+  {
+    title: "Maklaud Project",
+    description: "",
+    price: "+10.00 €",
+    imageUrl: "/images/menu/hookah-maklaud.jpg",
+  },
+  {
+    title: "Roden",
+    description: "",
+    price: "+10.00 €",
+    imageUrl: "/images/menu/hookah-roden.jpg",
+  },
+  {
+    title: "Japona, Oro, Katana, Sansara",
+    description: "",
+    price: "+5.00 €",
+    imageUrl: "/images/menu/hookah-katana.jpg",
+  },
+];
+
+/**
+ * Shisha Cocktail
+ */
+const shishaCocktail: MenuItem[] = [
+  {
+    title: "Aperol",
+    description: "",
+    price: "",
+    imageUrl: "/images/menu/hookah-maklaud.jpg",
+  },
+  {
+    title: "Citrus Tonic",
+    description: "",
+    price: "",
+    imageUrl: "/images/menu/hookah-maklaud.jpg",
   },
 ];
 
@@ -43,6 +95,14 @@ export const allHookahCategories: HookahCategory[] = [
     name: "Hookah",
     items: hookahCategories,
   },
+  {
+    name: "Special Hookah Collection",
+    items: specialHookah,
+  },
+  // {
+  //   name: "Shisha Cocktail",
+  //   items: shishaCocktail,
+  // }, @TODO remove comment later
 ];
 
 /**
@@ -62,7 +122,7 @@ export const getHookahCategories = (): MenuItem[] => {
 /**
  * Get all hookah categories
  */
-export const getHookahCategoriesWithRefills = (): HookahCategory[] => {
+export const getAllHookahCategories = (): HookahCategory[] => {
   return allHookahCategories;
 };
 

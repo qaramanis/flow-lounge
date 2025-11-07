@@ -6,6 +6,7 @@ import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
 import MenuCard from "@/components/menu/card";
 import { getHomemadeLemonades } from "@/data/homemade-lemonades";
+import VatDisclaimer from "@/components/vat-disclaimer";
 
 export default function LemonadesPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -77,13 +78,7 @@ export default function LemonadesPage() {
         ))}
       </div>
 
-      <div className="mt-20 text-center">
-        <p className="text-white/60 mb-4">
-          All prices listed above include vat 24% and municipal taxes 0.5%
-          <br />
-          Market Law Health Officer: Kyriakos Katikaridis
-        </p>
-      </div>
+      <VatDisclaimer />
     </div>
   );
 }

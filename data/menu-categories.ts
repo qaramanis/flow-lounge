@@ -14,16 +14,14 @@ const menuCategories: MenuCategory[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     link: "/hookah",
-    imageUrl:
-      "https://images.unsplash.com/photo-1683231089717-4dde53471d33?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGhvb2thaHxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&q=60&w=900",
+    imageUrl: "/images/menu/hookah-maklaud.jpg",
   },
   {
     title: "Cocktails",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     link: "/menu/cocktails",
-    imageUrl:
-      "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
+    imageUrl: "/images/menu/cocktails.jpg",
   },
   {
     title: "Homemade Lemonades",

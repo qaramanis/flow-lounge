@@ -85,7 +85,7 @@ export default function PlayroomModal({ isOpen, onClose }: PlayroomModalProps) {
   if (!isOpen) return null;
 
   const consumptionRules: ConsumptionRule[] = [
-    { people: "1-2 Persons", requirement: "1 Hookah + Drink per Person" },
+    { people: "1-2 Person(s)", requirement: "1 Hookah + Drink per Person" },
     { people: "3-4 Persons", requirement: "2 Hookahs + Drink per Person" },
     { people: "5-6 Persons", requirement: "3 Hookahs + Drink per Person" },
     { people: "7+ Persons", requirement: "Contact staff for arrangement" },
@@ -157,7 +157,7 @@ export default function PlayroomModal({ isOpen, onClose }: PlayroomModalProps) {
                 Minimum Consumption
               </h3>
               <p className="text-white/50 text-sm mb-6">
-                To enjoy our playroom facilities, the following minimum orders
+                To enjoy our playroom, the following minimum orders
                 apply:
               </p>
             </div>

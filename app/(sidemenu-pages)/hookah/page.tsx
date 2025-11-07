@@ -5,7 +5,8 @@ import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
 import MenuCard from "@/components/menu/card";
-import { getHookahCategories } from "@/data/hookah";
+import { getAllHookahCategories } from "@/data/hookah";
+import VatDisclaimer from "@/components/vat-disclaimer";
 
 export default function HookahPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -40,7 +41,7 @@ export default function HookahPage() {
     return () => ctx.revert();
   }, []);
 
-  const hookahCategories = getHookahCategories();
+  const allCategories = getAllHookahCategories();
 
   return (
     <div ref={containerRef} className="pt-24 mb-10">
@@ -59,32 +60,36 @@ export default function HookahPage() {
           </span>
         </h1>
 
-        <div className="self-center items-center text-center mb-8 mt-24 md:mb-16 md:mt-36">
-          <h1 className="text-5xl md:text-7xl">Hookah</h1>
-        </div>
-        <div
-          ref={gridRef}
-          className="grid grid-cols-1 md:grid-cols-4 gap-5 lg:gap-6 items-center"
-        >
-          {hookahCategories.map((category, index) => (
-            <MenuCard
-              key={index}
-              title={category.title}
-              description={category.description}
-              // imageUrl={category.imageUrl}
-              price={category.price}
-            />
-          ))}
-        </div>
+        {allCategories.map((category, categoryIndex) => (
+          <div key={categoryIndex}>
+            <div className="self-center items-center text-center mb-8 mt-24 md:mb-16 md:mt-36">
+              <h1 className="text-5xl md:text-7xl">{category.name}</h1>
+            </div>
+            <div
+              ref={categoryIndex === 0 ? gridRef : null}
+              className="flex flex-wrap justify-center gap-6 lg:gap-8"
+            >
+              {category.items.map((item, index) => (
+                <div
+                  key={index}
+                  className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+                >
+                  <MenuCard
+                    title={item.title}
+                    description={item.description}
+                    imageUrl={item.imageUrl}
+                    price={item.price}
+                  />
+                </div>
+              ))}
+            </div>
+            {categoryIndex < allCategories.length - 1 && (
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
+            )}
+          </div>
+        ))}
 
-        <div className="mt-16 text-center">
-          <p className="text-white/60 mb-3">
-            All prices listed above include vat 24% and municipal taxes 0.5%
-            <br />
-            Market Law Health Officer: Kyriakos Katikaridis
-          </p>
-          {/*<button className="px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:border-accent/50 transition-all duration-300"></button>*/}
-        </div>
+        <VatDisclaimer />
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { gsap } from "@/lib/gsap";
+import { PhoneOutgoing, Mail, Phone } from "lucide-react";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import ContactForm from "@/components/contact/contact-form";
 import ReservationForm from "@/components/contact/reservation-form";
@@ -60,17 +61,21 @@ export default function ContactPage() {
       <div ref={contentRef} className="space-y-6 max-w-4xl mb-12">
         <div className="border-b border-white/15 pb-5">
           <h2 className="text-lg text-white/60 mb-1.5">Name</h2>
-          <p className="text-2xl text-white font-light">Apostolos Karamanis</p>
+          <p className="text-2xl text-white font-light">Titto Peronetti</p>
         </div>
 
         <div className="border-b border-white/15 pb-5">
           <h2 className="text-lg text-white/60 mb-1.5">Phone</h2>
           <a
             href="tel:+30"
-            className="text-2xl text-white font-light hover:text-accent transition-colors duration-300"
+            className="text-2xl text-white font-light hover:text-accent transition-colors duration-300 group flex flex-row justify-start items-center gap-4"
           >
             {/*+30 697 208 4941*/}
-            <br /> +30 693 426 5802
+            +30 697 683 9487
+            <PhoneOutgoing
+              size={20}
+              className="opacity-50 group-hover:opacity-100 transition-all duration-300"
+            />
           </a>
         </div>
 
@@ -78,9 +83,14 @@ export default function ContactPage() {
           <h2 className="text-lg text-white/60 mb-1.5">Email</h2>
           <a
             href="mailto:info@flowlounge.gr"
-            className="text-2xl text-white font-light hover:text-accent transition-colors duration-300"
+            className="text-2xl text-white font-light hover:text-accent transition-colors duration-300 group flex flex-row justify-start items-center gap-4"
           >
             info@flowlounge.gr
+            <Mail
+              size={22}
+              className="opacity-50 group-hover:opacity-100 transition-all duration-300 -mb-1"
+            />
+            {/*@TODO add new mail*/}
           </a>
         </div>
       </div>

@@ -67,5 +67,3 @@ export default function MembershipSection() {
     </section>
   );
 }
-
-// @TODO mobile view

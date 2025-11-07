@@ -95,22 +95,75 @@ const greekCoffee: MenuItem[] = [
 ];
 
 /**
- * Tea Route
+ * Cocktail Tea
+ */
+const cocktailTea: MenuItem[] = [
+  {
+    title: "Sweet november",
+    description: "",
+    price: "7.50 €",
+  },
+  {
+    title: "Kislaslatki",
+    description: "",
+    price: "7.00 €",
+  },
+  {
+    title: "Blue Dragon",
+    description: "",
+    price: "7.00 €",
+  },
+  {
+    title: "Apple Pie",
+    description: "",
+    price: "7.50 €",
+  },
+
+  {
+    title: "Red velvet",
+    description: "",
+    price: "6.50 €",
+  },
+];
+
+/**
+ * Ceremony Tea
+ */
+const ceremonyTea: MenuItem[] = [
+  {
+    title: "Gaba Oolong Sapphire",
+    description: "",
+    price: "11.50 €",
+  },
+  {
+    title: "Pu-erh Taetea",
+    description: "",
+    price: "10.50 €",
+  },
+  {
+    title: "Tie Guan Yin",
+    description: "",
+    price: "9.50 €",
+  },
+  {
+    title: "Fo Shou Oolong",
+    description: "",
+    price: "9.50 €",
+  },
+];
+
+/**
+ * Classic Tea Route
  */
 const teaRoute: MenuItem[] = [
   {
-    title: "Chun Mei Bio",
+    title: "Chun Mei",
     description: "Chinese Green Tea",
     price: "3.50 €",
   },
   {
-    title: "English Breakfast Tea",
+    title: "English Breakfast",
     description: "Indian and Ceylon Black Tea",
-    price: "3.50 €",
-  },
-  {
-    title: "Chamomile",
-    description: "Relaxing, Relieves Teething Pains",
     price: "3.50 €",
   },
   {
@@ -118,6 +171,12 @@ const teaRoute: MenuItem[] = [
     description: "Cranberry, Hibiscus, Apple",
     price: "3.50 €",
   },
+  {
+    title: "Chamomile",
+    description: "Relaxing, Relieves Teething Pains",
+    price: "3.50 €",
+  },
+
   {
     title: "Alexandria Symphony",
     description: "Raspberry, Strawberry, Peppermint",
@@ -155,8 +214,8 @@ const iceTea: MenuItem[] = [
     price: "4.00 €",
   },
   {
-    title: "Energy Matcha",
-    description: "Guarana, Mate, Ginger, Pomegranate, Stevia",
+    title: "Lemon & Bergamot",
+    description: "",
     price: "4.00 €",
   },
 ];
@@ -182,7 +241,7 @@ export const teaAndCoffeeCategories: TeaAndCoffeeCategory[] = [
     items: greekCoffee,
   },
   {
-    name: "Tea Route",
+    name: "Classic Tea Route",
     items: teaRoute,
   },
   {
@@ -200,6 +259,8 @@ export const getAllTeaAndCoffee = (): MenuItem[] => {
     ...doubleEspresso,
     ...coldCoffee,
     ...greekCoffee,
+    ...cocktailTea,
+    ...ceremonyTea,
     ...teaRoute,
     ...iceTea,
   ];
@@ -234,7 +295,21 @@ export const getGreekCoffee = (): MenuItem[] => {
 };
 
 /**
- * Get tea route
+ * Get cocktail tea
+ */
+export const getCocktailTea = (): MenuItem[] => {
+  return cocktailTea;
+};
+
+/**
+ * Get ceremony tea
+ */
+export const getCeremonyTea = (): MenuItem[] => {
+  return ceremonyTea;
+};
+
+/**
+ * Get classic tea route
  */
 export const getTeaRoute = (): MenuItem[] => {
   return teaRoute;

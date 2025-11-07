@@ -46,8 +46,8 @@ export function Marquees() {
         >
           <MarqueeItem text="Hookah" />
           <MarqueeItem text="Cocktails" />
-          <MarqueeItem text="Beers" />
-          <MarqueeItem text="Spirits" />
+          <MarqueeItem text="Wines" />
+          <MarqueeItem text="Tea" />
         </SimpleMarquee>
         <SimpleMarquee
           className="w-full"
@@ -58,10 +58,10 @@ export function Marquees() {
           useScrollVelocity={true}
           direction="right"
         >
-          <MarqueeItem text="Tea" />
+          <MarqueeItem text="Spirits" />
           <MarqueeItem text="Soft Drinks" />
           <MarqueeItem text="Juices" />
-          <MarqueeItem text="Wines" />
+          <MarqueeItem text="Cocktails" />
         </SimpleMarquee>
       </div>
     </section>

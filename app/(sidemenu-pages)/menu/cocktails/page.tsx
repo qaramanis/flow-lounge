@@ -11,6 +11,7 @@ import {
   getAperitifs,
   getMocktails,
 } from "@/data/cocktails";
+import VatDisclaimer from "@/components/vat-disclaimer";
 
 export default function HookahPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -162,13 +163,7 @@ export default function HookahPage() {
         ))}
       </div>
 
-      <div className="mt-20 text-center">
-        <p className="text-white/60 mb-4">
-          All prices listed above include vat 24% and municipal taxes 0.5%
-          <br />
-          Market Law Health Officer: Kyriakos Katikaridis
-        </p>
-      </div>
+      <VatDisclaimer />
     </div>
   );
 }

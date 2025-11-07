@@ -66,5 +66,3 @@ export default function SpecialsSection() {
     </section>
   );
 }
-
-// @TODO mobile view
