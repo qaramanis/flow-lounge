@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
@@ -12,6 +12,7 @@ export default function LemonadesPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
 
   useIsomorphicLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -62,20 +63,25 @@ export default function LemonadesPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {lemonades.map((lemonade, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={lemonade.title}
-              description={lemonade.description}
-              price={lemonade.price}
-            />
-          </div>
-        ))}
+        {lemonades.map((lemonade, index) => {
+          const cardId = `lemonade-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={lemonade.title}
+                description={lemonade.description}
+                price={lemonade.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <VatDisclaimer />

@@ -451,7 +451,7 @@ const Masonry: React.FC<MasonryProps> = ({
               style={{ backgroundImage: `url(${item.img})` }}
             >
               {/* Gradient overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded-[10px]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent rounded-[10px]" />
 
               {/* Item info overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white">

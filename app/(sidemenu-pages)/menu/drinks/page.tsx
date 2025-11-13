@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
@@ -20,6 +20,7 @@ export default function DrinksPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
 
   useIsomorphicLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -76,20 +77,25 @@ export default function DrinksPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {vodka.map((drink, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={drink.title}
-              description={drink.description}
-              price={drink.price}
-            />
-          </div>
-        ))}
+        {vodka.map((drink, index) => {
+          const cardId = `vodka-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={drink.title}
+                description={drink.description}
+                price={drink.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
@@ -100,20 +106,25 @@ export default function DrinksPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {gin.map((drink, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={drink.title}
-              description={drink.description}
-              price={drink.price}
-            />
-          </div>
-        ))}
+        {gin.map((drink, index) => {
+          const cardId = `gin-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={drink.title}
+                description={drink.description}
+                price={drink.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
@@ -124,20 +135,25 @@ export default function DrinksPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {rum.map((drink, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={drink.title}
-              description={drink.description}
-              price={drink.price}
-            />
-          </div>
-        ))}
+        {rum.map((drink, index) => {
+          const cardId = `rum-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={drink.title}
+                description={drink.description}
+                price={drink.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
@@ -148,20 +164,25 @@ export default function DrinksPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {tequila.map((drink, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={drink.title}
-              description={drink.description}
-              price={drink.price}
-            />
-          </div>
-        ))}
+        {tequila.map((drink, index) => {
+          const cardId = `tequila-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={drink.title}
+                description={drink.description}
+                price={drink.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
@@ -172,20 +193,25 @@ export default function DrinksPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {whisky.map((drink, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={drink.title}
-              description={drink.description}
-              price={drink.price}
-            />
-          </div>
-        ))}
+        {whisky.map((drink, index) => {
+          const cardId = `whisky-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={drink.title}
+                description={drink.description}
+                price={drink.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
@@ -196,20 +222,25 @@ export default function DrinksPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {cognac.map((drink, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={drink.title}
-              description={drink.description}
-              price={drink.price}
-            />
-          </div>
-        ))}
+        {cognac.map((drink, index) => {
+          const cardId = `cognac-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={drink.title}
+                description={drink.description}
+                price={drink.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
@@ -220,20 +251,25 @@ export default function DrinksPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {metaxa.map((drink, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={drink.title}
-              description={drink.description}
-              price={drink.price}
-            />
-          </div>
-        ))}
+        {metaxa.map((drink, index) => {
+          const cardId = `metaxa-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={drink.title}
+                description={drink.description}
+                price={drink.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <VatDisclaimer />

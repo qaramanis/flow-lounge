@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
@@ -17,6 +17,7 @@ export default function HookahPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
 
   useIsomorphicLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -71,21 +72,26 @@ export default function HookahPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {signatureCocktails.map((cocktail, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={cocktail.title}
-              description={cocktail.description}
-              // imageUrl={cocktail.imageUrl}
-              price={cocktail.price}
-            />
-          </div>
-        ))}
+        {signatureCocktails.map((cocktail, index) => {
+          const cardId = `signature-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={cocktail.title}
+                description={cocktail.description}
+                // imageUrl={cocktail.imageUrl}
+                price={cocktail.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
@@ -96,21 +102,26 @@ export default function HookahPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {classicCocktails.map((cocktail, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={cocktail.title}
-              description={cocktail.description}
-              // imageUrl={cocktail.imageUrl}
-              price={cocktail.price}
-            />
-          </div>
-        ))}
+        {classicCocktails.map((cocktail, index) => {
+          const cardId = `classic-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={cocktail.title}
+                description={cocktail.description}
+                // imageUrl={cocktail.imageUrl}
+                price={cocktail.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
@@ -121,21 +132,26 @@ export default function HookahPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {aperitifs.map((aperitif, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={aperitif.title}
-              description={aperitif.description}
-              // imageUrl={aperitif.imageUrl}
-              price={aperitif.price}
-            />
-          </div>
-        ))}
+        {aperitifs.map((aperitif, index) => {
+          const cardId = `aperitif-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={aperitif.title}
+                description={aperitif.description}
+                // imageUrl={aperitif.imageUrl}
+                price={aperitif.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
@@ -146,21 +162,26 @@ export default function HookahPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {mocktails.map((mocktail, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={mocktail.title}
-              description={mocktail.description}
-              // imageUrl={mocktail.imageUrl}
-              price={mocktail.price}
-            />
-          </div>
-        ))}
+        {mocktails.map((mocktail, index) => {
+          const cardId = `mocktail-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={mocktail.title}
+                description={mocktail.description}
+                // imageUrl={mocktail.imageUrl}
+                price={mocktail.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <VatDisclaimer />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
@@ -16,6 +16,7 @@ export default function SoftDrinksPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
 
   useIsomorphicLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -71,20 +72,25 @@ export default function SoftDrinksPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {freshJuices.map((juice, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={juice.title}
-              description={juice.description}
-              price={juice.price}
-            />
-          </div>
-        ))}
+        {freshJuices.map((juice, index) => {
+          const cardId = `fresh-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={juice.title}
+                description={juice.description}
+                price={juice.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
@@ -95,20 +101,25 @@ export default function SoftDrinksPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {packagedJuices.map((juice, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={juice.title}
-              description={juice.description}
-              price={juice.price}
-            />
-          </div>
-        ))}
+        {packagedJuices.map((juice, index) => {
+          const cardId = `packaged-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={juice.title}
+                description={juice.description}
+                price={juice.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
@@ -119,20 +130,25 @@ export default function SoftDrinksPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {softDrinks.map((drink, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={drink.title}
-              description={drink.description}
-              price={drink.price}
-            />
-          </div>
-        ))}
+        {softDrinks.map((drink, index) => {
+          const cardId = `soft-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={drink.title}
+                description={drink.description}
+                price={drink.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <VatDisclaimer />

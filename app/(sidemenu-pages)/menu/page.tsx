@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import MenuCard from "@/components/menu/card";
@@ -11,6 +11,7 @@ export default function MenuPage() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
 
   useIsomorphicLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -68,17 +69,26 @@ export default function MenuPage() {
         {/* Menu Grid */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 md:grid-cols-4 gap-3 mb-5"
+          className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8 mb-5"
         >
-          {menuCategories.map((category, index) => (
-            <MenuCard
-              key={index}
-              title={category.title}
-              description={category.description}
-              imageUrl={category.imageUrl}
-              link={category.link}
-            />
-          ))}
+          {menuCategories.map((category, index) => {
+            const cardId = `menu-${index}`;
+            return (
+              <div
+                key={index}
+                className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+              >
+                <MenuCard
+                  title={category.title}
+                  description={category.description}
+                  imageUrl={category.imageUrl}
+                  link={category.link}
+                  isExpanded={expandedCardId === cardId}
+                  onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

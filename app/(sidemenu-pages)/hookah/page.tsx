@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
@@ -12,6 +12,7 @@ export default function HookahPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
 
   useIsomorphicLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -67,21 +68,26 @@ export default function HookahPage() {
             </div>
             <div
               ref={categoryIndex === 0 ? gridRef : null}
-              className="flex flex-wrap justify-center gap-6 lg:gap-8"
+              className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
             >
-              {category.items.map((item, index) => (
-                <div
-                  key={index}
-                  className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-                >
-                  <MenuCard
-                    title={item.title}
-                    description={item.description}
-                    imageUrl={item.imageUrl}
-                    price={item.price}
-                  />
-                </div>
-              ))}
+              {category.items.map((item, index) => {
+                const cardId = `${categoryIndex}-${index}`;
+                return (
+                  <div
+                    key={index}
+                    className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+                  >
+                    <MenuCard
+                      title={item.title}
+                      description={item.description}
+                      imageUrl={item.imageUrl}
+                      price={item.price}
+                      isExpanded={expandedCardId === cardId}
+                      onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+                    />
+                  </div>
+                );
+              })}
             </div>
             {categoryIndex < allCategories.length - 1 && (
               <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
@@ -11,6 +11,7 @@ export default function BeersAndCidersPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
 
   useIsomorphicLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -65,20 +66,25 @@ export default function BeersAndCidersPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {beers.map((beer, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={beer.title}
-              description={beer.description}
-              price={beer.price}
-            />
-          </div>
-        ))}
+        {beers.map((beer, index) => {
+          const cardId = `beer-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={beer.title}
+                description={beer.description}
+                price={beer.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
@@ -89,20 +95,25 @@ export default function BeersAndCidersPage() {
       </div>
       <div
         ref={gridRef}
-        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
       >
-        {ciders.map((cider, index) => (
-          <div
-            key={index}
-            className="w-full md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-          >
-            <MenuCard
-              title={cider.title}
-              description={cider.description}
-              price={cider.price}
-            />
-          </div>
-        ))}
+        {ciders.map((cider, index) => {
+          const cardId = `cider-${index}`;
+          return (
+            <div
+              key={index}
+              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+            >
+              <MenuCard
+                title={cider.title}
+                description={cider.description}
+                price={cider.price}
+                isExpanded={expandedCardId === cardId}
+                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
+              />
+            </div>
+          );
+        })}
       </div>
 
       <div className="mt-20 text-center">
