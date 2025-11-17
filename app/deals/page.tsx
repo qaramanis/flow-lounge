@@ -2,7 +2,7 @@ export default function DealsPage() {
   return (
     <div className="pt-32 px-8 md:px-20 pb-20 max-w-4xl mx-auto tracking-wide">
       <h1 className="text-5xl md:text-6xl font-light text-white mb-4">
-        Flow Specials
+        Flow Special Offers
       </h1>
       <p className="text-white/60 mb-12">Exclusive offers for our guests</p>
 
