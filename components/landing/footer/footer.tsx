@@ -29,13 +29,13 @@ const footerData: FooterColumn[] = [
     title: "About Us",
     links: [
       { label: "Our Story", href: "/story", isExternal: false },
+      { label: "Flow Events", href: "/events", isExternal: false },
       {
         label: "Join the Team",
         href: "/contact",
         isNew: false,
         isExternal: false,
       },
-      { label: "Flow Events", href: "/events", isExternal: false },
     ],
   },
   {
