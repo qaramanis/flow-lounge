@@ -5,6 +5,7 @@ import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 import { useRouter } from "next/navigation";
 import { useLenis } from "@/hooks/use-lenis";
+import OrangeText from "@/components/orange-text";
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);

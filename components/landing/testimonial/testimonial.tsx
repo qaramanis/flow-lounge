@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
+import OrangeText from "@/components/orange-text";
 
 export default function TestimonialsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);

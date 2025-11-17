@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { useLenis } from "@/hooks/use-lenis";
+import OrangeText from "@/components/orange-text";
 
 interface FooterLink {
   label: string;
@@ -21,13 +22,13 @@ const footerData: FooterColumn[] = [
     title: "Experience",
     links: [
       { label: "Hookah", href: "/hookah", isExternal: false },
-      { label: "Deals & Offers", href: "#", isExternal: false },
+      { label: "Deals & Offers", href: "/deals", isExternal: false },
     ],
   },
   {
     title: "About Us",
     links: [
-      { label: "Our Story", href: "#", isExternal: false },
+      { label: "Our Story", href: "/story", isExternal: false },
       {
         label: "Join the Team",
         href: "/contact",
@@ -58,7 +59,7 @@ const footerData: FooterColumn[] = [
     links: [
       {
         label: "Instagram",
-        href: "https://instagram.com/flowlounge",
+        href: "https://www.instagram.com/flow__lounge/2",
         isExternal: true,
       },
       {
@@ -161,20 +162,13 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#f3f3f2] rounded-t-[40px] mt-auto">
       <div className="px-8 md:px-20 pt-12 pb-10">
-        <h2
-          className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter pb-16 bg-clip-text text-transparent"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, black, #EF5021, black, #EF5021, black, #EF5021, black)",
-            backgroundSize: "200% 100%",
-            animation: "gradientPulse 20s ease-in-out infinite",
-          }}
-        >
-          FLOW LOUNGE
-        </h2>
+        <OrangeText
+          text="FLOW LOUNGE"
+          className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter"
+        />
 
         {/* Footer Content Grid */}
-        <div className="grid grid-cols-2 md:flex md:flex-row md:justify-start gap-8 md:gap-[10rem] mb-16">
+        <div className="grid grid-cols-2 md:flex md:flex-row md:justify-start gap-8 md:gap-[10rem] my-16">
           {footerData.map((column, idx) => (
             <div key={idx} className="space-y-4">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-background">

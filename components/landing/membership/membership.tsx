@@ -56,7 +56,7 @@ export default function MembershipSection() {
                   <ActionButton
                     text="Become a member"
                     icon={ArrowUpRight}
-                    href="/community"
+                    href="/deals"
                   />
                 </div>
               </div>
