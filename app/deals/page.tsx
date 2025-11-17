@@ -23,18 +23,18 @@ export default function DealsPage() {
           Birthday Party στο Flow Lounge
         </h2>
         <p>
-          Στο Flow Lounge κάθε birthday party γίνεται ξεχωριστό. Έλα να ζήσεις
-          μια αξέχαστη βραδιά με Birthday Gift και 15% έκπτωση στον κατάλογό μας
-          για εσένα και την παρέα σου. Ρώτησε το προσωπικό για κράτηση και
-          περισσότερες πληροφορίες.
+          At Flow Lounge every birhtday becomes special. Join us to live an
+          unforgetable night with a Birthday Gift and 15% discount on our
+          catalog for you and your party. Ask our staff for the party
+          reservation and more information.
         </p>
 
         <h2 className="text-3xl font-light text-white mt-12 mb-4">
           Wednesday Cocktail Night
         </h2>
         <p>
-          Κάθε Τετάρτη μπορείς να απολαύσεις όλα τα cocktails μας μόνο με 8€.
-          Ζήσε τη mid-week χαλάρωση στο Flow Lounge!
+          Every Wednesday you can enjoy all our cocktails for only 8€. Live the
+          mid-week relaxation at Flow Lounge!
         </p>
       </div>
     </div>
