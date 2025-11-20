@@ -12,7 +12,7 @@ const beers: MenuItem[] = [
   {
     title: "Ali Pilsner Draft",
     description: "400ml",
-    price: "5.00 €",
+    price: "5.50 €",
   },
   {
     title: "Stella",
@@ -25,24 +25,29 @@ const beers: MenuItem[] = [
     price: "5.50 €",
   },
   {
-    title: "56 Lager",
-    description: "500ml",
-    price: "6.00 €",
-  },
-  {
-    title: "56 Isles Pilsner",
+    title: "Kyria Toula New England Ipa",
     description: "330ml",
-    price: "6.00 €",
+    price: "7.50 €",
   },
   {
-    title: "Blame the Sun Beach Bum",
+    title: "Bella Pilsner",
     description: "330ml",
     price: "6.50 €",
+  },
+  {
+    title: "Beach Bum Tropic Ale",
+    description: "330ml",
+    price: "7.00 €",
   },
   {
     title: "Vergina Weiss",
     description: "500ml",
     price: "5.50 €",
+  },
+  {
+    title: "Crispy Pils",
+    description: "440ml",
+    price: "8.00 €",
   },
   {
     title: "Radler",
@@ -62,7 +67,7 @@ const beers: MenuItem[] = [
 const ciders: MenuItem[] = [
   {
     title: "Milokleftis",
-    description: "",
+    description: "330ml",
     price: "5.00 €",
   },
 ];

@@ -115,7 +115,7 @@ export default function MenuCard({
         </div>
         {description && (
           <div
-            className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${isExpanded ? "max-h-[500px]" : "max-h-[2.5rem]"}`}
+            className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${isExpanded ? "max-h-[500px]" : "max-h-[2.7rem]"}`}
           >
             <p className="text-white/60 text-sm leading-relaxed">
               {description}

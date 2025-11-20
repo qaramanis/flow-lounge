@@ -5,7 +5,7 @@ import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
 import MenuCard from "@/components/menu/card";
-import { getAllHookahCategories } from "@/data/hookah";
+import { getHookahCategories } from "@/data/hookah";
 import VatDisclaimer from "@/components/vat-disclaimer";
 
 export default function HookahPage() {
@@ -42,7 +42,7 @@ export default function HookahPage() {
     return () => ctx.revert();
   }, []);
 
-  const allCategories = getAllHookahCategories();
+  const categories = getHookahCategories();
 
   return (
     <div ref={containerRef} className="pt-24 mb-10">
@@ -61,7 +61,7 @@ export default function HookahPage() {
           </span>
         </h1>
 
-        {allCategories.map((category, categoryIndex) => (
+        {categories.map((category, categoryIndex) => (
           <div key={categoryIndex}>
             <div className="self-center items-center text-center mb-8 mt-24 md:mb-16 md:mt-36">
               <h1 className="text-5xl md:text-7xl">{category.name}</h1>
@@ -89,7 +89,7 @@ export default function HookahPage() {
                 );
               })}
             </div>
-            {categoryIndex < allCategories.length - 1 && (
+            {categoryIndex < categories.length - 1 && (
               <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
             )}
           </div>

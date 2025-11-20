@@ -1,5 +1,7 @@
 "use client";
-
+// @TODO add time in reservation form, dropdown every 30 minutes
+// @TODO make date text not black on hover
+// @TODO add reservation button which navigates to contact page somewhere in landing
 import { useState, useEffect } from "react";
 import { Calendar } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";

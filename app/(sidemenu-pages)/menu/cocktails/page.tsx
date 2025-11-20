@@ -5,12 +5,7 @@ import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
 import MenuCard from "@/components/menu/card";
-import {
-  getSignatureCocktails,
-  getClassicCocktails,
-  getAperitifs,
-  getMocktails,
-} from "@/data/cocktails";
+import { getCocktailCategories } from "@/data/cocktails";
 import VatDisclaimer from "@/components/vat-disclaimer";
 
 export default function HookahPage() {
@@ -48,10 +43,7 @@ export default function HookahPage() {
     return () => ctx.revert();
   }, []);
 
-  const signatureCocktails = getSignatureCocktails();
-  const classicCocktails = getClassicCocktails();
-  const aperitifs = getAperitifs();
-  const mocktails = getMocktails();
+  const categories = getCocktailCategories();
 
   return (
     <div ref={containerRef} className="pt-32 px-8 md:px-20 mb-12">
@@ -66,123 +58,43 @@ export default function HookahPage() {
         List
       </h1>
 
-      {/* Signature Cocktails */}
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-16 md:mt-36">
-        <h1 className="text-5xl md:text-7xl">Signature Cocktails</h1>
-      </div>
-      <div
-        ref={gridRef}
-        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
-      >
-        {signatureCocktails.map((cocktail, index) => {
-          const cardId = `signature-${index}`;
-          return (
-            <div
-              key={index}
-              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-            >
-              <MenuCard
-                title={cocktail.title}
-                description={cocktail.description}
-                // imageUrl={cocktail.imageUrl}
-                price={cocktail.price}
-                isExpanded={expandedCardId === cardId}
-                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
-              />
-            </div>
-          );
-        })}
-      </div>
+      {categories.map((category, categoryIndex) => (
+        <div key={categoryIndex}>
+          <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
+            <h1 className="text-5xl md:text-7xl">{category.name}</h1>
+          </div>
+          <div
+            ref={gridRef}
+            className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
+          >
+            {category.items.map((item, index) => {
+              const cardId = `${categoryIndex}-${index}`;
+              return (
+                <div
+                  key={index}
+                  className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+                >
+                  <MenuCard
+                    title={item.title}
+                    description={item.description}
+                    price={item.price}
+                    isExpanded={expandedCardId === cardId}
+                    onToggleExpand={() =>
+                      setExpandedCardId(
+                        expandedCardId === cardId ? null : cardId,
+                      )
+                    }
+                  />
+                </div>
+              );
+            })}
+          </div>
 
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
-
-      {/* Classic Cocktails */}
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
-        <h1 className="text-5xl md:text-7xl">Classic Cocktails</h1>
-      </div>
-      <div
-        ref={gridRef}
-        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
-      >
-        {classicCocktails.map((cocktail, index) => {
-          const cardId = `classic-${index}`;
-          return (
-            <div
-              key={index}
-              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-            >
-              <MenuCard
-                title={cocktail.title}
-                description={cocktail.description}
-                // imageUrl={cocktail.imageUrl}
-                price={cocktail.price}
-                isExpanded={expandedCardId === cardId}
-                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
-              />
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
-
-      {/* Aperitifs */}
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
-        <h1 className="text-5xl md:text-7xl">Aperitifs</h1>
-      </div>
-      <div
-        ref={gridRef}
-        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
-      >
-        {aperitifs.map((aperitif, index) => {
-          const cardId = `aperitif-${index}`;
-          return (
-            <div
-              key={index}
-              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-            >
-              <MenuCard
-                title={aperitif.title}
-                description={aperitif.description}
-                // imageUrl={aperitif.imageUrl}
-                price={aperitif.price}
-                isExpanded={expandedCardId === cardId}
-                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
-              />
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
-
-      {/* Mocktails */}
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
-        <h1 className="text-5xl md:text-7xl">Mocktails</h1>
-      </div>
-      <div
-        ref={gridRef}
-        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
-      >
-        {mocktails.map((mocktail, index) => {
-          const cardId = `mocktail-${index}`;
-          return (
-            <div
-              key={index}
-              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-            >
-              <MenuCard
-                title={mocktail.title}
-                description={mocktail.description}
-                // imageUrl={mocktail.imageUrl}
-                price={mocktail.price}
-                isExpanded={expandedCardId === cardId}
-                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
-              />
-            </div>
-          );
-        })}
-      </div>
+          {categoryIndex < categories.length - 1 && (
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
+          )}
+        </div>
+      ))}
 
       <VatDisclaimer />
     </div>

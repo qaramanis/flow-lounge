@@ -5,11 +5,7 @@ import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
 import MenuCard from "@/components/menu/card";
-import {
-  getFreshJuices,
-  getPackagedJuices,
-  getSoftDrinks,
-} from "@/data/soft-drinks-and-juices";
+import { getSoftDrinksAndJuicesCategories } from "@/data/soft-drinks-and-juices";
 import VatDisclaimer from "@/components/vat-disclaimer";
 
 export default function SoftDrinksPage() {
@@ -46,9 +42,7 @@ export default function SoftDrinksPage() {
     return () => ctx.revert();
   }, []);
 
-  const freshJuices = getFreshJuices();
-  const packagedJuices = getPackagedJuices();
-  const softDrinks = getSoftDrinks();
+  const categories = getSoftDrinksAndJuicesCategories();
 
   return (
     <div ref={containerRef} className="pt-32 px-8 md:px-20 mb-12">
@@ -66,90 +60,43 @@ export default function SoftDrinksPage() {
         </a>
       </h1>
 
-      {/* Fresh Juices */}
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-16 md:mt-36">
-        <h1 className="text-5xl md:text-7xl">Fresh Juices</h1>
-      </div>
-      <div
-        ref={gridRef}
-        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
-      >
-        {freshJuices.map((juice, index) => {
-          const cardId = `fresh-${index}`;
-          return (
-            <div
-              key={index}
-              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-            >
-              <MenuCard
-                title={juice.title}
-                description={juice.description}
-                price={juice.price}
-                isExpanded={expandedCardId === cardId}
-                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
-              />
-            </div>
-          );
-        })}
-      </div>
+      {categories.map((category, categoryIndex) => (
+        <div key={categoryIndex}>
+          <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
+            <h1 className="text-5xl md:text-7xl">{category.name}</h1>
+          </div>
+          <div
+            ref={gridRef}
+            className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
+          >
+            {category.items.map((item, index) => {
+              const cardId = `${categoryIndex}-${index}`;
+              return (
+                <div
+                  key={index}
+                  className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+                >
+                  <MenuCard
+                    title={item.title}
+                    description={item.description}
+                    price={item.price}
+                    isExpanded={expandedCardId === cardId}
+                    onToggleExpand={() =>
+                      setExpandedCardId(
+                        expandedCardId === cardId ? null : cardId,
+                      )
+                    }
+                  />
+                </div>
+              );
+            })}
+          </div>
 
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
-
-      {/* Packaged Juices */}
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
-        <h1 className="text-5xl md:text-7xl">Packaged Juices</h1>
-      </div>
-      <div
-        ref={gridRef}
-        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
-      >
-        {packagedJuices.map((juice, index) => {
-          const cardId = `packaged-${index}`;
-          return (
-            <div
-              key={index}
-              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-            >
-              <MenuCard
-                title={juice.title}
-                description={juice.description}
-                price={juice.price}
-                isExpanded={expandedCardId === cardId}
-                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
-              />
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
-
-      {/* Soft Drinks */}
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
-        <h1 className="text-5xl md:text-7xl">Soft Drinks</h1>
-      </div>
-      <div
-        ref={gridRef}
-        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
-      >
-        {softDrinks.map((drink, index) => {
-          const cardId = `soft-${index}`;
-          return (
-            <div
-              key={index}
-              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-            >
-              <MenuCard
-                title={drink.title}
-                description={drink.description}
-                price={drink.price}
-                isExpanded={expandedCardId === cardId}
-                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
-              />
-            </div>
-          );
-        })}
-      </div>
+          {categoryIndex < categories.length - 1 && (
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
+          )}
+        </div>
+      ))}
 
       <VatDisclaimer />
     </div>

@@ -6,35 +6,35 @@ import { MenuItem, HookahCategory } from "@/types/menu";
  */
 
 /**
- * Hookah Categories
+ * Hookah Items
  */
-const hookahCategories: MenuItem[] = [
+const hookahItems: MenuItem[] = [
   {
     title: "Classic",
     description:
       "Wide variety of blonde tobacco flavors, recommended for those who are not familiar!",
-    price: "In house - 16.00 € \n Bowl to go - 6.00€",
+    price: "In house - 16.00 € \n Refill - 10.00€ \n Bowl to go - 6.00€",
     imageUrl: "/images/hookah/hookah-classic.webp",
   },
   {
     title: "Premium",
     description:
       "Wider range of blonde and dark tobacco varieties, recommended for those who want to experiment and discover new flavors!",
-    price: "In house - 20.00 € \n Bowl to go - 7.00€",
+    price: "In house - 20.00 € \n Refill - 12.00€ \n Bowl to go - 7.00€",
     imageUrl: "/images/hookah/hookah-premium.webp",
   },
   {
     title: "Exclusive",
     description:
       "Huge variety of dark tobacco, from Virginia and Burley leaves. An Exclusive experience from start to finish!",
-    price: "In house - 26.00 € \n Bowl to go - 9.00€",
+    price: "In house - 26.00 € \n Refill - 16.00€ \n Bowl to go - 9.00€",
     imageUrl: "/images/hookah/hookah-exclusiv.webp",
   },
   {
     title: "Ultra",
     description:
       "Enjoy authentic Hookah with refined tobacco elements and flavor delights, completed with cigar aromas. Recommended for experienced smokers or those seeking heavy hookah smoking in terms of nicotine!",
-    price: "In house - 34.00 € \n Bowl to go - 12.00€",
+    price: "In house - 34.00 € \n Refill - 24.00€ \n Bowl to go - 12.00€",
     imageUrl: "/images/hookah/hookah-ultra.webp",
   },
 ];
@@ -62,10 +62,22 @@ const specialHookah: MenuItem[] = [
     imageUrl: "/images/menu/hookah-roden.jpg",
   },
   {
-    title: "Japona, Oro, Katana, Sansara",
+    title: "Katana",
     description: "",
     price: "+5.00 €",
     imageUrl: "/images/menu/hookah-katana.jpg",
+  },
+  {
+    title: "oro",
+    description: "",
+    price: "+5.00 €",
+    imageUrl: "/images/hookah/oro.jpg",
+  },
+  {
+    title: "Japona",
+    description: "",
+    price: "+5.00 €",
+    imageUrl: "/images/hookah/japona.jpg",
   },
 ];
 
@@ -90,10 +102,10 @@ const shishaCocktail: MenuItem[] = [
 /**
  * All hookah categories
  */
-export const allHookahCategories: HookahCategory[] = [
+export const hookahCategories: HookahCategory[] = [
   {
     name: "Hookah",
-    items: hookahCategories,
+    items: hookahItems,
   },
   {
     name: "Special Hookah Collection",
@@ -109,21 +121,21 @@ export const allHookahCategories: HookahCategory[] = [
  * Get all hookah items
  */
 export const getAllHookahItems = (): MenuItem[] => {
-  return hookahCategories;
+  return hookahItems;
 };
 
 /**
- * Get hookah categories
+ * Get hookah items
  */
-export const getHookahCategories = (): MenuItem[] => {
-  return hookahCategories;
+export const getHookahItems = (): MenuItem[] => {
+  return hookahItems;
 };
 
 /**
  * Get all hookah categories
  */
-export const getAllHookahCategories = (): HookahCategory[] => {
-  return allHookahCategories;
+export const getHookahCategories = (): HookahCategory[] => {
+  return hookahCategories;
 };
 
 /**
@@ -132,6 +144,6 @@ export const getAllHookahCategories = (): HookahCategory[] => {
 export const getHookahByCategory = (
   categoryName: string,
 ): MenuItem[] | undefined => {
-  const category = allHookahCategories.find((cat) => cat.name === categoryName);
+  const category = hookahCategories.find((cat) => cat.name === categoryName);
   return category?.items;
 };

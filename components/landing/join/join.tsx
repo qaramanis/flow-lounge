@@ -26,7 +26,7 @@ export default function JoinSection() {
           </a>
         </h2>
         <div className="h-full flex flex-col md:flex-row gap-10 p-3 mt-3">
-          <div className="w-full md:w-[45%] md:h-[400px] rounded-lg overflow-hidden flex items-center justify-center order-3 md:order-1">
+          <div className="w-full md:w-[45%] md:h-[450px] rounded-lg overflow-hidden flex items-center justify-center order-3 md:order-1">
             <Image
               src="/images/landing/team.jpg"
               alt="Flow Lounge Hookah"
@@ -50,9 +50,13 @@ export default function JoinSection() {
                 <div>
                   Looking to work with us? Are you{" "}
                   <a className="font-bold">ambitious</a>,{" "}
-                  <a className="font-bold">passionate</a> and ready to work with{" "}
+                  <a className="font-bold">dedicated</a> and ready to work with{" "}
                   <a className="font-bold">great</a> people?
                   <br />
+                </div>
+                <div>
+                  We&apos;re looking for individuals who are passionate about
+                  hospitality and eager to make a positive impact.
                 </div>
                 <div>
                   Get in touch with us today and get details about open

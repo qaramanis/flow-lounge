@@ -12,17 +12,17 @@ const homemadeLemonades: MenuItem[] = [
   {
     title: "Classic Lemonade",
     description: "",
-    price: "4.00 €",
+    price: "4.50 €",
   },
   {
     title: "Raspberry Passion",
     description: "",
-    price: "4.50 €",
+    price: "5.00 €",
   },
   {
     title: "Wild Berries",
     description: "",
-    price: "4.50 €",
+    price: "5.00 €",
   },
 ];
 

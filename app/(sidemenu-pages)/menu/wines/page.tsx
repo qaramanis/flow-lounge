@@ -5,12 +5,7 @@ import { gsap } from "@/lib/gsap";
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
 import MenuCard from "@/components/menu/card";
-import {
-  getRedWines,
-  getWhiteWines,
-  getRoseWines,
-  getSparklingWines,
-} from "@/data/wines";
+import { getWineCategories } from "@/data/wines";
 import VatDisclaimer from "@/components/vat-disclaimer";
 
 export default function WinesPage() {
@@ -48,10 +43,7 @@ export default function WinesPage() {
     return () => ctx.revert();
   }, []);
 
-  const redWines = getRedWines();
-  const whiteWines = getWhiteWines();
-  const roseWines = getRoseWines();
-  const sparklingWines = getSparklingWines();
+  const categories = getWineCategories();
 
   return (
     <div ref={containerRef} className="pt-32 px-8 md:px-20 mb-12">
@@ -66,123 +58,43 @@ export default function WinesPage() {
         Selection
       </h1>
 
-      {/* Red Wines */}
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-16 md:mt-36">
-        <h1 className="text-5xl md:text-7xl">Red Wines</h1>
-      </div>
-      <div
-        ref={gridRef}
-        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
-      >
-        {redWines.map((wine, index) => {
-          const cardId = `red-${index}`;
-          return (
-            <div
-              key={index}
-              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-            >
-              <MenuCard
-                title={wine.title}
-                description={wine.description}
-                // imageUrl={wine.imageUrl}
-                price={wine.price}
-                isExpanded={expandedCardId === cardId}
-                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
-              />
-            </div>
-          );
-        })}
-      </div>
+      {categories.map((category, categoryIndex) => (
+        <div key={categoryIndex}>
+          <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
+            <h1 className="text-5xl md:text-7xl">{category.name}</h1>
+          </div>
+          <div
+            ref={gridRef}
+            className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
+          >
+            {category.items.map((item, index) => {
+              const cardId = `${categoryIndex}-${index}`;
+              return (
+                <div
+                  key={index}
+                  className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
+                >
+                  <MenuCard
+                    title={item.title}
+                    description={item.description}
+                    price={item.price}
+                    isExpanded={expandedCardId === cardId}
+                    onToggleExpand={() =>
+                      setExpandedCardId(
+                        expandedCardId === cardId ? null : cardId,
+                      )
+                    }
+                  />
+                </div>
+              );
+            })}
+          </div>
 
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
-
-      {/* White Wines */}
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
-        <h1 className="text-5xl md:text-7xl">White Wines</h1>
-      </div>
-      <div
-        ref={gridRef}
-        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
-      >
-        {whiteWines.map((wine, index) => {
-          const cardId = `white-${index}`;
-          return (
-            <div
-              key={index}
-              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-            >
-              <MenuCard
-                title={wine.title}
-                description={wine.description}
-                // imageUrl={wine.imageUrl}
-                price={wine.price}
-                isExpanded={expandedCardId === cardId}
-                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
-              />
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
-
-      {/* Rosé Wines */}
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
-        <h1 className="text-5xl md:text-7xl">Rosé Wines</h1>
-      </div>
-      <div
-        ref={gridRef}
-        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
-      >
-        {roseWines.map((wine, index) => {
-          const cardId = `rose-${index}`;
-          return (
-            <div
-              key={index}
-              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-            >
-              <MenuCard
-                title={wine.title}
-                description={wine.description}
-                // imageUrl={wine.imageUrl}
-                price={wine.price}
-                isExpanded={expandedCardId === cardId}
-                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
-              />
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
-
-      {/* Sparkling Wines */}
-      <div className="self-center items-center text-center mb-8 mt-24 md:mb-12 md:mt-12">
-        <h1 className="text-5xl md:text-7xl">Sparkling Wines</h1>
-      </div>
-      <div
-        ref={gridRef}
-        className="flex flex-wrap justify-center gap-x-6 gap-y-10 lg:gap-8"
-      >
-        {sparklingWines.map((wine, index) => {
-          const cardId = `sparkling-${index}`;
-          return (
-            <div
-              key={index}
-              className="w-[calc(50%-0.75rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(25%-1.5rem)]"
-            >
-              <MenuCard
-                title={wine.title}
-                description={wine.description}
-                // imageUrl={wine.imageUrl}
-                price={wine.price}
-                isExpanded={expandedCardId === cardId}
-                onToggleExpand={() => setExpandedCardId(expandedCardId === cardId ? null : cardId)}
-              />
-            </div>
-          );
-        })}
-      </div>
+          {categoryIndex < categories.length - 1 && (
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-foreground/50 to-transparent my-24" />
+          )}
+        </div>
+      ))}
 
       <VatDisclaimer />
     </div>

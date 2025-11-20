@@ -23,18 +23,20 @@ const faqs: FAQ[] = [
     question: "Which Beers are available?",
     answer: {
       description:
-        "We have a wide variety of beers available, including IPAs, Stouts, Lagers and more. Our suggestions are:",
+        "We offer an extensive selection of beers, from hoppy IPAs and rich stouts to crisp lagers and beyond. Our top recommendations include:",
       items: [
-        "Marmita Red Ale",
-        "Blame the Sun Beach Bum",
-        "Surmena Raspberry Shower",
+        "Kyria Toula New England Ipa",
+        "Bella Pilsner",
+        "Beach Bum Tropic Ale",
       ],
     },
   },
   {
     question: "What is so special about the tea?",
     answer: {
-      description: "@TODO",
+      // Ανακαλύψτε τις διαχρονικές κλασικές γεύσεις από Tea Route﻿ μαζί με τις ειδικές μας μίξεις που προέρχονται από τα απομακρυσμένα βουνά και τις αγροτικές περιοχές της Κίνας, όπου η παραδοσιακή τέχνη του τσαγιού δημιουργεί μοναδικά και μαγευτικά αρώματα
+      description:
+        "Experience the timeless classics from Tea Route along with our special blends sourced from the remote mountains and rural regions of China, where traditional tea craftsmanship creates unique and captivating aromas.",
     },
   },
 ];

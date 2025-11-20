@@ -12,7 +12,7 @@ const singleEspresso: MenuItem[] = [
   {
     title: "Ristretto / Normale / Lugo",
     description: "",
-    price: "2.50 €",
+    price: "3.00 €",
   },
   {
     title: "Espresso Americano",
@@ -33,22 +33,22 @@ const doubleEspresso: MenuItem[] = [
   {
     title: "Ristretto / Normale / Lugo",
     description: "",
-    price: "3.50 €",
+    price: "4.00 €",
   },
   {
     title: "Espresso Americano",
     description: "",
-    price: "3.50 €",
+    price: "4.00 €",
   },
   {
     title: "Cappuccino",
     description: "",
-    price: "4.00 €",
+    price: "4.50 €",
   },
   {
     title: "Latte",
     description: "",
-    price: "3.50 €",
+    price: "4.50 €",
   },
 ];
 
@@ -59,12 +59,12 @@ const coldCoffee: MenuItem[] = [
   {
     title: "Freddo Espresso",
     description: "",
-    price: "3.50 €",
+    price: "4.00 €",
   },
   {
     title: "Freddo Cappuccino",
     description: "",
-    price: "4.00 €",
+    price: "4.50 €",
   },
 ];
 
@@ -75,22 +75,33 @@ const greekCoffee: MenuItem[] = [
   {
     title: "Greek Coffee Single",
     description: "",
-    price: "2.50 €",
+    price: "3.00 €",
   },
   {
     title: "Greek Coffee Double",
     description: "",
-    price: "3.00 €",
-  },
-  {
-    title: "Nescafe Hot",
-    description: "",
     price: "3.50 €",
   },
+];
+
+/**
+ * Chocolates
+ */
+const chocolates: MenuItem[] = [
   {
-    title: "Nescafe Cold",
-    description: "",
-    price: "3.50 €",
+    title: "Chocolate Classic ",
+    description: "Hot or Cold",
+    price: "4.50 €",
+  },
+  {
+    title: "Chocolate Salt Caramel",
+    description: "Hot or Cold",
+    price: "5.00 €",
+  },
+  {
+    title: "Chocolate Lila Pause",
+    description: "Hot or Cold",
+    price: "5.00 €",
   },
 ];
 
@@ -100,12 +111,14 @@ const greekCoffee: MenuItem[] = [
 const cocktailTea: MenuItem[] = [
   {
     title: "Sweet november",
-    description: "",
+    description:
+      "Το Sweet November με τη καπνώδη βάση του Zhen Shan σε συνδυασμό με τη δροσιά του πορτοκαλιού, την έντονη γεύση του τζίντζερ και τη γλύκα του μελιού είναι ένα τσάι που θυμίζει μια σφιχτή αγκαλιά σε ένα κρύο απόγευμα του Νοέμβρη.",
     price: "7.50 €",
   },
   {
     title: "Kislaslatki",
-    description: "",
+    description:
+      "Το Kislaslatki είναι ένα δροσερό blend με φρουτώδη ένταση από μύρτιλο και raspberry, οξύτητα από γκρειπφρουτ, και χαρακτήρα λουλουδιών από τριαντάφυλλο και ιβίσκο. Πρόκειται για το ιδανικό αναζωογονητικό ρόφημα.",
     price: "7.00 €",
   },
   {
@@ -115,13 +128,14 @@ const cocktailTea: MenuItem[] = [
   },
   {
     title: "Apple Pie",
-    description: "",
+    description:
+      "Το Apple Pie είναι ένα γλυκό μίγμα μήλου και κανέλας εμπνευσμένο από την αγαπημένη μηλόπιτα. Το Shu Puerh είναι ένα είδος κινέζικου μαύρου τσαγιού, γνωστό για την ώριμη, γήινη γεύση του.",
     price: "7.50 €",
   },
-
   {
     title: "Red velvet",
-    description: "",
+    description:
+      "Το Red Velvet είναι ένα ρόφημα με πολλά επίπεδα. Γλυκόξινη, αρμονική επίγευση δίνεται από το συνδυασμό χαμομηλιού και raspberry.",
     price: "6.50 €",
   },
 ];
@@ -136,7 +150,7 @@ const ceremonyTea: MenuItem[] = [
     price: "11.50 €",
   },
   {
-    title: "Pu-erh Taetea",
+    title: "Pu-erh Taetea V93",
     description: "",
     price: "10.50 €",
   },
@@ -158,39 +172,38 @@ const ceremonyTea: MenuItem[] = [
 const teaRoute: MenuItem[] = [
   {
     title: "Chun Mei",
-    description: "Chinese Green Tea",
-    price: "3.50 €",
+    description: "Bio Chinese Green Tea",
+    price: "4.00 €",
   },
   {
     title: "English Breakfast",
     description: "Indian and Ceylon Black Tea",
-    price: "3.50 €",
-  },
-  {
-    title: "Red Square",
-    description: "Cranberry, Hibiscus, Apple",
-    price: "3.50 €",
+    price: "4.00 €",
   },
   {
     title: "Chamomile",
     description: "Relaxing, Relieves Teething Pains",
-    price: "3.50 €",
+    price: "4.00 €",
   },
-
+  {
+    title: "Red Square",
+    description: "Cranberry, Hibiscus, Apple",
+    price: "4.00 €",
+  },
   {
     title: "Alexandria Symphony",
     description: "Raspberry, Strawberry, Peppermint",
-    price: "3.50 €",
+    price: "4.00 €",
   },
   {
     title: "Evening Chat",
     description: "Apple and Cinnamon",
-    price: "3.50 €",
+    price: "4.00 €",
   },
   {
     title: "Scented Bush",
     description: "Green tea, Orange, Cardamom",
-    price: "3.50 €",
+    price: "4.00 €",
   },
 ];
 
@@ -225,6 +238,26 @@ const iceTea: MenuItem[] = [
  */
 export const teaAndCoffeeCategories: TeaAndCoffeeCategory[] = [
   {
+    name: "Classic Tea Route",
+    items: teaRoute,
+  },
+  {
+    name: "Cocktail Tea",
+    items: cocktailTea,
+  },
+  {
+    name: "Ceremony Tea",
+    items: ceremonyTea,
+  },
+  {
+    name: "Ice Tea",
+    items: iceTea,
+  },
+  {
+    name: "Chocolates",
+    items: chocolates,
+  },
+  {
     name: "Single Espresso",
     items: singleEspresso,
   },
@@ -239,14 +272,6 @@ export const teaAndCoffeeCategories: TeaAndCoffeeCategory[] = [
   {
     name: "Greek Coffee",
     items: greekCoffee,
-  },
-  {
-    name: "Classic Tea Route",
-    items: teaRoute,
-  },
-  {
-    name: "Ice Tea",
-    items: iceTea,
   },
 ];
 
@@ -263,6 +288,7 @@ export const getAllTeaAndCoffee = (): MenuItem[] => {
     ...ceremonyTea,
     ...teaRoute,
     ...iceTea,
+    ...chocolates,
   ];
 };
 
@@ -320,6 +346,13 @@ export const getTeaRoute = (): MenuItem[] => {
  */
 export const getIceTea = (): MenuItem[] => {
   return iceTea;
+};
+
+/**
+ * Get chocolates
+ */
+export const getChocolates = (): MenuItem[] => {
+  return chocolates;
 };
 
 /**

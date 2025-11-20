@@ -10,60 +10,19 @@ import { MenuItem, DrinksCategory } from "@/types/menu";
  */
 const vodka: MenuItem[] = [
   {
-    title: "Smirnoff",
+    title: "Smirnoff Red",
     description: "",
-    price: "Glass - 8.00 € \n Bottle - 80.00 €",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
   },
   {
     title: "Ketel One",
     description: "",
-    price: "Glass - 9.00 € \n Bottle - 90.00 €",
+    price: "Glass - 9.00 € \n Bottle 0.7 L - 90.00 €",
   },
   {
     title: "Ciroc",
     description: "",
-    price: "Glass - 11.00 € \n Bottle - 110.00 €",
-  },
-  {
-    title: "Belvedere",
-    description: "",
-    price: "Glass - 12.00 € \n Bottle - 120.00 €",
-  },
-  {
-    title: "Grey Goose",
-    description: "",
-    price: "Glass - 13.00 € \n Bottle - 130.00 €",
-  },
-];
-
-/**
- * Gin
- */
-const gin: MenuItem[] = [
-  {
-    title: "Tanqueray",
-    description: "",
-    price: "Glass - 8.00 € \n Bottle - 80.00 €",
-  },
-  {
-    title: "Tanqueray Ten",
-    description: "",
-    price: "Glass - 10.00 € \n Bottle - 100.00 €",
-  },
-  {
-    title: "The Botanist",
-    description: "",
-    price: "Glass - 12.00 € \n Bottle - 120.00 €",
-  },
-  {
-    title: "Hendricks",
-    description: "",
-    price: "Glass - 13.00 € \n Bottle - 130.00 €",
-  },
-  {
-    title: "Tanqueray Zero",
-    description: "",
-    price: "Glass - 8.00 € \n Bottle - 80.00 €",
+    price: "Glass - 11.00 € \n Bottle 0.7 L - 110.00 €",
   },
 ];
 
@@ -72,34 +31,65 @@ const gin: MenuItem[] = [
  */
 const rum: MenuItem[] = [
   {
-    title: "Pampero Blanco",
+    title: "Havana 3YO",
     description: "",
-    price: "Glass - 8.00 € \n Bottle - 80.00 €",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
   },
   {
-    title: "Pampero Especial",
+    title: "Havana Especial",
     description: "",
-    price: "Glass - 8.00 € \n Bottle - 80.00 €",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
   },
   {
-    title: "Havana Club Anejo Reserva",
+    title: "Sailor Jerry",
     description: "",
-    price: "Glass - 9.00 € \n Bottle - 90.00 €",
+    price: "Glass - 9.00 € \n Bottle 0.7 L - 90.00 €",
   },
   {
-    title: "Havana Club 7 Years Old",
+    title: "Havana 7YO",
     description: "",
-    price: "Glass - 10.00 € \n Bottle - 100.00 €",
+    price: "Glass - 9.00 € \n Bottle 0.7 L - 90.00 €",
   },
   {
-    title: "Diplomatico Reserva",
+    title: "Diplomatico Reserva Exclusiva",
     description: "",
-    price: "Glass - 14.00 € \n Bottle - 140.00 €",
+    price: "Glass - 11.00 € \n Bottle 0.7 L - 110.00 €",
   },
   {
-    title: "Zacapa",
+    title: "Zacapa 23YO",
     description: "",
-    price: "Glass - 14.00 € \n Bottle - 140.00 €",
+    price: "Glass - 11.00 € \n Bottle 0.7 L - 110.00 €",
+  },
+  {
+    title: "Cachaca Sagatiba White",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+];
+
+/**
+ * Gin
+ */
+const gin: MenuItem[] = [
+  {
+    title: "Beefeater",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+  {
+    title: "Tanqueray",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+  {
+    title: "Tanqueray 0% Alc. Free",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+  {
+    title: "Hendrick's",
+    description: "",
+    price: "Glass - 11.00 € \n Bottle 0.7 L - 110.00 €",
   },
 ];
 
@@ -108,60 +98,90 @@ const rum: MenuItem[] = [
  */
 const tequila: MenuItem[] = [
   {
+    title: "Jose Cuervo Yellow",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+  {
+    title: "Jose Cuervo White",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+  {
+    title: "Ocho Blanco",
+    description: "",
+    price: "Glass - 9.00 € \n Bottle 0.5 L - 90.00 €",
+  },
+  {
+    title: "Ocho Reposado",
+    description: "",
+    price: "Glass - 9.00 € \n Bottle 0.5 L - 90.00 €",
+  },
+  {
     title: "Don Julio Blanco",
     description: "",
-    price: "Glass - 12.00 € \n Bottle - 120.00 €",
+    price: "Glass - 11.00 € \n Bottle 0.7 L - 110.00 €",
   },
   {
     title: "Don Julio Reposado",
     description: "",
-    price: "Glass - 13.00 € \n Bottle - 130.00 €",
-  },
-  {
-    title: "Mezcal Amaras",
-    description: "",
-    price: "Glass - 13.00 € \n Bottle - 130.00 €",
+    price: "Glass - 11.00 € \n Bottle 0.7 L - 110.00 €",
   },
 ];
 
 /**
- * Whisky
+ * Whiskey
  */
-const whisky: MenuItem[] = [
+const whiskey: MenuItem[] = [
   {
     title: "Jameson",
     description: "",
-    price: "Glass - 8.00 € \n Bottle - 80.00 €",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
   },
   {
-    title: "Talisker",
+    title: "Tullamore Dew",
     description: "",
-    price: "Glass - 9.50 € \n Bottle - 95.00 €",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
   },
   {
-    title: "Roe & Co",
+    title: "Haig",
     description: "",
-    price: "Glass - 9.00 € \n Bottle - 90.00 €",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
   },
   {
-    title: "Chivas 12",
+    title: "Jack Daniel's",
     description: "",
-    price: "Glass - 9.00 € \n Bottle - 90.00 €",
+    price: "Glass - 9.00 € \n Bottle 0.7 L - 90.00 €",
   },
   {
-    title: "Cardhu 12",
+    title: "Johnnie Walker Black",
     description: "",
-    price: "Glass - 9.00 € \n Bottle - 90.00 €",
+    price: "Glass - 9.00 € \n Bottle 0.7 L - 90.00 €",
   },
   {
-    title: "JW Black Label",
+    title: "Bulleit Bourbon",
     description: "",
-    price: "Glass - 9.00 € \n Bottle - 90.00 €",
+    price: "Glass - 9.00 € \n Bottle 0.7 L - 90.00 €",
   },
   {
-    title: "Bullet Bourbon",
+    title: "Chivas Regal 12YO",
     description: "",
-    price: "Glass - 9.00 € \n Bottle - 90.00 €",
+    price: "Glass - 9.00 € \n Bottle 0.7 L - 90.00 €",
+  },
+  {
+    title: "Teeling Irish Whiskey Single Grain",
+    description: "",
+    price: "Glass - 11.00 € \n Bottle 0.7 L - 110.00 €",
+  },
+  {
+    title: "Cardhu 12YO",
+    description: "",
+    price: "Glass - 11.00 € \n Bottle 0.7 L - 110.00 €",
+  },
+  {
+    title: "Talisker 10YO",
+    description: "",
+    price: "Glass - 11.00 € \n Bottle 0.7 L - 110.00 €",
   },
 ];
 
@@ -170,9 +190,9 @@ const whisky: MenuItem[] = [
  */
 const cognac: MenuItem[] = [
   {
-    title: "Hennessy",
+    title: "Hennessy V.S.",
     description: "",
-    price: "Glass - 9.00 € \n Bottle - 90.00 €",
+    price: "Glass - 11.00 € \n Bottle 0.7 L - 110.00 €",
   },
 ];
 
@@ -183,12 +203,78 @@ const metaxa: MenuItem[] = [
   {
     title: "Metaxa 5*",
     description: "",
-    price: "Glass - 8.00 € \n Bottle - 80.00 €",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
   },
   {
     title: "Metaxa 7*",
     description: "",
-    price: "Glass - 9.00 € \n Bottle - 90.00 €",
+    price: "Glass - 9.00 € \n Bottle 0.7 L - 90.00 €",
+  },
+];
+
+/**
+ * Liqueurs
+ */
+const liqueurs: MenuItem[] = [
+  {
+    title: "Aperol Aperitivo",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 1 L - 70.00 €",
+  },
+  {
+    title: "Apple Sourz",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+  {
+    title: "Campari Bitter",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+  {
+    title: "Jagermeister",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+  {
+    title: "Olmeca Fusion Chocolate",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+  {
+    title: "Mastiha Omiriko (Miss Tic)",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+  {
+    title: "Malibu",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+  {
+    title: "Disaronno Originale",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+  {
+    title: "Baileys",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 0.7 L - 70.00 €",
+  },
+  {
+    title: "Martini Bianco",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 1 L - 70.00 €",
+  },
+  {
+    title: "Martini Extra Dry",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 1 L - 70.00 €",
+  },
+  {
+    title: "Martini Rosso",
+    description: "",
+    price: "Glass - 7.00 € \n Bottle 1 L - 70.00 €",
   },
 ];
 
@@ -213,8 +299,8 @@ export const drinkCategories: DrinksCategory[] = [
     items: tequila,
   },
   {
-    name: "Whisky",
-    items: whisky,
+    name: "Whiskey",
+    items: whiskey,
   },
   {
     name: "Cognac",
@@ -224,13 +310,26 @@ export const drinkCategories: DrinksCategory[] = [
     name: "Metaxa",
     items: metaxa,
   },
+  {
+    name: "Liqueurs",
+    items: liqueurs,
+  },
 ];
 
 /**
  * Get all drinks
  */
 export const getAllDrinks = (): MenuItem[] => {
-  return [...vodka, ...gin, ...rum, ...tequila, ...whisky, ...cognac, ...metaxa];
+  return [
+    ...vodka,
+    ...gin,
+    ...rum,
+    ...tequila,
+    ...whiskey,
+    ...cognac,
+    ...metaxa,
+    ...liqueurs,
+  ];
 };
 
 /**
@@ -262,10 +361,10 @@ export const getTequila = (): MenuItem[] => {
 };
 
 /**
- * Get whisky
+ * Get whiskey
  */
-export const getWhisky = (): MenuItem[] => {
-  return whisky;
+export const getWhiskey = (): MenuItem[] => {
+  return whiskey;
 };
 
 /**
@@ -280,6 +379,13 @@ export const getCognac = (): MenuItem[] => {
  */
 export const getMetaxa = (): MenuItem[] => {
   return metaxa;
+};
+
+/**
+ * Get liqueurs
+ */
+export const getLiqueurs = (): MenuItem[] => {
+  return liqueurs;
 };
 
 /**

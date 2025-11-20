@@ -6,40 +6,49 @@ import { MenuItem, WinesCategory } from "@/types/menu";
  */
 
 /**
- * Red Wines
+ * Wines
  */
-const redWines: MenuItem[] = [
+const wines: MenuItem[] = [
   {
-    title: "Lalikos Red",
-    description: "Full-bodied red wine with rich dark fruit flavors",
-    price: "Glass - 5.00 € \n Bottle - 28.00 €",
+    title: "Monemvasia Voltes White",
+    description: "",
+    price: "Glass - 5.50 € \n Bottle - 24.00 €",
   },
   {
-    title: "Real Sangria",
-    description: "Red",
+    title: "Rocca Ventosa Pinot Grigio White",
+    description: "",
+    price: "Bottle - 25.00 €",
+  },
+  {
+    title: "Monemvasia Voltes Red",
+    description: "",
+    price: "Glass - 5.50 € \n Bottle - 24.00 €",
+  },
+  {
+    title: "Zacharias Agioritiko Red",
+    description: "",
+    price: "Glass - 5.50 € \n Bottle - 24.00 €",
+  },
+  {
+    title: "Red Elephant Merlot",
+    description: "",
+    price: "Bottle - 27.00 €",
+  },
+  {
+    title: "Ploes Roze",
+    description: "",
+    price: "Glass - 5.50 € \n Bottle - 23.00 €",
+  },
+];
+
+/**
+ * Sangria
+ */
+const sangria: MenuItem[] = [
+  {
+    title: "Real Sagria",
+    description: "",
     price: "Glass - 5.00 €",
-  },
-];
-
-/**
- * White Wines
- */
-const whiteWines: MenuItem[] = [
-  {
-    title: "Lalikos Jocker White",
-    description: "Semi Dry",
-    price: "Glass - 5.00 € \n Bottle - 28.00 €",
-  },
-];
-
-/**
- * Rosé Wines
- */
-const roseWines: MenuItem[] = [
-  {
-    title: "Zitsa",
-    description: "Semi Sweet",
-    price: "Glass - 4.00 €",
   },
 ];
 
@@ -48,14 +57,14 @@ const roseWines: MenuItem[] = [
  */
 const sparklingWines: MenuItem[] = [
   {
-    title: "Prosecco Doc",
-    description: "Light and bubbly Italian sparkling wine with apple notes",
-    price: "Glass - 5.50 € \n Bottle - 28.00 €",
+    title: "Moscato Dasti Leggenda",
+    description: "",
+    price: "Glass - 5.50 € \n Bottle - 30.00 €",
   },
   {
-    title: "Moscato D'Asti",
-    description: "Sweet and lightly sparkling wine with peach and honey notes",
-    price: "Glass - 5.50 € \n Bottle - 28.00 €",
+    title: "Scanavino Prosecco White",
+    description: "",
+    price: "Glass - 6.00 € \n Bottle - 29.00 €",
   },
 ];
 
@@ -65,7 +74,11 @@ const sparklingWines: MenuItem[] = [
 export const wineCategories: WinesCategory[] = [
   {
     name: "Wines",
-    items: [...redWines, ...whiteWines, ...roseWines],
+    items: wines,
+  },
+  {
+    name: "Sangria",
+    items: sangria,
   },
   {
     name: "Sparkling Wines",
@@ -77,28 +90,21 @@ export const wineCategories: WinesCategory[] = [
  * Get all wines
  */
 export const getAllWines = (): MenuItem[] => {
-  return [...redWines, ...whiteWines, ...roseWines, ...sparklingWines];
+  return [...wines, ...sangria, ...sparklingWines];
 };
 
 /**
- * Get red wines
+ * Get wines
  */
-export const getRedWines = (): MenuItem[] => {
-  return redWines;
+export const getWines = (): MenuItem[] => {
+  return wines;
 };
 
 /**
- * Get white wines
+ * Get sangria
  */
-export const getWhiteWines = (): MenuItem[] => {
-  return whiteWines;
-};
-
-/**
- * Get rosé wines
- */
-export const getRoseWines = (): MenuItem[] => {
-  return roseWines;
+export const getSangria = (): MenuItem[] => {
+  return sangria;
 };
 
 /**

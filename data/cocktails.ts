@@ -11,14 +11,13 @@ import { MenuItem, CocktailCategory } from "@/types/menu";
 const signatureCocktails: MenuItem[] = [
   {
     title: "Flow",
-    description:
-      "Vodka, Chios Mastic, Pomegranate, Maraschino, Passion, Yuzu",
-    price: "11.00 €",
+    description: "Campari, Disaronno, Raspberry, Cherry Soda",
+    price: "10.00 €",
   },
   {
     title: "Irish Traveller",
     description: "Whiskey, Apple Sours, Orgeat, Lime, Sugar",
-    price: "11.00 €",
+    price: "10.00 €",
   },
   {
     title: "Rum Splash",
@@ -38,12 +37,7 @@ const signatureCocktails: MenuItem[] = [
   {
     title: "Citrus Serenede",
     description: "Gin, Falernum, Vanilla, Lime, Sugar",
-    price: "9.00 €",
-  },
-  {
-    title: "Basil & Berries",
-    description: "Gin, Berries, Basil, Lime, Sugar",
-    price: "9.00 €",
+    price: "10.00 €",
   },
 ];
 
@@ -54,68 +48,62 @@ const classicCocktails: MenuItem[] = [
   {
     title: "Paloma",
     description: "Tequila Blanco, Agave, Grapefruit, Lime",
-    price: "10.00 €",
+    price: "9.00 €",
   },
   {
     title: "Negroni",
     description: "Gin, Campari, Sweet Vermouth",
-    price: "11.00 €",
-  },
-  {
-    title: "Zombie",
-    description:
-      "Blend Rum, Falernum, Triple Sec, Angostura, Lime, Passion, Pineapple",
-    price: "11.00 €",
-  },
-  {
-    title: "Old Fashioned",
-    description: "Bourbon, Angostura,  Brown Sugar",
     price: "10.00 €",
   },
   {
-    title: "Mai Tai",
-    description: "Rum Blend, Triple Sec, Orgeat, Lime, Angostura",
+    title: "Boulevandier",
+    description: "Campari, Whiskey, Vermouth",
     price: "10.00 €",
   },
   {
     title: "Old Fashioned",
-    description: "Bourbon, Angostura,  Brown Sugar",
-    price: "20.00 €",
+    description: "Bourbon, Angostura, Brown Sugar",
+    price: "10.00 €",
   },
   {
-    title: "Tommy's Margarita",
-    description: "Tequila Reposado, Triple Sec, Agave, Lime",
+    title: "Moscow Mule",
+    description: "Vodka, Lime, Ginger Beer",
+    price: "10.00 €",
+  },
+  {
+    title: "Espresso Martini",
+    description: "Vodka, Espresso, Simple Syrup",
+    price: "9.00 €",
+  },
+  {
+    title: "Tom Collins",
+    description: "Gin, Lime, Simple Syrup, Mint",
     price: "9.00 €",
   },
   {
     title: "Pornstar",
-    description: "Vodka, Passoa, Vanilla, Passion, Lime",
+    description: "Vodka, Vanilla, Passion, Lime",
     price: "9.00 €",
   },
 ];
 
 /**
- * Aperitifs
+ * Spritz
  */
-const aperitifs: MenuItem[] = [
+const spritz: MenuItem[] = [
   {
     title: "Aperol Spritz",
     description: "Αperol, Prosecco, Splash Soda",
     price: "7.00 €",
   },
   {
-    title: "Chios Spritz",
-    description: "Prosecco, Mastiha, Cucumber, Splash Soda",
-    price: "8.00 €",
-  },
-  {
-    title: "Americano",
-    description: "Campari, Martini Rosso, Splash Soda / Cherry Soda",
+    title: "Flow Spritz",
+    description: "Disaronno, Tangerine, Pink Grapefruit",
     price: "7.00 €",
   },
   {
-    title: "Asti Spritz",
-    description: "Moscato D' Asti, Watermelon, Splash Soda",
+    title: "Americano Spritz",
+    description: "Campari, Martini Rosso, Splash / Cherry Soda",
     price: "7.00 €",
   },
 ];
@@ -125,23 +113,13 @@ const aperitifs: MenuItem[] = [
  */
 const mocktails: MenuItem[] = [
   {
-    title: "Cucumberita",
-    description: "Cucumber, Ginger, Mint, Lime, Splash Soda",
-    price: "8.00 €",
-  },
-  {
-    title: "Water Halls",
+    title: "Watermelon Halls",
     description: "Watermelon, Honey, Strawberry, Lime, Splash Soda",
-    price: "8.00 €",
+    price: "7.00 €",
   },
   {
     title: "Non-Negroni",
     description: "Gin 0%, Non Alc Vermouth, Teisseire",
-    price: "9.00 €",
-  },
-  {
-    title: "Basil & Berries",
-    description: "Gin 0%, Berries, Basil, Lime, Sugar",
     price: "8.00 €",
   },
 ];
@@ -155,12 +133,12 @@ export const cocktailCategories: CocktailCategory[] = [
     items: signatureCocktails,
   },
   {
-    name: "Classic Cocktails",
+    name: "All Time Classic",
     items: classicCocktails,
   },
   {
-    name: "Aperitifs",
-    items: aperitifs,
+    name: "Spritz",
+    items: spritz,
   },
   {
     name: "Mocktails",
@@ -172,12 +150,7 @@ export const cocktailCategories: CocktailCategory[] = [
  * Get all cocktails
  */
 export const getAllCocktails = (): MenuItem[] => {
-  return [
-    ...signatureCocktails,
-    ...classicCocktails,
-    ...aperitifs,
-    ...mocktails,
-  ];
+  return [...signatureCocktails, ...classicCocktails, ...spritz, ...mocktails];
 };
 
 /**
@@ -195,10 +168,10 @@ export const getClassicCocktails = (): MenuItem[] => {
 };
 
 /**
- * Get aperitifs
+ * Get spritz
  */
-export const getAperitifs = (): MenuItem[] => {
-  return aperitifs;
+export const getSpritz = (): MenuItem[] => {
+  return spritz;
 };
 
 /**

@@ -47,11 +47,6 @@ const footerData: FooterColumn[] = [
         href: "/services",
         isExternal: false,
       },
-      {
-        label: "For Businesses",
-        href: "/services",
-        isExternal: false,
-      },
     ],
   },
   {

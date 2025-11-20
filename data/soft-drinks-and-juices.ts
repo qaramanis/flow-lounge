@@ -12,19 +12,14 @@ const freshJuices: MenuItem[] = [
   {
     title: "Orange Juice",
     description: "",
-    price: "4.50 €",
+    price: "5.00 €",
   },
 ];
 
 /**
- * Packaged Juices
+ * Juices
  */
-const packagedJuices: MenuItem[] = [
-  {
-    title: "Orange Juice",
-    description: "",
-    price: "3.50 €",
-  },
+const juices: MenuItem[] = [
   {
     title: "Pineapple",
     description: "",
@@ -58,52 +53,52 @@ const packagedJuices: MenuItem[] = [
 const softDrinks: MenuItem[] = [
   {
     title: "Red Bull Classic",
-    description: "",
+    description: "250 ml",
     price: "5.00 €",
   },
   {
     title: "Red Bull Zero",
-    description: "",
+    description: "250 ml",
+    price: "5.00 €",
+  },
+  {
+    title: "Red Bull The Red",
+    description: "250 ml",
     price: "5.00 €",
   },
   {
     title: "Coca Cola Classic",
-    description: "",
-    price: "3.50 €",
+    description: "250 ml",
+    price: "4.00 €",
   },
   {
     title: "Coca Cola Zero",
-    description: "",
-    price: "3.50 €",
+    description: "250 ml",
+    price: "4.00 €",
   },
   {
-    title: "Fanta Orange",
-    description: "",
-    price: "3.50 €",
-  },
-  {
-    title: "Fanta Lemon",
-    description: "",
-    price: "3.50 €",
-  },
-  {
-    title: "Fanta Exotic",
-    description: "",
+    title: "Pink Grapefruit Soda",
+    description: "Three cents - 200 ml",
     price: "4.50 €",
   },
   {
-    title: "Grapefruit Soda",
-    description: "",
+    title: "Cherry Soda",
+    description: "Three cents - 200 ml",
+    price: "4.50 €",
+  },
+  {
+    title: "Ginger Beer",
+    description: "Three cents - 200 ml",
     price: "4.50 €",
   },
   {
     title: "Xino Nero",
-    description: "",
-    price: "3.50 €",
+    description: "250 ml",
+    price: "4.00 €",
   },
   {
     title: "Water Theoni",
-    description: "1.5Lt",
+    description: "1 Lt",
     price: "2.00 €",
   },
 ];
@@ -117,8 +112,8 @@ export const softDrinksAndJuicesCategories: SoftDrinksAndJuicesCategory[] = [
     items: freshJuices,
   },
   {
-    name: "Packaged Juices",
-    items: packagedJuices,
+    name: "Juices",
+    items: juices,
   },
   {
     name: "Soft Drinks",
@@ -130,7 +125,7 @@ export const softDrinksAndJuicesCategories: SoftDrinksAndJuicesCategory[] = [
  * Get all soft drinks and juices
  */
 export const getAllSoftDrinksAndJuices = (): MenuItem[] => {
-  return [...freshJuices, ...packagedJuices, ...softDrinks];
+  return [...freshJuices, ...juices, ...softDrinks];
 };
 
 /**
@@ -141,10 +136,10 @@ export const getFreshJuices = (): MenuItem[] => {
 };
 
 /**
- * Get packaged juices
+ * Get juices
  */
-export const getPackagedJuices = (): MenuItem[] => {
-  return packagedJuices;
+export const getJuices = (): MenuItem[] => {
+  return juices;
 };
 
 /**
