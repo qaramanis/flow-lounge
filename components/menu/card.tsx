@@ -18,7 +18,7 @@ interface MenuCardProps {
 export default function MenuCard({
   title,
   description = "",
-  imageUrl = "/flow-lounge.svg",
+  imageUrl = "/logo-new.svg",
   className = "",
   link = "#",
   price = "",
@@ -64,7 +64,7 @@ export default function MenuCard({
           {price}
         </div>*/}
 
-        <div className="absolute inset-0 bg-[#241F21]">
+        <div className="absolute inset-0 bg-transparent">
           {imageUrl ? (
             <Image
               src={imageUrl}

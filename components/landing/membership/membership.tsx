@@ -27,7 +27,7 @@ export default function MembershipSection() {
         <div className="h-full flex flex-col md:flex-row mt-3">
           <div className="md:w-[35%] h-[400px] rounded-lg">
             <Image
-              src="/flow-lounge.svg"
+              src="/logo-new.svg"
               alt="Flow Lounge Hookah"
               height={400}
               width={400}

@@ -124,7 +124,7 @@ const rawEvents: Event[] = [
     sortDate: "2025-10-17",
     time: "21:00",
     location: "Flow Lounge",
-    image: "/flow-lounge.svg",
+    image: "/logo-new.svg",
     category: "Party",
     isPast: false,
     color: "#EF5021",
@@ -144,6 +144,21 @@ const rawEvents: Event[] = [
     isPast: false,
     color: "#EF5021",
     height: 550,
+  },
+  {
+    id: "10",
+    title: "Fruit Bowls by Titto Peronetti",
+    description:
+      "Παρασκευή στο Flow. Fruit Bowls by Titto Peronetti. Μοναδικά μιξάκια, μόνο μετά τις 21:00.Be there — feel the flow.",
+    date: "Friday, November 28th 2025",
+    sortDate: "2025-11-28",
+    time: "21:00",
+    location: "Flow Lounge",
+    image: "/images/events/fruit-bowl-1350x1080.jpg",
+    category: "Party",
+    isPast: false,
+    color: "#EF5021",
+    height: 480,
   },
 ];
 

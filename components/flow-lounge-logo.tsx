@@ -63,7 +63,7 @@ export default function FlowLoungeLogo() {
       aria-label="Flow Lounge - Go to homepage"
     >
       <Image
-        src="/flow-lounge.svg"
+        src="/logo-new.svg"
         alt="Flow Lounge Logo"
         fill
         className="rounded-full transition-all duration-500 object-contain"

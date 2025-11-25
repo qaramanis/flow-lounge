@@ -50,7 +50,7 @@ const specialHookah: MenuItem[] = [
     imageUrl: "/images/menu/hookah-solomon.jpg",
   },
   {
-    title: "Maklaud Project",
+    title: "Maklaud Project 22",
     description: "",
     price: "+10.00 €",
     imageUrl: "/images/menu/hookah-maklaud.jpg",
@@ -68,7 +68,7 @@ const specialHookah: MenuItem[] = [
     imageUrl: "/images/menu/hookah-katana.jpg",
   },
   {
-    title: "oro",
+    title: "Oro",
     description: "",
     price: "+5.00 €",
     imageUrl: "/images/hookah/oro.jpg",

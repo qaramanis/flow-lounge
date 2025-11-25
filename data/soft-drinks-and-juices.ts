@@ -79,17 +79,17 @@ const softDrinks: MenuItem[] = [
   {
     title: "Pink Grapefruit Soda",
     description: "Three cents - 200 ml",
-    price: "4.50 €",
+    price: "5.00 €",
   },
   {
     title: "Cherry Soda",
     description: "Three cents - 200 ml",
-    price: "4.50 €",
+    price: "5.00 €",
   },
   {
     title: "Ginger Beer",
     description: "Three cents - 200 ml",
-    price: "4.50 €",
+    price: "5.00 €",
   },
   {
     title: "Xino Nero",

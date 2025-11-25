@@ -10,7 +10,7 @@ function MarqueeItem({ text }: { text: string }) {
       <span className="text-4xl md:text-5xl tracking-tight">{text}</span>
       <span className="block w-6 lg:w-8 px-8 lg:px-14 box-content mt-2">
         <Image
-          src="/flow-lounge.svg"
+          src="/logo-new.svg"
           alt="Flow Lounge"
           width={32}
           height={32}
