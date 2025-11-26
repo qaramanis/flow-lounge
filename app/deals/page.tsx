@@ -1,10 +1,17 @@
+"use client";
+
+import ActionButton from "@/components/action-button";
+import { ArrowUpRight } from "lucide-react";
+
 export default function DealsPage() {
   return (
-    <div className="pt-32 px-8 md:px-20 pb-20 max-w-4xl mx-auto tracking-wide">
-      <h1 className="text-5xl md:text-6xl font-light text-white mb-4">
+    <div className="pt-32 px-8 md:px-20 pb-20 max-w-4xl mx-auto tracking-wide flex flex-col items-center justify-center">
+      <h1 className="text-5xl md:text-6xl font-light text-white mb-4 self-start">
         Flow Special Offers
       </h1>
-      <p className="text-white/60 mb-12">Exclusive offers for our guests</p>
+      <p className="text-white/60 mb-12 self-start">
+        Exclusive offers for our guests
+      </p>
 
       <div className="prose prose-invert prose-lg max-w-none text-white/80 ">
         <h2 className="text-3xl font-light text-white mb-4">
@@ -36,6 +43,9 @@ export default function DealsPage() {
           Every Wednesday you can enjoy all our cocktails for only 8€. Live the
           mid-week relaxation at Flow Lounge!
         </p>
+      </div>
+      <div className="mt-8">
+        <ActionButton text="Contact" icon={ArrowUpRight} href="/contact" />
       </div>
     </div>
   );

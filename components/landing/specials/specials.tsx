@@ -30,7 +30,7 @@ export default function SpecialsSection() {
               <div className="h-full justify-center text-lg md:text-xl text-foreground leading-relaxed md:max-w-3/4 flex flex-col gap-8">
                 <div>
                   Are you organizing your own{" "}
-                  <a className="font-bold">event(s)</a>?
+                  <a className="font-bold">events</a>?
                 </div>
                 <div>
                   We offer <a className="font-bold">custom</a> services for your

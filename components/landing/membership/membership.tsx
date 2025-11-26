@@ -38,23 +38,20 @@ export default function MembershipSection() {
             <div className="flex flex-col justify-between items-start md:items-start w-full h-full">
               <div className="h-full justify-center text-lg md:text-xl text-foreground leading-relaxed flex flex-col gap-8 md:ml-[2rem]">
                 <div>
-                  Become a member of the{" "}
+                  At Flow Lounge we award your{" "}
                   <a className="font-bold text-accent">
-                    Flow Lounge Community.
+                    loyalty and dedication
                   </a>
+                  . With Flow Bonus, every 6th hookah is gift from us honoring
+                  your company.
                 </div>
                 <div>
-                  Members enjoy special{" "}
-                  <a className="font-bold">offers and discounts!</a>
-                </div>
-                <div>
-                  Subscribe to our Newsletter and be the{" "}
-                  <a className="font-bold">first</a> to learn about our
-                  exclusive <a className="font-bold">Events</a>.
+                  Ask for the membership card from our staff and begin to{" "}
+                  <a className="font-bold">collect stamps</a> with every hookah.
                 </div>
                 <div>
                   <ActionButton
-                    text="Become a member"
+                    text="Learn More"
                     icon={ArrowUpRight}
                     href="/deals"
                   />
