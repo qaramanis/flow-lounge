@@ -11,22 +11,19 @@ import { MenuCategory } from "@/types/menu";
 const menuCategories: MenuCategory[] = [
   {
     title: "Hookah",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: "",
     link: "/hookah",
-    imageUrl: "/images/menu/hookah-maklaud.jpg",
+    imageUrl: "/images/menu/hookah-maklaud.webp",
   },
   {
     title: "Cocktails",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: "",
     link: "/menu/cocktails",
-    imageUrl: "/images/menu/cocktails.jpg",
+    imageUrl: "/images/menu/cocktails.webp",
   },
   {
     title: "Homemade Lemonades",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: "",
     link: "/menu/lemonades",
     imageUrl:
       "https://images.unsplash.com/photo-1695490454828-f8df9109da43?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987",
@@ -45,24 +42,21 @@ const menuCategories: MenuCategory[] = [
   },
   {
     title: "Drinks",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: "",
     link: "/menu/drinks",
     imageUrl:
       "https://images.unsplash.com/photo-1640766322140-ab90a7bc71e5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987",
   },
   {
     title: "Wines",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: "",
     link: "/menu/wines",
     imageUrl:
       "https://images.unsplash.com/photo-1547595628-c61a29f496f0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987",
   },
   {
     title: "Beers and Ciders",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: "",
     link: "/menu/beers-ciders",
     imageUrl:
       "https://images.unsplash.com/photo-1608270586620-248524c67de9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",

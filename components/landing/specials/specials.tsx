@@ -54,7 +54,7 @@ export default function SpecialsSection() {
           </div>
           <div className="md:w-[45%] self-center h-[400px] rounded-lg overflow-hidden">
             <Image
-              src="/images/landing/specials1.jpg"
+              src="/images/landing/specials1.webp"
               alt="Flow Lounge Hookah"
               height={800}
               width={800}

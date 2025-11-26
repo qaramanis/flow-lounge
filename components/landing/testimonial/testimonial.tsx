@@ -56,7 +56,7 @@ export default function TestimonialsSection() {
         >
           <div className="absolute inset-0 z-10" />
           <Image
-            src="/images/landing/testimonial1.jpg"
+            src="/images/landing/testimonial1.webp"
             alt="Flow Lounge Hookah Experience"
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-110"

@@ -28,7 +28,7 @@ export default function JoinSection() {
         <div className="h-full flex flex-col md:flex-row gap-10 p-3 mt-3">
           <div className="w-full md:w-[45%] md:h-[450px] rounded-lg overflow-hidden flex items-center justify-center order-3 md:order-1">
             <Image
-              src="/images/landing/team.jpg"
+              src="/images/landing/team.webp"
               alt="Flow Lounge Hookah"
               height={400}
               width={400}
@@ -38,7 +38,7 @@ export default function JoinSection() {
           <div className="flex flex-col w-full md:w-[55%] md:h-[400px] rounded-lg gap-3 order-2">
             <div className="flex flex-col w-full h-[160px] md:h-[40%] rounded-lg items-center overflow-clip justify-center order-1 md:order-1">
               <Image
-                src="/images/landing/team2.jpg"
+                src="/images/landing/team2.webp"
                 alt="Flow Lounge Hookah"
                 height={1200}
                 width={1200}

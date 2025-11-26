@@ -149,7 +149,7 @@ const rawEvents: Event[] = [
     id: "10",
     title: "Fruit Bowls by Titto Peronetti",
     description:
-      "Παρασκευή στο Flow. Fruit Bowls by Titto Peronetti. Μοναδικά μιξάκια, μόνο μετά τις 21:00.Be there — feel the flow.",
+      "Παρασκευή στο Flow. Fruit Bowls by Titto Peronetti. Μοναδικά μιξάκια, μόνο μετά τις 21:00. Be there - feel the flow.",
     date: "Friday, November 28th 2025",
     sortDate: "2025-11-28",
     time: "21:00",
@@ -158,7 +158,22 @@ const rawEvents: Event[] = [
     category: "Party",
     isPast: false,
     color: "#EF5021",
-    height: 480,
+    height: 380,
+  },
+  {
+    id: "11",
+    title: "Ta Spame... Entexws",
+    description:
+      "Σάββατο στο Flow. Το πρώτο & μοναδικό Έντεχνο Ορθάδικο Party. Τα σπάμε… έντεχνα. Free σφηνάκια για όλους. 21:00 - be there.",
+    date: "Saturday, November 29th 2025",
+    sortDate: "2025-11-29",
+    time: "21:00",
+    location: "Flow Lounge",
+    image: "/images/events/1920x1080-entexno.png",
+    category: "Party",
+    isPast: false,
+    color: "#EF5021",
+    height: 520,
   },
 ];
 

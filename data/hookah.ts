@@ -47,37 +47,37 @@ const specialHookah: MenuItem[] = [
     title: "Solomon",
     description: "",
     price: "+20.00 €",
-    imageUrl: "/images/menu/hookah-solomon.jpg",
+    imageUrl: "/images/hookah/hookah-solomon.webp",
   },
   {
     title: "Maklaud Project 22",
     description: "",
     price: "+10.00 €",
-    imageUrl: "/images/menu/hookah-maklaud.jpg",
+    imageUrl: "/images/menu/hookah-maklaud.webp",
   },
   {
     title: "Roden",
     description: "",
     price: "+10.00 €",
-    imageUrl: "/images/menu/hookah-roden.jpg",
+    imageUrl: "/images/hookah/hookah-roden.webp",
   },
   {
     title: "Katana",
     description: "",
     price: "+5.00 €",
-    imageUrl: "/images/menu/hookah-katana.jpg",
+    imageUrl: "/images/hookah/hookah-katana.webp",
   },
   {
     title: "Oro",
     description: "",
     price: "+5.00 €",
-    imageUrl: "/images/hookah/oro.jpg",
+    imageUrl: "/images/hookah/oro.webp",
   },
   {
     title: "Japona",
     description: "",
     price: "+5.00 €",
-    imageUrl: "/images/hookah/japona.jpg",
+    imageUrl: "/images/hookah/japona.webp",
   },
 ];
 
@@ -89,13 +89,13 @@ const shishaCocktail: MenuItem[] = [
     title: "Aperol",
     description: "",
     price: "",
-    imageUrl: "/images/menu/hookah-maklaud.jpg",
+    imageUrl: "/images/menu/hookah-maklaud.webp",
   },
   {
     title: "Citrus Tonic",
     description: "",
     price: "",
-    imageUrl: "/images/menu/hookah-maklaud.jpg",
+    imageUrl: "/images/menu/hookah-maklaud.webp",
   },
 ];
 
