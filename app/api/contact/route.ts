@@ -23,6 +23,16 @@ export async function POST(request: Request) {
       );
     }
 
+    // Validate phone number format
+    // Remove all non-digit characters and check if at least 10 digits remain
+    const phoneDigits = phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10) {
+      return NextResponse.json(
+        { error: "Invalid phone number. Please enter a valid phone number." },
+        { status: 400 },
+      );
+    }
+
     // Create HTML email template
     const htmlEmail = `
       <!DOCTYPE html>
