@@ -203,9 +203,16 @@ export async function POST(request: Request) {
       { status: 200 },
     );
   } catch (error) {
-    console.error("Error sending email:", error);
+    console.error("[CONTACT] Error sending email:", {
+      error: error instanceof Error ? error.message : String(error),
+      stack: error instanceof Error ? error.stack : undefined,
+      fullError: error,
+    });
     return NextResponse.json(
-      { error: "Failed to send email" },
+      {
+        error: "Failed to send email",
+        details: error instanceof Error ? error.message : String(error),
+      },
       { status: 500 },
     );
   }

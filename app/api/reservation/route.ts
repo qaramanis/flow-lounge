@@ -216,9 +216,16 @@ export async function POST(request: Request) {
       { status: 200 },
     );
   } catch (error) {
-    console.error("Error sending reservation email:", error);
+    console.error("[RESERVATION] Error sending reservation email:", {
+      error: error instanceof Error ? error.message : String(error),
+      stack: error instanceof Error ? error.stack : undefined,
+      fullError: error,
+    });
     return NextResponse.json(
-      { error: "Failed to send reservation request" },
+      {
+        error: "Failed to send reservation request",
+        details: error instanceof Error ? error.message : String(error),
+      },
       { status: 500 },
     );
   }
