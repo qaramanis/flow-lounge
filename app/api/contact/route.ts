@@ -187,8 +187,8 @@ export async function POST(request: Request) {
 
     // Send email to business
     await resend.emails.send({
-      from: "Flow Lounge <onboarding@resend.dev>", // Change this to your verified domain
-      to: ["apostkaram@gmail.com"], // Your receiving email
+      from: "Flow Lounge <info@flowlounge.gr>", // Change this to your verified domain
+      to: ["info@flowlounge.gr"], // Your receiving email
       replyTo: email, // User's email for replies
       subject: `Νέο Μήνυμα: ${subject}`,
       html: htmlEmail,
@@ -196,7 +196,7 @@ export async function POST(request: Request) {
 
     // Send confirmation email to customer
     await resend.emails.send({
-      from: "Flow Lounge <onboarding@resend.dev>", // Change this to your verified domain
+      from: "Flow Lounge <info@flowlounge.gr>", // Change this to your verified domain
       to: [email], // Customer's email
       subject: "Επιβεβαίωση Μηνύματος - Flow Lounge",
       html: customerEmail,
