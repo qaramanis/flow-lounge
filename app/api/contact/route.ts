@@ -1,7 +1,5 @@
-import { Resend } from "resend";
 import { NextResponse } from "next/server";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { sendEmail } from "@/lib/email";
 
 export async function POST(request: Request) {
   try {
@@ -186,18 +184,16 @@ export async function POST(request: Request) {
     `;
 
     // Send email to business
-    await resend.emails.send({
-      from: "Flow Lounge <info@flowlounge.gr>", // Change this to your verified domain
-      to: ["info@flowlounge.gr"], // Your receiving email
-      replyTo: email, // User's email for replies
+    await sendEmail({
+      to: "info@flowlounge.gr",
       subject: `Νέο Μήνυμα: ${subject}`,
       html: htmlEmail,
+      replyTo: email,
     });
 
     // Send confirmation email to customer
-    await resend.emails.send({
-      from: "Flow Lounge <info@flowlounge.gr>", // Change this to your verified domain
-      to: [email], // Customer's email
+    await sendEmail({
+      to: email,
       subject: "Επιβεβαίωση Μηνύματος - Flow Lounge",
       html: customerEmail,
     });
